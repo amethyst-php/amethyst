@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Railken\Bag;
 use Railken\Laravel\Manager\ResultAction;
 use Illuminate\Support\Facades\DB;
+use DateTime;
 
 class UserManager extends ModelManager
 {
@@ -209,5 +210,109 @@ class UserManager extends ModelManager
         }
 
         return parent::update($entity, $parameters, $permission);
+    }
+
+    
+    /**
+     * Register a new account
+     *
+     * @param array $params
+     *
+     * @return ResultAction
+     */
+    public function register(array $params)
+    {
+        $params = new Bag($params);
+ 
+        $result = $this->create($params->only(['name', 'password', 'email']));
+
+        if ($result->ok()) {
+            $user = $result->getResource();
+            
+            $this->createConfirmationEmailToken($user, $user->email);
+
+            event(new Events\UserRegistered($user));
+            $this->requestConfirmEmail($user);
+        }
+
+        return $result;
+    }
+
+
+    /**
+     * Request confirmation email
+     *
+     * @param User $user
+     *
+     * @return void
+     */
+    public function requestConfirmEmail(User $user)
+    {
+        $email = $user->pendingEmail;
+
+        if (!$email) {
+            $email = $this->createConfirmationEmailToken($user, $user->email);
+        }
+
+        // Prevent spam
+        if (!$email->notified_at || $email->notified_at < (new DateTime())->modify('-10 minutes')) {
+            $email->notified_at = new DateTime();
+            $email->save();
+            event(new Events\UserRequestConfirmEmail($user));
+        }
+    }
+
+    /**
+     * Confirm an account
+     *
+     * @param string $token
+     *
+     * @return User|null
+     */
+    public function confirmEmail(string $token)
+    {
+        $result = $this->findUserPendingEmailByToken($token);
+
+        if ($result) {
+            $user = $result->user;
+            $user->enabled = 1;
+            $user->email = $result->email;
+            $user->save();
+            $result->delete();
+
+            return $user;
+        }
+
+        return null;
+    }
+
+    /**
+     * Request confirmation email
+     *
+     * @param User $user
+     *
+     * @return void
+     */
+    public function requestChangeEmail(User $user, $email)
+    {
+        $result = $this->changeEmail($user, $email);
+
+
+        if (!$result->ok()) {
+            return $result;
+        }
+
+
+        $email = $result->getResource();
+
+
+        // Prevent spam
+        if (!$email->notified_at || ($email->notified_at < (new DateTime())->modify('+10 minutes'))) {
+            $email->notified_at = new DateTime();
+            $email->save();
+            event(new Events\UserRequestConfirmEmail($user));
+        }
+
+        return $result;
     }
 }

@@ -8,6 +8,7 @@ use App\User\UserService;
 use Railken\Bag;
 use Railken\LaraOre\Api\Exceptions\BadRequestException;
 use Illuminate\Support\Collection;
+use Railken\LaraOre\Core\User\UserManager;
 
 class RegistrationController extends Controller
 {
@@ -38,7 +39,7 @@ class RegistrationController extends Controller
      */
     public function index(Request $request)
     {
-        $um = new UserService();
+        $um = new UserManager();
 
         $result = $um->register($request->all());
 
@@ -77,7 +78,7 @@ class RegistrationController extends Controller
      */
     public function confirmEmail(Request $request)
     {
-        $um = new UserService();
+        $um = new UserManager();
             
         $user = $um->confirmEmail($request->input('token'));
 
@@ -103,9 +104,9 @@ class RegistrationController extends Controller
      */
     public function requestConfirmEmail(Request $request)
     {
-        $um = new UserService();
+        $um = new UserManager();
             
-        $user = $um->manager->repository->findOneByEmail($request->input('email'));
+        $user = $um->repository->findOneByEmail($request->input('email'));
 
         if ($user && !$user->enabled) {
             $um->requestConfirmEmail($user);

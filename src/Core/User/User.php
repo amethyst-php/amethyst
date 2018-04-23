@@ -11,6 +11,7 @@ use Laravel\Passport\HasApiTokens;
 use Railken\LaraOre\Core\Manga\Manga;
 use Railken\LaraOre\Core\Address\Address;
 use Railken\LaraOre\Core\File\File;
+use DateTime;
 
 class User extends Authenticatable implements EntityContract
 {

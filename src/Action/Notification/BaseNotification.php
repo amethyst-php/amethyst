@@ -18,7 +18,7 @@ class BaseNotification extends IlluminateNotification implements ShouldQueue
      * Create a new event instance.
      *
      * @param Notification $action
-     * @param  event  $event
+     * @param mixed $event
      * @param string $message
      * @return void
      */

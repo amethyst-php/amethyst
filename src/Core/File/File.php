@@ -5,6 +5,19 @@ namespace Railken\LaraOre\Core\File;
 use Illuminate\Database\Eloquent\Model;
 use Railken\Laravel\Manager\Contracts\EntityContract;
 
+/**
+ * @property public $storage
+ * @property public $status
+ * @property public $type
+ * @property public $disk
+ * @property public $checksum
+ * @property public $access
+ * @property public $expire_at
+ * @property public $disk
+ * @property public $ext
+ * @property public $content_type
+ * @property public $content
+ */
 class File extends Model implements EntityContract
 {
 
@@ -29,7 +42,6 @@ class File extends Model implements EntityContract
         'permission',
         'access',
         'expire_at',
-        'disk',
         'disk_id',
         'ext',
         'content_type',

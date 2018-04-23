@@ -5,6 +5,13 @@ namespace Railken\LaraOre\Core\Disk;
 use Illuminate\Database\Eloquent\Model;
 use Railken\Laravel\Manager\Contracts\EntityContract;
 
+/**
+ * @property public $id
+ * @property public $name
+ * @property public $enabled
+ * @property public $config
+ * @property public $driver
+ */
 class Disk extends Model implements EntityContract
 {
     /**
