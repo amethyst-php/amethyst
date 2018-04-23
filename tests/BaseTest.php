@@ -54,6 +54,11 @@ class BaseTest extends \Orchestra\Testbench\TestCase
         ]);
 
         $access_token = $response->getContent();
+
+        if ($response->getStatusCode() === 500) {
+            print_r($response->getContent());
+        }
+
         $response->assertStatus(200);
         $access_token = json_decode($response->getContent())->data->access_token;
 

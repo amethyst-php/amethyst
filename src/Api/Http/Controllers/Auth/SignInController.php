@@ -84,16 +84,24 @@ class SignInController extends Controller
         ]);
         $request = Request::create('api/v1/oauth/token', 'POST', []);
 
-        $response = Route::dispatch($request)->getContent();
+        $response = Route::dispatch($request);
 
-        $body = json_decode($response);
+        $body = json_decode($response->getContent());
 
-
-        if (isset($body->access_token)) {
+        if ($response->getStatusCode() === 200) {
             return $this->success(['data' => $body]);
         }
 
-        return $this->error(['code' => 'CREDENTIALS_NOT_VALID', 'message' => $body->error]);
+        if ($response->getStatusCode() === 401) {
+            return $this->error(['code' => 'CREDENTIALS_NOT_VALID', 'message' => $body->error]);
+        }
+
+        if ($response->getStatusCode() === 500) {
+            return $response;
+        }
+
+        throw new \Exception("Uhm...");
+
     }
 
     /**
