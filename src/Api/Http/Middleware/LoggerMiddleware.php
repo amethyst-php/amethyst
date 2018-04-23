@@ -27,7 +27,7 @@ class LoggerMiddleware
             return;
         }
 
-        $lm = new \Core\HttpLog\HttpLogManager();
+        $lm = new \Railken\LaraOre\Core\HttpLog\HttpLogManager();
         $log = $lm->create([
             'type' => 'inbound',
             'category' => 'api',

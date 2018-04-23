@@ -44,7 +44,7 @@ class Mailable extends BaseMailable implements ShouldQueue
         parent::send($mailer);
 
         foreach ($this->to as $i => $to) {
-            $result = (new \Core\MailLog\MailLogManager())->create([
+            $result = (new \Railken\LaraOre\Core\MailLog\MailLogManager())->create([
                 'subject' => $this->subject,
                 'to' => $this->to[$i]['address'],
                 'to_name' => $this->to[$i]['name'],

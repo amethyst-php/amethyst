@@ -62,7 +62,7 @@ class BaseTest extends \Orchestra\Testbench\TestCase
         $response->assertStatus(200);
         $access_token = json_decode($response->getContent())->data->access_token;
 
-        print_r($access_token);
+        // print_r($access_token);
 
     }
 

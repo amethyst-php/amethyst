@@ -34,7 +34,7 @@ class FileSerializer extends ModelSerializer
 
 
         if ($entity->access === 'private') {
-            $bag->set('readable', $storage->temporaryUrl($bag->get('path'), (new \Datetime())->modify('+2 hours')));
+            $bag->set('readable', $storage->temporaryUrl($bag->get('path'), (new \DateTime())->modify('+2 hours')));
         }
 
         if ($entity->access === 'public') {

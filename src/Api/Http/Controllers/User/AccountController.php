@@ -10,7 +10,7 @@ class AccountController extends Controller
 {
 
     /**
-     * @var \Core\User\UserManager
+     * @var \Railken\LaraOre\Core\User\UserManager
      */
     protected $manager;
     

@@ -37,7 +37,7 @@ trait RestUpdateTrait
 
 
         if ($result->ok()) {
-            $m = new \Core\Log\LogManager();
+            $m = new \Railken\LaraOre\Core\Log\LogManager();
             $m->create([
                 'type' => 'api',
                 'category' => 'update',

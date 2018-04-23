@@ -29,7 +29,6 @@ trait RestIndexTrait
 
     public function createIndexResponseByQuery($query, Request $request)
     {
-        \DB::enableQuerylog();
         # FilterSyntaxException
 
         # Sorter
@@ -93,7 +92,6 @@ trait RestIndexTrait
             })->toArray(),
         ]);
 
-        // print_r(\DB::getQueryLog());
         return $response;
     }
 

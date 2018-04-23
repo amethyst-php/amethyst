@@ -12,7 +12,7 @@ class FilesController extends Controller
 {
 
     /**
-     * @var \Core\File\FileManager
+     * @var \Railken\LaraOre\Core\File\FileManager
      */
     protected $manager;
     

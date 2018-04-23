@@ -59,10 +59,10 @@ class NotificationManager extends ModelManager
      */
     public function resolve(Notification $action, $event)
     {
-        $user = (new \Core\User\UserManager())->getRepository()->findOneById($event->user->id);
+        $user = (new \Railken\LaraOre\Core\User\UserManager())->getRepository()->findOneById($event->user->id);
         $users = new Collection();
 
-        $repository = (new \Core\User\UserManager())->getRepository();
+        $repository = (new \Railken\LaraOre\Core\User\UserManager())->getRepository();
         (new Collection($action->targets))->map(function ($target) use ($event, $repository, &$users) {
             if ($target === "{{user.id}}") {
                 $users[] = $repository->findOneById($event->user->id);
