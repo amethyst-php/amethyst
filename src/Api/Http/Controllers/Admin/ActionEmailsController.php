@@ -3,7 +3,7 @@
 namespace Railken\LaraOre\Api\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Action\Email\EmailManager;
+use Railken\LaraOre\Action\Email\EmailManager;
 
 use Railken\LaraOre\Api\Http\Controllers\Traits\RestIndexTrait;
 use Railken\LaraOre\Api\Http\Controllers\Traits\RestShowTrait;

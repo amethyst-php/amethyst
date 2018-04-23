@@ -15,7 +15,8 @@
         "rcrowe/twigbridge": "^0.9.6",
         "railken/bag": "^1.2",
         "railken/laravel-api-helpers": "^1.1.3",
-        "railken/laravel-manager": "^3.0.3"
+        "railken/laravel-manager": "^3.0.3",
+        "railken/laravel-application": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~7.0",

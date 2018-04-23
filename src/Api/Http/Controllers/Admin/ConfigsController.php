@@ -30,7 +30,7 @@ class ConfigsController extends RestController
      * Construct
      *
      */
-    public function __construct(\Core\Config\ConfigManager $manager)
+    public function __construct(ConfigManager $manager)
     {
         $this->manager = $manager;
         parent::__construct();
@@ -54,7 +54,7 @@ class ConfigsController extends RestController
      * @param integer $id
      * @param \Illuminate\Http\Request $request
      *
-     * @return response
+     * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
     {

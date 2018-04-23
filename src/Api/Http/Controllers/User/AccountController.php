@@ -50,9 +50,7 @@ class AccountController extends Controller
      */
     public function email(Request $request)
     {
-        $us = new \App\User\UserService();
-
-        $result = $us->requestChangeEmail($this->getUser(), $request->input('email'));
+        $result = $this->manager->requestChangeEmail($this->getUser(), $request->input('email'));
 
         if (!$result->ok()) {
             return $this->error(['errors' => $result->getSimpleErrors()]);

@@ -18,7 +18,7 @@ trait RestUpdateTrait
      * @param integer $id
      * @param \Illuminate\Http\Request $request
      *
-     * @return response
+     * @return \Illuminate\Http\Response
      */
     public function update($id, Request $request)
     {

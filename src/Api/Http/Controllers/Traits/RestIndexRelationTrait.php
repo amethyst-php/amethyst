@@ -19,7 +19,7 @@ trait RestIndexRelationTrait
      * @param int $id
      * @param \Illuminate\Http\Request $request
      *
-     * @return response
+     * @return \Illuminate\Http\Response
      */
     public function index($id, Request $request)
     {

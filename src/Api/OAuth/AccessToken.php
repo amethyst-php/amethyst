@@ -13,7 +13,7 @@ use League\OAuth2\Server\CryptKey;
  * @property public $client
  * @property public $id
  * @property public $expires_at
- * @property public $User
+ * @property public $user
  * @property public $scopes
  */
 class AccessToken extends Model

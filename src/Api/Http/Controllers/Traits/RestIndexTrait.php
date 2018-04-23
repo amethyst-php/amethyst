@@ -20,7 +20,7 @@ trait RestIndexTrait
      *
      * @param Request $request
      *
-     * @return response
+     * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {

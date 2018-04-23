@@ -72,7 +72,7 @@ class ContentAttribute extends BaseAttribute
      * @param EntityContract       $entity
      * @param ParameterBagContract $parameters
      *
-     * @return Collection
+     * @return void
      */
     public function fill(EntityContract $entity, ParameterBagContract $parameters)
     {
@@ -117,7 +117,7 @@ class ContentAttribute extends BaseAttribute
      * @param EntityContract       $entity
      * @param ParameterBagContract $parameters
      *
-     * @return Collection
+     * @return void
      */
     public function remove(EntityContract $entity)
     {

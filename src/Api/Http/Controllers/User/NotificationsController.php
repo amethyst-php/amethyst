@@ -72,7 +72,7 @@ class NotificationsController extends RestController
      * @param integer $id
      * @param \Illuminate\Http\Request $request
      *
-     * @return response
+     * @return \Illuminate\Http\Response
      */
     public function markAsRead($id, Request $request)
     {
@@ -93,7 +93,7 @@ class NotificationsController extends RestController
      * @param integer $id
      * @param \Illuminate\Http\Request $request
      *
-     * @return response
+     * @return \Illuminate\Http\Response
      */
     public function markAsUnread($id, Request $request)
     {

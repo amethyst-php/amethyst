@@ -13,6 +13,7 @@ use Railken\Bag;
 use Railken\Laravel\Manager\ResultAction;
 use Illuminate\Support\Facades\DB;
 use DateTime;
+use Exception;
 
 class UserManager extends ModelManager
 {
@@ -212,7 +213,7 @@ class UserManager extends ModelManager
         return parent::update($entity, $parameters, $permission);
     }
 
-    
+
     /**
      * Register a new account
      *

@@ -17,7 +17,7 @@ trait RestCreateTrait
      *
      * @param \Illuminate\Http\Request $request
      *
-     * @return response
+     * @return \Illuminate\Http\Response
      */
     public function create(Request $request)
     {

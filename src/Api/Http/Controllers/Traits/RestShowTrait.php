@@ -18,7 +18,7 @@ trait RestShowTrait
      * @param mixed $id
      * @param \Illuminate\Http\Request $request
      *
-     * @return response
+     * @return \Illuminate\Http\Response
      */
     public function show($id, Request $request)
     {
