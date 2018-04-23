@@ -13,7 +13,7 @@ class HttpLog extends Model implements EntityContract
      *
      * @var string
      */
-    protected $table = 'http_logs';
+    protected $table = 'ore_http_logs';
 
     /**
      * The attributes that are mass assignable.

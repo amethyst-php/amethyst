@@ -13,14 +13,14 @@ class CreateUsersPendingEmailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('users_pending_emails', function ($table) {
+        Schema::create('ore_users_pending_emails', function ($table) {
             $table->increments('id');
             $table->string('token');
             $table->string('email');
             $table->integer('user_id')->unsigned();
             $table->timestamp('notified_at')->nullable();
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('ore_users');
         });
     }
 
@@ -31,6 +31,6 @@ class CreateUsersPendingEmailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users_pending_emails');
+        Schema::dropIfExists('ore_users_pending_emails');
     }
 }

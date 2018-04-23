@@ -13,7 +13,7 @@ class CreateDisksTable extends Migration
      */
     public function up()
     {
-        Schema::create('disks', function ($table) {
+        Schema::create('ore_disks', function ($table) {
             $table->increments('id');
             $table->string('name');
             $table->string('driver');
@@ -30,6 +30,6 @@ class CreateDisksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('disks');
+        Schema::dropIfExists('ore_disks');
     }
 }

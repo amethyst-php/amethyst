@@ -13,7 +13,7 @@ class Log extends Model implements EntityContract
      *
      * @var string
      */
-    protected $table = 'logs';
+    protected $table = 'ore_logs';
 
     /**
      * The attributes that are mass assignable.

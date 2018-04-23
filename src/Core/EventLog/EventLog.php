@@ -13,7 +13,7 @@ class EventLog extends Model implements EntityContract
      *
      * @var string
      */
-    protected $table = 'event_logs';
+    protected $table = 'ore_event_logs';
 
     /**
      * The attributes that should be cast to native types.

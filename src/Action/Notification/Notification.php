@@ -13,7 +13,7 @@ class Notification extends Model implements EntityContract
      *
      * @var string
      */
-    protected $table = 'action_notifications';
+    protected $table = 'ore_action_notifications';
 
     /**
      * The attributes that are mass assignable.

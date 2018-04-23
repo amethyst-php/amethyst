@@ -13,14 +13,14 @@ class CreateLogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('logs', function (Blueprint $table) {
+        Schema::create('ore_logs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('type');
             $table->string('category')->nullable();
             $table->string('message')->nullable();
             $table->text('vars');
             $table->bigInteger('parent_id')->unsigned()->nullable();
-            $table->foreign('parent_id')->references('id')->on('logs');
+            $table->foreign('parent_id')->references('id')->on('ore_logs');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CreateLogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('logs');
+        Schema::dropIfExists('ore_logs');
     }
 }

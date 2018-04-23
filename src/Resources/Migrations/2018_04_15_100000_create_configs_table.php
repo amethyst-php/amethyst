@@ -13,7 +13,7 @@ class CreateConfigsTable extends Migration
      */
     public function up()
     {
-        Schema::create('configs', function ($table) {
+        Schema::create('ore_configs', function ($table) {
             $table->increments('id');
             $table->text('key');
             $table->text('value');
@@ -28,6 +28,6 @@ class CreateConfigsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('configs');
+        Schema::dropIfExists('ore_configs');
     }
 }

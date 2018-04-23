@@ -26,7 +26,7 @@ class File extends Model implements EntityContract
      *
      * @var string
      */
-    protected $table = 'files';
+    protected $table = 'ore_files';
 
     /**
      * The attributes that are mass assignable.

@@ -13,7 +13,7 @@ class Email extends Model implements EntityContract
      *
      * @var string
      */
-    protected $table = 'action_emails';
+    protected $table = 'ore_action_emails';
 
     /**
      * The attributes that are mass assignable.

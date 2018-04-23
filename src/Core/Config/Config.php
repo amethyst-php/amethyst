@@ -14,7 +14,7 @@ class Config extends Model implements EntityContract
      *
      * @var string
      */
-    protected $table = 'configs';
+    protected $table = 'ore_configs';
 
     /**
      * The attributes that are mass assignable.

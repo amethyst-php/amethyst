@@ -13,10 +13,10 @@ class CreateFilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('files', function ($table) {
+        Schema::create('ore_files', function ($table) {
             $table->increments('id');
             $table->integer('disk_id')->unsigned();
-            $table->foreign('disk_id')->references('id')->on('disks');
+            $table->foreign('disk_id')->references('id')->on('ore_disks');
             $table->string('path');
             $table->string('type')->nullable();
             $table->string('status')->nullable();
@@ -26,7 +26,7 @@ class CreateFilesTable extends Migration
             $table->string('access')->default('public');
             $table->string('permission')->nullable();
             $table->integer('user_id')->unsigned()->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('ore_users');
             $table->timestamp('expire_at')->nullable();
             $table->softDeletes();
             $table->timestamps();
@@ -40,6 +40,6 @@ class CreateFilesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('files');
+        Schema::dropIfExists('ore_files');
     }
 }

@@ -13,7 +13,7 @@ class CreateHttpLogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('http_logs', function ($table) {
+        Schema::create('ore_http_logs', function ($table) {
             $table->increments('id');
             $table->string('type');
             $table->string('url');
@@ -33,6 +33,6 @@ class CreateHttpLogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('http_logs');
+        Schema::dropIfExists('ore_http_logs');
     }
 }

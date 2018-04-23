@@ -13,7 +13,7 @@ class CreateEventLogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('event_logs', function (Blueprint $table) {
+        Schema::create('ore_event_logs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('event_class');
             $table->text('vars');
@@ -28,6 +28,6 @@ class CreateEventLogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('event_logs');
+        Schema::dropIfExists('ore_event_logs');
     }
 }

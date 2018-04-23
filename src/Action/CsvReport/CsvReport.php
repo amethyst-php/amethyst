@@ -15,7 +15,7 @@ class CsvReport extends Model implements EntityContract
      *
      * @var string
      */
-    protected $table = 'csv_report';
+    protected $table = 'ore_csv_report';
 
     /**
      * The attributes that are mass assignable.

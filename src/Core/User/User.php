@@ -22,7 +22,7 @@ class User extends Authenticatable implements EntityContract
      *
      * @var string
      */
-    protected $table = 'users';
+    protected $table = 'ore_users';
 
     /**
      * The attributes that are mass assignable.

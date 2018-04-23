@@ -12,7 +12,7 @@ class CreateMailLogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('mail_logs', function ($table) {
+        Schema::create('ore_mail_logs', function ($table) {
             $table->increments('id');
             $table->string('to');
             $table->string('to_name')->nullable();
@@ -30,6 +30,6 @@ class CreateMailLogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mail_logs');
+        Schema::dropIfExists('ore_mail_logs');
     }
 }

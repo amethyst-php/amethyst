@@ -19,7 +19,7 @@ class Disk extends Model implements EntityContract
      *
      * @var string
      */
-    protected $table = 'disks';
+    protected $table = 'ore_disks';
 
     /**
      * The attributes that are mass assignable.

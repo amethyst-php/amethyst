@@ -13,7 +13,7 @@ class CreateActionEmailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('action_emails', function ($table) {
+        Schema::create('ore_action_emails', function ($table) {
             $table->increments('id');
             $table->string('name');
             $table->text('description')->nullable();
@@ -32,6 +32,6 @@ class CreateActionEmailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('action_emails');
+        Schema::dropIfExists('ore_action_emails');
     }
 }

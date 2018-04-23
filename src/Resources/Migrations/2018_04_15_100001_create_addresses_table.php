@@ -13,7 +13,7 @@ class CreateAddressesTable extends Migration
      */
     public function up()
     {
-        Schema::create('addresses', function ($table) {
+        Schema::create('ore_addresses', function ($table) {
             $table->increments('id');
             $table->string('firstname');
             $table->string('lastname');
@@ -34,6 +34,6 @@ class CreateAddressesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('addresses');
+        Schema::dropIfExists('ore_addresses');
     }
 }

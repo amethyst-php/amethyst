@@ -13,7 +13,7 @@ class Address extends Model implements EntityContract
      *
      * @var string
      */
-    protected $table = 'addresses';
+    protected $table = 'ore_addresses';
 
     /**
      * The attributes that are mass assignable.

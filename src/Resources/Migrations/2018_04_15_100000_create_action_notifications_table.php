@@ -13,7 +13,7 @@ class CreateActionNotificationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('action_notifications', function ($table) {
+        Schema::create('ore_action_notifications', function ($table) {
             $table->increments('id');
             $table->string('name');
             $table->text('description')->nullable();
@@ -31,6 +31,6 @@ class CreateActionNotificationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('action_notifications');
+        Schema::dropIfExists('ore_action_notifications');
     }
 }

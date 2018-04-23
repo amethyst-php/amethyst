@@ -12,7 +12,7 @@ class UserPendingEmail extends Model
      *
      * @var string
      */
-    protected $table = 'users_pending_emails';
+    protected $table = 'ore_users_pending_emails';
 
     /**
      * The attributes that are mass assignable.

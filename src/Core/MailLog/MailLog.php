@@ -13,7 +13,7 @@ class MailLog extends Model implements EntityContract
      *
      * @var string
      */
-    protected $table = 'mail_logs';
+    protected $table = 'ore_mail_logs';
 
     /**
      * The attributes that are mass assignable.

@@ -13,7 +13,7 @@ class Listener extends Model implements EntityContract
      *
      * @var string
      */
-    protected $table = 'listeners';
+    protected $table = 'ore_listeners';
 
     /**
      * The attributes that are mass assignable.

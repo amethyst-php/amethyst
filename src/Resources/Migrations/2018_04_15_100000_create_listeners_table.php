@@ -13,7 +13,7 @@ class CreateListenersTable extends Migration
      */
     public function up()
     {
-        Schema::create('listeners', function ($table) {
+        Schema::create('ore_listeners', function ($table) {
             $table->increments('id');
             $table->string('name');
             $table->text('description')->nullable();
@@ -31,6 +31,6 @@ class CreateListenersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('listeners');
+        Schema::dropIfExists('ore_listeners');
     }
 }
