@@ -3,7 +3,7 @@
 namespace Railken\LaraOre\Api\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Core\MailLog\MailLogManager;
+use Railken\LaraOre\Core\MailLog\MailLogManager;
 
 use Railken\LaraOre\Api\Http\Controllers\Traits\RestIndexTrait;
 use Railken\LaraOre\Api\Http\Controllers\Traits\RestShowTrait;

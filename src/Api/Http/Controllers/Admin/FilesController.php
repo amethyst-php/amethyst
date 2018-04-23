@@ -3,7 +3,7 @@ namespace Railken\LaraOre\Api\Http\Controllers\Admin;
 
 use Railken\LaraOre\Api\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Core\File\FileManager;
+use Railken\LaraOre\Core\File\FileManager;
 use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
 use Railken\LaraOre\Api\Http\Controllers\RestController;
 use Railken\Bag;

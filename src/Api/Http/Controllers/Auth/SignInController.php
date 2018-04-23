@@ -4,7 +4,7 @@ namespace Railken\LaraOre\Api\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use Railken\LaraOre\Api\Http\Controllers\Controller;
-use Core\User\UserManager;
+use Railken\LaraOre\Core\User\UserManager;
 use Railken\LaraOre\Api\OAuth\GithubProvider;
 use Railken\LaraOre\Api\OAuth\GitlabProvider;
 use Railken\LaraOre\Api\OAuth\GoogleProvider;
@@ -85,14 +85,13 @@ class SignInController extends Controller
         $request = Request::create('api/v1/oauth/token', 'POST', []);
 
         $response = Route::dispatch($request)->getContent();
-        
+
         $body = json_decode($response);
 
 
         if (isset($body->access_token)) {
-            return $this->success(array_merge((array)$body, ['data' => $body]));
+            return $this->success(['data' => $body]);
         }
-
 
         return $this->error(['code' => 'CREDENTIALS_NOT_VALID', 'message' => $body->error]);
     }

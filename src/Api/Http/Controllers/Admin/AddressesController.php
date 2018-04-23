@@ -3,7 +3,7 @@ namespace Railken\LaraOre\Api\Http\Controllers\Admin;
 
 use Railken\LaraOre\Api\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Core\Address\AddressManager;
+use Railken\LaraOre\Core\Address\AddressManager;
 use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
 use Railken\LaraOre\Api\Http\Controllers\RestController;
 

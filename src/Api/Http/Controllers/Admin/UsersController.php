@@ -3,7 +3,7 @@ namespace Railken\LaraOre\Api\Http\Controllers\Admin;
 
 use Railken\LaraOre\Api\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Core\User\UserManager;
+use Railken\LaraOre\Core\User\UserManager;
 use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
 use Railken\LaraOre\Api\Http\Controllers\RestController;
 

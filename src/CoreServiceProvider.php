@@ -6,6 +6,9 @@ use Illuminate\Support\ServiceProvider;
 use Railken\Laravel\App\Commands as Commands;
 use Illuminate\Support\Facades\Schema;
 use File;
+use Laravel\Passport\Passport;
+use Laravel\Passport\RouteRegistrar;
+use Illuminate\Support\Facades\Route;
 
 class CoreServiceProvider extends ServiceProvider
 {
@@ -40,13 +43,43 @@ class CoreServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(\Illuminate\Routing\Router $router)
     {
+        $router->middleware([
+            \Barryvdh\Cors\HandleCors::class,
+            \Railken\LaraOre\Api\Http\Middleware\ErrorsMiddleware::class,
+            \Railken\LaraOre\Api\Http\Middleware\LoggerMiddleware::class,
+        ]);
+
+        config(['auth.guards.api.driver' => 'passport']);
+        config(['auth.guards.api.provider' => 'users']);
+        config(['auth.providers.users.driver' => 'eloquent']);
+        config(['auth.providers.users.model' => \Railken\LaraOre\Core\User\User::class]);
+
+        print_r(config('auth'));
+
+        $callback = function ($router) {
+            $router->all();
+        };
 
         $this->loadRoutesFrom(__DIR__.'/Api/Resources/routes.php');
         $this->loadMigrationsFrom(__DIR__.'/Resources/Migrations');
 
         Schema::defaultStringLength(191);
+
+        $options = array_merge([
+            'namespace' => '\Laravel\Passport\Http\Controllers',
+            'prefix' => 'api/v1/oauth',
+        ], []);
+
+        Route::group($options, function ($router) use ($callback) {
+            $callback(new RouteRegistrar($router));
+        });
+        
+        Passport::tokensExpireIn(now()->addDays(15));
+
+        Passport::refreshTokensExpireIn(now()->addDays(30));
+
 
         if (Schema::hasTable('configs')) {
             $configs = (new \Railken\LaraOre\Core\Config\ConfigManager())->getRepository()->findToLoad();

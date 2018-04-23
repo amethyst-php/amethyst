@@ -3,12 +3,18 @@
 namespace Railken\LaraOre\Api\Http\Controllers;
 
 use App\Http\Controllers\Controller as AppController;
-use Core\Permission\UserAgent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-class Controller extends AppController
+class Controller extends BaseController
 {
+
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
     /**
      * Return a JSON response with status success
      *

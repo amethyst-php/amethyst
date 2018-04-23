@@ -3,7 +3,7 @@
 namespace Railken\LaraOre\Api\Http\Controllers\User;
 
 use Illuminate\Http\Request;
-use Core\Notification\NotificationManager;
+use Railken\LaraOre\Core\Notification\NotificationManager;
 
 use Railken\LaraOre\Api\Http\Controllers\Traits\RestIndexTrait;
 use Railken\LaraOre\Api\Http\Controllers\Traits\RestShowTrait;

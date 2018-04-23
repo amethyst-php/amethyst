@@ -4,7 +4,7 @@ namespace Railken\LaraOre\Api\Http\Controllers\File;
 
 use Railken\LaraOre\Api\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Core\File\FileManager;
+use Railken\LaraOre\Core\File\FileManager;
 use Railken\Bag;
 use Illuminate\Support\Collection;
 

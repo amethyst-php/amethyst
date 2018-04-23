@@ -2,9 +2,9 @@
 
 namespace Railken\LaraOre\Tests;
 
-use Railken\Laravel\ApiHelpers\Filter;
-use Railken\Laravel\ApiHelpers\Paginator;
-use Railken\Laravel\ApiHelpers\Sorter;
+use GuzzleHttp\Client;
+use GuzzleHttp\Psr7;
+use GuzzleHttp\Exception\RequestException;
 
 class BaseTest extends \Orchestra\Testbench\TestCase
 {
@@ -23,6 +23,8 @@ class BaseTest extends \Orchestra\Testbench\TestCase
     protected function getPackageProviders($app)
     {
         return [
+
+            \Laravel\Passport\PassportServiceProvider::class,
             \Railken\LaraOre\CoreServiceProvider::class
         ];
     }
@@ -39,13 +41,24 @@ class BaseTest extends \Orchestra\Testbench\TestCase
     
         $this->artisan('migrate:refresh');
         $this->artisan('migrate');
+        $this->artisan('passport:install');
         $this->artisan('db:seed', ['--class' => 'Railken\LaraOre\Resources\Seeds\UserSeeder']);
 
     }
 
     public function testSomething()
     {
-        $this->assertEquals(1, 1);
+        $response = $this->post('/api/v1/sign-in', [
+            'username' => 'admin@admin.com',
+            'password' => 'vercingetorige',
+        ]);
+
+        $access_token = $response->getContent();
+        $response->assertStatus(200);
+        $access_token = json_decode($response->getContent())->data->access_token;
+
+        print_r($access_token);
+
     }
 
 }

@@ -3,7 +3,7 @@
 namespace Railken\LaraOre\Api\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Core\Log\LogManager;
+use Railken\LaraOre\Core\Log\LogManager;
 
 use Railken\LaraOre\Api\Http\Controllers\Traits\RestIndexTrait;
 use Railken\LaraOre\Api\Http\Controllers\Traits\RestShowTrait;
