@@ -2,7 +2,7 @@
 
 namespace Railken\LaraOre\Action\Email\Attributes\MockData\Exceptions;
 
-use Core\Email\Exceptions\EmailAttributeException;
+use Railken\LaraOre\Action\Email\Exceptions\EmailAttributeException;
 
 class EmailMockDataNotUniqueException extends EmailAttributeException
 {
