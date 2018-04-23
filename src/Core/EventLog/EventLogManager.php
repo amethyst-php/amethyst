@@ -14,11 +14,11 @@ class EventLogManager extends ModelManager
      * @var array
      */
     protected $attributes = [
-        Attributes\Id\IdAttribute::class, 
-        Attributes\EventClass\EventClassAttribute::class, 
+        Attributes\Id\IdAttribute::class,
+        Attributes\EventClass\EventClassAttribute::class,
         Attributes\Vars\VarsAttribute::class,
-        Attributes\CreatedAt\CreatedAtAttribute::class, 
-        Attributes\UpdatedAt\UpdatedAtAttribute::class, 
+        Attributes\CreatedAt\CreatedAtAttribute::class,
+        Attributes\UpdatedAt\UpdatedAtAttribute::class,
     ];
 
     /**

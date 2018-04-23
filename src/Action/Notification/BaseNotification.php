@@ -49,7 +49,6 @@ class BaseNotification extends IlluminateNotification implements ShouldQueue
      */
     public function toArray($notifiable)
     {
-
         return [
             'message' => $this->message,
             'event' => $this->event,

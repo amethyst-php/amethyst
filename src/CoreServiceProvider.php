@@ -34,8 +34,6 @@ class CoreServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
-
     }
 
     /**
@@ -84,7 +82,7 @@ class CoreServiceProvider extends ServiceProvider
         if (Schema::hasTable('configs')) {
             $configs = (new \Railken\LaraOre\Core\Config\ConfigManager())->getRepository()->findToLoad();
 
-            $configs = $configs->mapWithKeys(function($config, $key) {
+            $configs = $configs->mapWithKeys(function ($config, $key) {
                 return [$config->resolveKey($config->key) => $config->value];
             })->toArray();
 
@@ -93,13 +91,10 @@ class CoreServiceProvider extends ServiceProvider
 
 
         if (Schema::hasTable('disks')) {
-
             $disks = (new \Railken\LaraOre\Core\Disk\DiskManager())->getRepository()->newQuery()->get();
 
             foreach ($disks as $disk) {
-
                 if ($disk->config) {
-
                     $base = 'filesystems.disks';
                     $name = $disk->getConfigName();
 
@@ -109,9 +104,8 @@ class CoreServiceProvider extends ServiceProvider
                         config([$base . '.' . $name . '.' . $key => $value]);
                     }
                 }
-            } 
+            }
         }
-
     }
 
     /**

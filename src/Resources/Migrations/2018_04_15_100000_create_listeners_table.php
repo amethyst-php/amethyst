@@ -12,8 +12,8 @@ class CreateListenersTable extends Migration
      * @return void
      */
     public function up()
-    {  
-        Schema::create('listeners',function($table) {
+    {
+        Schema::create('listeners', function ($table) {
             $table->increments('id');
             $table->string('name');
             $table->text('description')->nullable();

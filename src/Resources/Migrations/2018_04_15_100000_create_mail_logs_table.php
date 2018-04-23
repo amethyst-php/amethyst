@@ -11,8 +11,8 @@ class CreateMailLogsTable extends Migration
      * @return void
      */
     public function up()
-    {   
-        Schema::create('mail_logs',function($table) {
+    {
+        Schema::create('mail_logs', function ($table) {
             $table->increments('id');
             $table->string('to');
             $table->string('to_name')->nullable();

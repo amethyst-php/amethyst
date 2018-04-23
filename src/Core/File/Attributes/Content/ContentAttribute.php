@@ -123,5 +123,4 @@ class ContentAttribute extends BaseAttribute
     {
         $entity->getStorage()->delete($entity->path);
     }
-
 }

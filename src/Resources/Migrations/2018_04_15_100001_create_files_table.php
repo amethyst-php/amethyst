@@ -13,7 +13,7 @@ class CreateFilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('files', function($table) {
+        Schema::create('files', function ($table) {
             $table->increments('id');
             $table->integer('disk_id')->unsigned();
             $table->foreign('disk_id')->references('id')->on('disks');

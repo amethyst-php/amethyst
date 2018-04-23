@@ -75,5 +75,4 @@ class NameAttribute extends BaseAttribute
 
         return $filename;
     }
-
 }

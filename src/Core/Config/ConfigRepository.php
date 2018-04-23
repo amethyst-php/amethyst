@@ -18,6 +18,6 @@ class ConfigRepository extends ModelRepository
      */
     public function findToLoad()
     {
-    	return $this->newQuery()->whereNotNull('value')->get();
+        return $this->newQuery()->whereNotNull('value')->get();
     }
 }

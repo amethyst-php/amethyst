@@ -13,7 +13,7 @@ class CreateHttpLogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('http_logs', function($table) {
+        Schema::create('http_logs', function ($table) {
             $table->increments('id');
             $table->string('type');
             $table->string('url');

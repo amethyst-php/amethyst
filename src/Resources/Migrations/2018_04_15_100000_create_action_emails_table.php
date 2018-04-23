@@ -12,8 +12,8 @@ class CreateActionEmailsTable extends Migration
      * @return void
      */
     public function up()
-    {  
-        Schema::create('action_emails',function($table) {
+    {
+        Schema::create('action_emails', function ($table) {
             $table->increments('id');
             $table->string('name');
             $table->text('description')->nullable();

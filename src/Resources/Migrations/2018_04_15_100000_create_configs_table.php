@@ -13,7 +13,7 @@ class CreateConfigsTable extends Migration
      */
     public function up()
     {
-        Schema::create('configs', function($table) {
+        Schema::create('configs', function ($table) {
             $table->increments('id');
             $table->text('key');
             $table->text('value');

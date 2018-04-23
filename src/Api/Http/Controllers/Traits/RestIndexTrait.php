@@ -40,7 +40,6 @@ trait RestIndexTrait
         try {
             $sort->add($request->input('sort_field', 'id'), strtolower($request->input('sort_direction', 'desc')));
         } catch (InvalidSorterFieldException $e) {
-
             return $this->error(["code" => "SORT_INVALID_FIELD", "message" => "Invalid field for sorting"]);
         }
 
@@ -89,7 +88,7 @@ trait RestIndexTrait
             }),
             'select' => $select->values(),
             'pagination' => $paginator->all(),
-            'sort' => $sort->get()->map(function($attribute) {
+            'sort' => $sort->get()->map(function ($attribute) {
                 return ['name' => $attribute->getName(), 'value' => $attribute->getDirection()];
             })->toArray(),
         ]);

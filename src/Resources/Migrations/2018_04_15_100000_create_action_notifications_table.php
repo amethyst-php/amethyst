@@ -12,8 +12,8 @@ class CreateActionNotificationsTable extends Migration
      * @return void
      */
     public function up()
-    {  
-        Schema::create('action_notifications',function($table) {
+    {
+        Schema::create('action_notifications', function ($table) {
             $table->increments('id');
             $table->string('name');
             $table->text('description')->nullable();

@@ -13,7 +13,7 @@ class CreateAddressesTable extends Migration
      */
     public function up()
     {
-        Schema::create('addresses', function($table) {
+        Schema::create('addresses', function ($table) {
             $table->increments('id');
             $table->string('firstname');
             $table->string('lastname');

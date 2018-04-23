@@ -43,7 +43,6 @@ class KeyVisitor extends BaseVisitor
      */
     public function visit($query, NodeContract $node, string $context)
     {
-
         if ($node instanceof Nodes\KeyNode) {
             $key = $node->getValue();
 
@@ -59,7 +58,6 @@ class KeyVisitor extends BaseVisitor
             }
 
             $node->setValue($key);
-
         }
 
         foreach ($node->getChilds() as $child) {

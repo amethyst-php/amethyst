@@ -17,14 +17,14 @@ class NotificationManager extends ModelManager
      * @var array
      */
     protected $attributes = [
-        Attributes\Id\IdAttribute::class, 
-        Attributes\Name\NameAttribute::class, 
-        Attributes\CreatedAt\CreatedAtAttribute::class, 
+        Attributes\Id\IdAttribute::class,
+        Attributes\Name\NameAttribute::class,
+        Attributes\CreatedAt\CreatedAtAttribute::class,
         Attributes\UpdatedAt\UpdatedAtAttribute::class,
         Attributes\Description\DescriptionAttribute::class,
         Attributes\Targets\TargetsAttribute::class,
         Attributes\Template\TemplateAttribute::class,
-        Attributes\MockData\MockDataAttribute::class, 
+        Attributes\MockData\MockDataAttribute::class,
     ];
 
     /**
@@ -59,21 +59,18 @@ class NotificationManager extends ModelManager
      */
     public function resolve(Notification $action, $event)
     {
-
         $user = (new \Core\User\UserManager())->getRepository()->findOneById($event->user->id);
         $users = new Collection();
 
         $repository = (new \Core\User\UserManager())->getRepository();
         (new Collection($action->targets))->map(function ($target) use ($event, $repository, &$users) {
-
             if ($target === "{{user.id}}") {
                 $users[] = $repository->findOneById($event->user->id);
-            } 
+            }
 
             if ($target === "@admin") {
                 $users = $users->merge($repository->newQuery()->where('role', '=', 'admin')->get());
             }
-
         });
 
         $template = $action->template;

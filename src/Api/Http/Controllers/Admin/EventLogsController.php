@@ -70,7 +70,7 @@ class EventLogsController extends RestController
      * @return \Illuminate\Http\Response
      */
     public function stats(Request $request)
-    {   
+    {
         $query = $this->getQuery();
 
 

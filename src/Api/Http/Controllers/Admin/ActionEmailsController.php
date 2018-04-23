@@ -73,7 +73,7 @@ class ActionEmailsController extends RestController
      * @return \Illuminate\Http\Response
      */
     public function renderTemplate(Request $request)
-    {   
+    {
         $data = json_decode(base64_decode($request->input('data')));
         $template = $request->input('template');
 

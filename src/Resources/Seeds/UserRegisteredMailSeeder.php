@@ -14,7 +14,6 @@ class UserRegisteredMailSeeder extends Seeder
      */
     public function run()
     {
-
         $am = new \Railken\LaraOre\Action\Email\EmailManager();
 
         $result = $am->create([

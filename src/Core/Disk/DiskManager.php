@@ -14,13 +14,13 @@ class DiskManager extends ModelManager
      * @var array
      */
     protected $attributes = [
-        Attributes\Id\IdAttribute::class, 
+        Attributes\Id\IdAttribute::class,
         Attributes\Driver\DriverAttribute::class,
-        Attributes\Name\NameAttribute::class, 
-        Attributes\CreatedAt\CreatedAtAttribute::class, 
-        Attributes\UpdatedAt\UpdatedAtAttribute::class, 
-        Attributes\Enabled\EnabledAttribute::class, 
-        Attributes\Config\ConfigAttribute::class, 
+        Attributes\Name\NameAttribute::class,
+        Attributes\CreatedAt\CreatedAtAttribute::class,
+        Attributes\UpdatedAt\UpdatedAtAttribute::class,
+        Attributes\Enabled\EnabledAttribute::class,
+        Attributes\Config\ConfigAttribute::class,
     ];
 
     /**
