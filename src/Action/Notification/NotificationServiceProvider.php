@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\Notification;
+namespace Railken\LaraOre\Action\Notification;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\Notification\Attributes\Description\Exceptions;
+namespace Railken\LaraOre\Action\Notification\Attributes\Description\Exceptions;
 
-use Railken\Laravel\Core\Action\Notification\Exceptions\NotificationAttributeException;
+use Railken\LaraOre\Action\Notification\Exceptions\NotificationAttributeException;
 
 class NotificationDescriptionNotValidException extends NotificationAttributeException
 {

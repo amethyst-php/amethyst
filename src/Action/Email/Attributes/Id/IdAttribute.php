@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\Email\Attributes\Id;
+namespace Railken\LaraOre\Action\Email\Attributes\Id;
 
 use Railken\Laravel\Manager\Attributes\BaseAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;

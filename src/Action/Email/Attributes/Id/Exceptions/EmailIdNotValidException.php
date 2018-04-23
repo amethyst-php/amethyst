@@ -1,8 +1,8 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\Email\Attributes\Id\Exceptions;
+namespace Railken\LaraOre\Action\Email\Attributes\Id\Exceptions;
 
-use Railken\Laravel\Core\Action\Email\Exceptions\EmailAttributeException;
+use Railken\LaraOre\Action\Email\Exceptions\EmailAttributeException;
 
 class EmailIdNotValidException extends EmailAttributeException
 {

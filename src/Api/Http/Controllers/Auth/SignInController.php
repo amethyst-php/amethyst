@@ -1,14 +1,14 @@
 <?php
 
-namespace Railken\Laravel\Core\Api\Http\Controllers\Auth;
+namespace Railken\LaraOre\Api\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
-use Railken\Laravel\Core\Api\Http\Controllers\Controller;
+use Railken\LaraOre\Api\Http\Controllers\Controller;
 use Core\User\UserManager;
-use Railken\Laravel\Core\Api\OAuth\GithubProvider;
-use Railken\Laravel\Core\Api\OAuth\GitlabProvider;
-use Railken\Laravel\Core\Api\OAuth\GoogleProvider;
-use Railken\Laravel\Core\Api\OAuth\FacebookProvider;
+use Railken\LaraOre\Api\OAuth\GithubProvider;
+use Railken\LaraOre\Api\OAuth\GitlabProvider;
+use Railken\LaraOre\Api\OAuth\GoogleProvider;
+use Railken\LaraOre\Api\OAuth\FacebookProvider;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -50,7 +50,7 @@ class SignInController extends Controller
      *
      * @param string $name
      *
-     * @return \Railken\Laravel\Core\Api\Oauth\Provider
+     * @return \Railken\LaraOre\Api\Oauth\Provider
      */
     public function getProvider($name)
     {
@@ -135,7 +135,7 @@ class SignInController extends Controller
     /**
      * Serialize token
      *
-     * @param \Railken\Laravel\Core\Api\OAuth\AccessToken $token
+     * @param \Railken\LaraOre\Api\OAuth\AccessToken $token
      *
      * @return array
      */
@@ -178,7 +178,7 @@ class SignInController extends Controller
 
         try {
             $provider_user = $provider->getUser($access_token);
-        } catch (\Railken\Laravel\Core\Api\OAuth\Exceptions\EmailNotFoundException $e) {
+        } catch (\Railken\LaraOre\Api\OAuth\Exceptions\EmailNotFoundException $e) {
             return $this->error([
                 'code' => 'AUTH.PROVIDER.EMAIL_NOT_FOUND',
                 'message' => 'Email not found'

@@ -1,8 +1,8 @@
 <?php
 
-namespace Railken\Laravel\Core\Api\Http\Controllers\File;
+namespace Railken\LaraOre\Api\Http\Controllers\File;
 
-use Railken\Laravel\Core\Api\Http\Controllers\Controller;
+use Railken\LaraOre\Api\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Core\File\FileManager;
 use Railken\Bag;

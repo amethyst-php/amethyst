@@ -1,8 +1,8 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\Notification\Attributes\UpdatedAt\Exceptions;
+namespace Railken\LaraOre\Action\Notification\Attributes\UpdatedAt\Exceptions;
 
-use Railken\Laravel\Core\Action\Notification\Exceptions\NotificationAttributeException;
+use Railken\LaraOre\Action\Notification\Exceptions\NotificationAttributeException;
 
 class NotificationUpdatedAtNotAuthorizedException extends NotificationAttributeException
 {

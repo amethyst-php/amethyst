@@ -1,16 +1,16 @@
 <?php
 
-namespace Railken\Laravel\Core\Api\Http\Controllers\User;
+namespace Railken\LaraOre\Api\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use Core\Notification\NotificationManager;
 
-use Railken\Laravel\Core\Api\Http\Controllers\Traits\RestIndexTrait;
-use Railken\Laravel\Core\Api\Http\Controllers\Traits\RestShowTrait;
-use Railken\Laravel\Core\Api\Http\Controllers\Traits\RestCreateTrait;
-use Railken\Laravel\Core\Api\Http\Controllers\Traits\RestUpdateTrait;
-use Railken\Laravel\Core\Api\Http\Controllers\Traits\RestRemoveTrait;
-use Railken\Laravel\Core\Api\Http\Controllers\RestController;
+use Railken\LaraOre\Api\Http\Controllers\Traits\RestIndexTrait;
+use Railken\LaraOre\Api\Http\Controllers\Traits\RestShowTrait;
+use Railken\LaraOre\Api\Http\Controllers\Traits\RestCreateTrait;
+use Railken\LaraOre\Api\Http\Controllers\Traits\RestUpdateTrait;
+use Railken\LaraOre\Api\Http\Controllers\Traits\RestRemoveTrait;
+use Railken\LaraOre\Api\Http\Controllers\RestController;
 
 class NotificationsController extends RestController
 {

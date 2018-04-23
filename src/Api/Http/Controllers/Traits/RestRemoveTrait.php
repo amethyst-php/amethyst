@@ -1,13 +1,13 @@
 <?php
 
-namespace Railken\Laravel\Core\Api\Http\Controllers\Traits;
+namespace Railken\LaraOre\Api\Http\Controllers\Traits;
 
 use Illuminate\Http\Request;
-use Railken\Laravel\Core\Api\Helper\Paginator;
-use Railken\Laravel\Core\Api\Helper\Filter;
-use Railken\Laravel\Core\Api\Helper\Sorter;
+use Railken\LaraOre\Api\Helper\Paginator;
+use Railken\LaraOre\Api\Helper\Filter;
+use Railken\LaraOre\Api\Helper\Sorter;
 
-use Railken\Laravel\Core\Api\Helper\Exceptions\FilterSyntaxException;
+use Railken\LaraOre\Api\Helper\Exceptions\FilterSyntaxException;
 
 trait RestRemoveTrait
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\Email\Attributes\CreatedAt\Exceptions;
+namespace Railken\LaraOre\Action\Email\Attributes\CreatedAt\Exceptions;
 
-use Railken\Laravel\Core\Action\Email\Exceptions\EmailAttributeException;
+use Railken\LaraOre\Action\Email\Exceptions\EmailAttributeException;
 
 class EmailCreatedAtNotValidException extends EmailAttributeException
 {

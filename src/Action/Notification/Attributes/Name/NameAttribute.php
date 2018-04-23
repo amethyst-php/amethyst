@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\Notification\Attributes\Name;
+namespace Railken\LaraOre\Action\Notification\Attributes\Name;
 
 use Railken\Laravel\Manager\Attributes\BaseAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;

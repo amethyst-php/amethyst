@@ -1,8 +1,8 @@
 <?php
 
-namespace Railken\Laravel\Core\Api\Http\Controllers\User;
+namespace Railken\LaraOre\Api\Http\Controllers\User;
 
-use Railken\Laravel\Core\Api\Http\Controllers\Controller;
+use Railken\LaraOre\Api\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Core\User\UserManager;
 

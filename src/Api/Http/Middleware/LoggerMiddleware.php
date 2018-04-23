@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Api\Http\Middleware;
+namespace Railken\LaraOre\Api\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Log;

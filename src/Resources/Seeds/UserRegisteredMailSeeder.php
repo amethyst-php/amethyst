@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Resources\Seeds;
+namespace Railken\LaraOre\Resources\Seeds;
 
 use Illuminate\Database\Seeder;
 
@@ -15,7 +15,7 @@ class UserRegisteredMailSeeder extends Seeder
     public function run()
     {
 
-        $am = new \Action\Email\EmailManager();
+        $am = new \Railken\LaraOre\Action\Email\EmailManager();
 
         $result = $am->create([
             'name' => 'EMAIL_REGISTRATION',

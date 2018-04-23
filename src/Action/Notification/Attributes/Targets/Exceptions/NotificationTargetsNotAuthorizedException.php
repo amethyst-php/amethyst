@@ -1,8 +1,8 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\Notification\Attributes\Targets\Exceptions;
+namespace Railken\LaraOre\Action\Notification\Attributes\Targets\Exceptions;
 
-use Railken\Laravel\Core\Action\Notification\Exceptions\NotificationAttributeException;
+use Railken\LaraOre\Action\Notification\Exceptions\NotificationAttributeException;
 
 class NotificationTargetsNotAuthorizedException extends NotificationAttributeException
 {

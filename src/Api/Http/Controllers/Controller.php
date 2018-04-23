@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Api\Http\Controllers;
+namespace Railken\LaraOre\Api\Http\Controllers;
 
 use App\Http\Controllers\Controller as AppController;
 use Core\Permission\UserAgent;

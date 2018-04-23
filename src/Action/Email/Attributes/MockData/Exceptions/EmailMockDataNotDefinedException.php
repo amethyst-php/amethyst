@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\Email\Attributes\MockData\Exceptions;
+namespace Railken\LaraOre\Action\Email\Attributes\MockData\Exceptions;
 
 use Core\Email\Exceptions\EmailAttributeException;
 

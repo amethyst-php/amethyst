@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Api\Providers;
+namespace Railken\LaraOre\Api\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Route;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Api\Http\Middleware;
+namespace Railken\LaraOre\Api\Http\Middleware;
 
 use Symfony\Component\HttpFoundation\HeaderBag;
 use Closure;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\Email\Exceptions;
+namespace Railken\LaraOre\Action\Email\Exceptions;
 
 class EmailNotFoundException extends EmailException
 {

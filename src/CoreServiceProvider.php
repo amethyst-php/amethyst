@@ -1,6 +1,6 @@
 <?php 
 
-namespace Railken\Laravel\Core;
+namespace Railken\LaraOre;
 
 use Illuminate\Support\ServiceProvider;
 use Railken\Laravel\App\Commands as Commands;
@@ -49,7 +49,7 @@ class CoreServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
 
         if (Schema::hasTable('configs')) {
-            $configs = (new \Railken\Laravel\Core\Data\Config\ConfigManager())->getRepository()->findToLoad();
+            $configs = (new \Railken\LaraOre\Core\Config\ConfigManager())->getRepository()->findToLoad();
 
             $configs = $configs->mapWithKeys(function($config, $key) {
                 return [$config->resolveKey($config->key) => $config->value];
@@ -61,7 +61,7 @@ class CoreServiceProvider extends ServiceProvider
 
         if (Schema::hasTable('disks')) {
 
-            $disks = (new \Railken\Laravel\Core\Data\Disk\DiskManager())->getRepository()->newQuery()->get();
+            $disks = (new \Railken\LaraOre\Core\Disk\DiskManager())->getRepository()->newQuery()->get();
 
             foreach ($disks as $disk) {
 

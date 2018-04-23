@@ -1,11 +1,11 @@
 <?php
-namespace Railken\Laravel\Core\Api\Http\Controllers\Admin;
+namespace Railken\LaraOre\Api\Http\Controllers\Admin;
 
-use Railken\Laravel\Core\Api\Http\Controllers\Controller;
+use Railken\LaraOre\Api\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Core\File\FileManager;
-use Railken\Laravel\Core\Api\Http\Controllers\Traits as RestTraits;
-use Railken\Laravel\Core\Api\Http\Controllers\RestController;
+use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
+use Railken\LaraOre\Api\Http\Controllers\RestController;
 use Railken\Bag;
 use Illuminate\Support\Collection;
 

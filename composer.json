@@ -24,10 +24,10 @@
     },
     "autoload": {
         "psr-4" : {
-            "Railken\\Laravel\\Core\\" : "src/"
+            "Railken\\LaraOre\\" : "src/"
         }
     },
     "autoload-dev": {
-        "psr-4": { "Railken\\Laravel\\Core\\Tests\\": "tests/" }
+        "psr-4": { "Railken\\LaraOre\\Tests\\": "tests/" }
     }
 }

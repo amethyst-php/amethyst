@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\CsvReport\Exceptions;
+namespace Railken\LaraOre\Action\CsvReport\Exceptions;
 
 class CsvReportNotFoundException extends CsvReportException
 {

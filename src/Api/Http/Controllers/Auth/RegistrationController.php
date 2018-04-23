@@ -1,12 +1,12 @@
 <?php
 
-namespace Railken\Laravel\Core\Api\Http\Controllers\Auth;
+namespace Railken\LaraOre\Api\Http\Controllers\Auth;
 
-use Railken\Laravel\Core\Api\Http\Controllers\Controller;
+use Railken\LaraOre\Api\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User\UserService;
 use Railken\Bag;
-use Railken\Laravel\Core\Api\Exceptions\BadRequestException;
+use Railken\LaraOre\Api\Exceptions\BadRequestException;
 use Illuminate\Support\Collection;
 
 class RegistrationController extends Controller
@@ -15,7 +15,7 @@ class RegistrationController extends Controller
     /**
      * Serialize token
      *
-     * @param \Railken\Laravel\Core\Api\OAuth\AccessToken $token
+     * @param \Railken\LaraOre\Api\OAuth\AccessToken $token
      *
      * @return array
      */

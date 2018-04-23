@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\Email;
+namespace Railken\LaraOre\Action\Email;
 
 use Railken\Laravel\Manager\ModelRepository;
 

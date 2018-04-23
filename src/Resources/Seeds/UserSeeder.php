@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Resources\Seeds;
+namespace Railken\LaraOre\Resources\Seeds;
 
 use Illuminate\Database\Seeder;
 
@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
             ],
         ];
 
-        $um = new \Railken\Laravel\Core\Data\User\UserManager();
+        $um = new \Railken\LaraOre\Core\User\UserManager();
 
         foreach ($users as $user) {
             $result = $um->create($user);

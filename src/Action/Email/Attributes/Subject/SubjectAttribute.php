@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\Email\Attributes\Subject;
+namespace Railken\LaraOre\Action\Email\Attributes\Subject;
 
 use Railken\Laravel\Manager\Attributes\BaseAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;

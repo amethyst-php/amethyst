@@ -1,8 +1,8 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\CsvReport\Attributes\CreatedAt\Exceptions;
+namespace Railken\LaraOre\Action\CsvReport\Attributes\CreatedAt\Exceptions;
 
-use Railken\Laravel\Core\Action\CsvReport\Exceptions\CsvReportAttributeException;
+use Railken\LaraOre\Action\CsvReport\Exceptions\CsvReportAttributeException;
 
 class CsvReportCreatedAtNotUniqueException extends CsvReportAttributeException
 {

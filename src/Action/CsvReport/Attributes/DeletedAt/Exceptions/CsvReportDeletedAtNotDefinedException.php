@@ -1,8 +1,8 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\CsvReport\Attributes\DeletedAt\Exceptions;
+namespace Railken\LaraOre\Action\CsvReport\Attributes\DeletedAt\Exceptions;
 
-use Railken\Laravel\Core\Action\CsvReport\Exceptions\CsvReportAttributeException;
+use Railken\LaraOre\Action\CsvReport\Exceptions\CsvReportAttributeException;
 
 class CsvReportDeletedAtNotDefinedException extends CsvReportAttributeException
 {

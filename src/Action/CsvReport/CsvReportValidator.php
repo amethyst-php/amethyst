@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\CsvReport;
+namespace Railken\LaraOre\Action\CsvReport;
 
 use Railken\Laravel\Manager\ModelValidator;
 

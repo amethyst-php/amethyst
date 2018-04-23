@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\Email;
+namespace Railken\LaraOre\Action\Email;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable as BaseMailable;

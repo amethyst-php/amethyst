@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\ApiHelpers\Tests;
+namespace Railken\LaraOre\Tests;
 
 use Railken\Laravel\ApiHelpers\Filter;
 use Railken\Laravel\ApiHelpers\Paginator;
@@ -23,7 +23,7 @@ class BaseTest extends \Orchestra\Testbench\TestCase
     protected function getPackageProviders($app)
     {
         return [
-            \Railken\Laravel\Core\CoreServiceProvider::class
+            \Railken\LaraOre\CoreServiceProvider::class
         ];
     }
 
@@ -39,7 +39,7 @@ class BaseTest extends \Orchestra\Testbench\TestCase
     
         $this->artisan('migrate:refresh');
         $this->artisan('migrate');
-        $this->artisan('db:seed', ['--class' => 'Railken\Laravel\Core\Resources\Seeds\UserSeeder']);
+        $this->artisan('db:seed', ['--class' => 'Railken\LaraOre\Resources\Seeds\UserSeeder']);
 
     }
 

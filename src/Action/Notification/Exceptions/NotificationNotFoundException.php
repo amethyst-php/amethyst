@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\Notification\Exceptions;
+namespace Railken\LaraOre\Action\Notification\Exceptions;
 
 class NotificationNotFoundException extends NotificationException
 {

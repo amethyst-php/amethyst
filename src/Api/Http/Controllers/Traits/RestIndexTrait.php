@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Api\Http\Controllers\Traits;
+namespace Railken\LaraOre\Api\Http\Controllers\Traits;
 
 use Illuminate\Http\Request;
 use Railken\Laravel\ApiHelpers\Paginator;
@@ -106,7 +106,7 @@ trait RestIndexTrait
 
         $builder = new Builder([]);
         $builder->setVisitors([
-            (new \Railken\Laravel\Core\Api\Query\Visitors\KeyVisitor($builder))->setManager($this->manager)->setKeys($selectable),
+            (new \Railken\LaraOre\Api\Query\Visitors\KeyVisitor($builder))->setManager($this->manager)->setKeys($selectable),
             new Visitors\EqVisitor($builder),
             new Visitors\NotEqVisitor($builder),
             new Visitors\GtVisitor($builder),

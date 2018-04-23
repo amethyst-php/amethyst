@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\Email\Attributes\DeletedAt;
+namespace Railken\LaraOre\Action\Email\Attributes\DeletedAt;
 
 use Railken\Laravel\Manager\Attributes\BaseAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;

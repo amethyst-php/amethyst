@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Api\Http\Controllers\Traits;
+namespace Railken\LaraOre\Api\Http\Controllers\Traits;
 
 use Illuminate\Http\Request;
 use Railken\Laravel\ApiHelpers\Paginator;

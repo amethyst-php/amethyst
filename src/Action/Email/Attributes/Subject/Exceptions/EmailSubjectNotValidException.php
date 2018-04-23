@@ -1,8 +1,8 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\Email\Attributes\Subject\Exceptions;
+namespace Railken\LaraOre\Action\Email\Attributes\Subject\Exceptions;
 
-use Railken\Laravel\Core\Action\Email\Exceptions\EmailAttributeException;
+use Railken\LaraOre\Action\Email\Exceptions\EmailAttributeException;
 
 class EmailSubjectNotValidException extends EmailAttributeException
 {

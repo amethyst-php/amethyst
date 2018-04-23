@@ -1,13 +1,13 @@
 <?php
 
-namespace Railken\Laravel\Core\Api\Http\Controllers;
+namespace Railken\LaraOre\Api\Http\Controllers;
 
-use Railken\Laravel\Core\Api\Helper\Paginator;
+use Railken\LaraOre\Api\Helper\Paginator;
 
 
 use Railken\Laravel\Manager\ModelContract;
 use Illuminate\Http\Request;
-use Railken\Laravel\Core\Api\Http\Controllers\Traits\RestIndexTrait;
+use Railken\LaraOre\Api\Http\Controllers\Traits\RestIndexTrait;
 use Railken\Bag;
 use Illuminate\Support\Facades\DB;
 

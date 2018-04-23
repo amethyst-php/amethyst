@@ -1,8 +1,8 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\Email\Attributes\Name\Exceptions;
+namespace Railken\LaraOre\Action\Email\Attributes\Name\Exceptions;
 
-use Railken\Laravel\Core\Action\Email\Exceptions\EmailAttributeException;
+use Railken\LaraOre\Action\Email\Exceptions\EmailAttributeException;
 
 class EmailNameNotDefinedException extends EmailAttributeException
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\CsvReport\Attributes\DeletedAt;
+namespace Railken\LaraOre\Action\CsvReport\Attributes\DeletedAt;
 
 use Railken\Laravel\Manager\Attributes\BaseAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;

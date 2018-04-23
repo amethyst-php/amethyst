@@ -1,8 +1,8 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\Notification\Attributes\Template\Exceptions;
+namespace Railken\LaraOre\Action\Notification\Attributes\Template\Exceptions;
 
-use Railken\Laravel\Core\Action\Notification\Exceptions\NotificationAttributeException;
+use Railken\LaraOre\Action\Notification\Exceptions\NotificationAttributeException;
 
 class NotificationTemplateNotDefinedException extends NotificationAttributeException
 {

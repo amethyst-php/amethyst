@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\CsvReport\Attributes\Id;
+namespace Railken\LaraOre\Action\CsvReport\Attributes\Id;
 
 use Railken\Laravel\Manager\Attributes\BaseAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;

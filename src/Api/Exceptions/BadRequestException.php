@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Api\Exceptions;
+namespace Railken\LaraOre\Api\Exceptions;
 
 use Exception;
 use Illuminate\Support\Collection;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Api\OAuth\Exceptions;
+namespace Railken\LaraOre\Api\OAuth\Exceptions;
 
 use Exception;
 

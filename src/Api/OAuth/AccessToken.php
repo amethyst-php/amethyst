@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Api\OAuth;
+namespace Railken\LaraOre\Api\OAuth;
 
 use Laravel\Passport\Token as Model;
 use Lcobucci\JWT\Builder;

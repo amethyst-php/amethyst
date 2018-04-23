@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Laravel\Core\Api\Query\Visitors;
+namespace Railken\LaraOre\Api\Query\Visitors;
 
 use Railken\SQ\Contracts\NodeContract;
 use Railken\SQ\Languages\BoomTree\Nodes as Nodes;

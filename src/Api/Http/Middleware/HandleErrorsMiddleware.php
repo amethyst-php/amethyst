@@ -1,11 +1,11 @@
 <?php
 
-namespace Railken\Laravel\Core\Api\Http\Middleware;
+namespace Railken\LaraOre\Api\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\DB;
 use Exception;
-use Railken\Laravel\Core\Api\Exceptions\BadRequestException;
+use Railken\LaraOre\Api\Exceptions\BadRequestException;
 use Illuminate\Http\JsonResponse;
 
 class HandleErrorsMiddleware

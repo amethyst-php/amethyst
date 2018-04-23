@@ -1,8 +1,8 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\CsvReport\Attributes\Id\Exceptions;
+namespace Railken\LaraOre\Action\CsvReport\Attributes\Id\Exceptions;
 
-use Railken\Laravel\Core\Action\CsvReport\Exceptions\CsvReportAttributeException;
+use Railken\LaraOre\Action\CsvReport\Exceptions\CsvReportAttributeException;
 
 class CsvReportIdNotDefinedException extends CsvReportAttributeException
 {

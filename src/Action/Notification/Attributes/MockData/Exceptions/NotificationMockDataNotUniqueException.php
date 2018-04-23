@@ -1,8 +1,8 @@
 <?php
 
-namespace Railken\Laravel\Core\Action\Notification\Attributes\MockData\Exceptions;
+namespace Railken\LaraOre\Action\Notification\Attributes\MockData\Exceptions;
 
-use Railken\Laravel\Core\Action\Notification\Exceptions\NotificationAttributeException;
+use Railken\LaraOre\Action\Notification\Exceptions\NotificationAttributeException;
 
 class NotificationMockDataNotUniqueException extends NotificationAttributeException
 {
