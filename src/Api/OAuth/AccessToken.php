@@ -8,6 +8,14 @@ use Lcobucci\JWT\Signer\Key;
 use Lcobucci\JWT\Signer\Rsa\Sha256;
 use League\OAuth2\Server\CryptKey;
 
+
+/**
+ * @property public $client
+ * @property public $id
+ * @property public $expires_at
+ * @property public $User
+ * @property public $scopes
+ */
 class AccessToken extends Model
 {
     /**
