@@ -59,7 +59,7 @@ class MailLogsController extends RestController
     /**
      * Create a new instance for query
      *
-     * @return QueryBuilder
+     * @return \Illuminate\DataBase\Query\Builder
      */
     public function getQuery()
     {

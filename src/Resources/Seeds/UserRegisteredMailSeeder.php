@@ -53,7 +53,7 @@ class UserRegisteredMailSeeder extends Seeder
         ]);
 
 
-        $lm = new \Core\Listener\ListenerManager();
+        $lm = new \Railken\LaraOre\Core\Listener\ListenerManager();
         $lm->create([
             'name' => 'SEND_EMAIL_ON_REGISTRATION',
             'description' => 'Uhm...',

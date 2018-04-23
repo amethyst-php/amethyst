@@ -63,7 +63,7 @@ class UserManager extends ModelManager
      */
     public function createConfirmationEmailToken(User $user, string $email)
     {
-        $p = UserPendingEmail::where(['email' => $email, 'user_id' => $user->id])->first();
+        $p = (new UserPendingEmail())->newQuery()->where(['email' => $email, 'user_id' => $user->id])->first();
 
         if ($p) {
             return $p;
@@ -71,10 +71,10 @@ class UserManager extends ModelManager
 
         do {
             $token = strtoupper(str_random(4)."-".str_random(4));
-            $exists = UserPendingEmail::where('token', $token)->count();
+            $exists = (new UserPendingEmail())->newQuery()->where('token', $token)->count();
         } while ($exists > 0);
 
-        return UserPendingEmail::create(['token' => $token, 'email' => $email, 'user_id' => $user->id]);
+        return (new UserPendingEmail())->fill(['token' => $token, 'email' => $email, 'user_id' => $user->id])->save();
     }
 
     /**
@@ -86,7 +86,7 @@ class UserManager extends ModelManager
      */
     public function findUserPendingEmailByToken(string $token)
     {
-        return UserPendingEmail::where(['token' => $token])->first();
+        return (new UserPendingEmail())->newQuery()->where(['token' => $token])->first();
     }
 
     /**

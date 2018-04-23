@@ -45,7 +45,6 @@ class CoreServiceProvider extends ServiceProvider
     {
         $router->middleware([
             \Barryvdh\Cors\HandleCors::class,
-            \Railken\LaraOre\Api\Http\Middleware\ErrorsMiddleware::class,
             \Railken\LaraOre\Api\Http\Middleware\LoggerMiddleware::class,
         ]);
 

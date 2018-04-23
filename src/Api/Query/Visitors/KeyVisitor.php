@@ -16,6 +16,11 @@ class KeyVisitor extends BaseVisitor
     protected $manager;
 
     /**
+     * @var array
+     */
+    protected $keys;
+
+    /**
      * @param \Railken\Laravel\Manager\Contracts\ManagerContract $manager
      *
      * @return $this
