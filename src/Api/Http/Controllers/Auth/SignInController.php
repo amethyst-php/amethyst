@@ -101,7 +101,6 @@ class SignInController extends Controller
         }
 
         throw new \Exception("Uhm...");
-
     }
 
     /**

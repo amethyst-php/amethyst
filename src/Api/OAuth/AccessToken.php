@@ -8,7 +8,6 @@ use Lcobucci\JWT\Signer\Key;
 use Lcobucci\JWT\Signer\Rsa\Sha256;
 use League\OAuth2\Server\CryptKey;
 
-
 /**
  * @property public $client
  * @property public $id

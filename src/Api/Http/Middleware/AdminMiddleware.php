@@ -15,8 +15,7 @@ class AdminMiddleware
      * @return mixed
      */
     public function handle($request, Closure $next)
-    {     
-
+    {
         $user = Auth::user();
 
         if (!$user || $user->role !== 'admin') {
