@@ -6,9 +6,8 @@ use Railken\Laravel\Manager\ModelRepository;
 
 class LogRepository extends ModelRepository
 {
-
     /**
-     * Class name entity
+     * Class name entity.
      *
      * @var string
      */

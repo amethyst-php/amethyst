@@ -2,12 +2,11 @@
 
 namespace Railken\LaraOre\Core\Listener\Attributes\ActionId;
 
+use Illuminate\Support\Collection;
 use Railken\Laravel\Manager\Attributes\BelongsToAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;
 use Railken\Laravel\Manager\Contracts\ParameterBagContract;
 use Railken\Laravel\Manager\Tokens;
-use Respect\Validation\Validator as v;
-use Illuminate\Support\Collection;
 
 class ActionIdAttribute extends BelongsToAttribute
 {
@@ -61,7 +60,7 @@ class ActionIdAttribute extends BelongsToAttribute
     {
         return 'action';
     }
-    
+
     /**
      * Retrieve eloquent relation.
      *
@@ -111,7 +110,6 @@ class ActionIdAttribute extends BelongsToAttribute
             return false;
         }
     }
-
 
     /**
      * Update entity value.

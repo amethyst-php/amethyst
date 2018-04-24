@@ -29,13 +29,13 @@ class LoggerMiddleware
 
         $lm = new \Railken\LaraOre\Core\HttpLog\HttpLogManager();
         $log = $lm->create([
-            'type' => 'inbound',
+            'type'     => 'inbound',
             'category' => 'api',
-            'method' => $request->method(),
-            'url' => $request->path(),
-            'ip' => $request->ip(),
-            'request' => json_encode(['headers' => $request->headers->all(), 'body' => $params]),
-            'response' => json_encode($response->original)
+            'method'   => $request->method(),
+            'url'      => $request->path(),
+            'ip'       => $request->ip(),
+            'request'  => json_encode(['headers' => $request->headers->all(), 'body' => $params]),
+            'response' => json_encode($response->original),
         ]);
     }
 }

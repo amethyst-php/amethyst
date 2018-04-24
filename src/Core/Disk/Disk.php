@@ -39,7 +39,7 @@ class Disk extends Model implements EntityContract
 
     public function getConfigName()
     {
-        return "disk-" . $this->id;
+        return 'disk-'.$this->id;
     }
 
     public function getStorage()

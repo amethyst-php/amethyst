@@ -6,23 +6,22 @@ use Railken\LaraOre\Core\File\Exceptions\FileAttributeException;
 
 class FileUpdatedAtNotAuthorizedException extends FileAttributeException
 {
-
     /**
-     * The reason (attribute) for which this exception is thrown
+     * The reason (attribute) for which this exception is thrown.
      *
      * @var string
      */
     protected $attribute = 'updated_at';
 
     /**
-     * The code to identify the error
+     * The code to identify the error.
      *
      * @var string
      */
     protected $code = 'FILE_UPDATED_AT_NOT_AUTHTORIZED';
-    
+
     /**
-     * The message
+     * The message.
      *
      * @var string
      */

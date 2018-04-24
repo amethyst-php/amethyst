@@ -2,12 +2,12 @@
 
 namespace Railken\LaraOre\Action\Email;
 
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Mail;
 use Railken\Laravel\Manager\Contracts\AgentContract;
 use Railken\Laravel\Manager\ModelManager;
 use Railken\Laravel\Manager\Tokens;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Collection;
 
 class EmailManager extends ModelManager
 {
@@ -25,7 +25,7 @@ class EmailManager extends ModelManager
         Attributes\Targets\TargetsAttribute::class,
         Attributes\Subject\SubjectAttribute::class,
         Attributes\Template\TemplateAttribute::class,
-        Attributes\MockData\MockDataAttribute::class
+        Attributes\MockData\MockDataAttribute::class,
     ];
 
     /**
@@ -60,13 +60,13 @@ class EmailManager extends ModelManager
      */
     public function resolve(Email $action, $event)
     {
-        $data = (array)$event;
+        $data = (array) $event;
 
         $targets = (new Collection($action->targets))->map(function ($target) use ($event) {
-            return str_replace("{{user.email}}", $event->user->email, $target);
+            return str_replace('{{user.email}}', $event->user->email, $target);
         })->toArray();
 
-        $filename = $this->generateViewFile($action->template, "actions-emails-".$action->id);
+        $filename = $this->generateViewFile($action->template, 'actions-emails-'.$action->id);
 
         $mail = new Mailable();
         $mail->subject($action->subject);
@@ -80,9 +80,9 @@ class EmailManager extends ModelManager
     {
         $path = Config::get('view.paths.0');
 
-        $view = "cache/".$url."-".hash('sha1', $url);
+        $view = 'cache/'.$url.'-'.hash('sha1', $url);
 
-        $filename = $path."/".$view.".twig";
+        $filename = $path.'/'.$view.'.twig';
 
         !file_exists(dirname($filename)) && mkdir(dirname($filename), 0777, true);
 

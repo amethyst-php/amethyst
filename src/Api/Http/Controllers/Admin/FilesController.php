@@ -1,20 +1,18 @@
 <?php
+
 namespace Railken\LaraOre\Api\Http\Controllers\Admin;
 
-use Railken\LaraOre\Api\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Railken\LaraOre\Core\File\FileManager;
-use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
-use Railken\LaraOre\Api\Http\Controllers\RestController;
 use Railken\Bag;
-use Illuminate\Support\Collection;
+use Railken\LaraOre\Api\Http\Controllers\RestController;
+use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
+use Railken\LaraOre\Core\File\FileManager;
 
 class FilesController extends RestController
 {
     use RestTraits\RestIndexTrait;
     use RestTraits\RestShowTrait;
     use RestTraits\RestRemoveTrait;
-
 
     protected static $query = [
         'id',
@@ -28,7 +26,7 @@ class FilesController extends RestController
         'user_id',
         'expire_at',
         'created_at',
-        'updated_at'
+        'updated_at',
     ];
 
     protected static $fillable = [
@@ -44,15 +42,13 @@ class FilesController extends RestController
     ];
 
     /**
-     * Construct
-     *
+     * Construct.
      */
     public function __construct(FileManager $manager)
     {
         $this->manager = $manager;
         parent::__construct();
     }
-
 
     /**
      * Upload a file.
@@ -68,14 +64,14 @@ class FilesController extends RestController
         $params = new Bag($request->all());
 
         $result = $manager->create([
-            'disk_id' => $params->get('disk_id'),
-            'content' => $params->get('content'),
-            'type' => $params->get('type', 'default'),
-            'expire_at' => $params->get('expire_at', null),
+            'disk_id'    => $params->get('disk_id'),
+            'content'    => $params->get('content'),
+            'type'       => $params->get('type', 'default'),
+            'expire_at'  => $params->get('expire_at', null),
             'permission' => null,
-            'access' => $params->get('access', 'private'),
-            'status' => 'pending',
-            'user' => $this->getUser(),
+            'access'     => $params->get('access', 'private'),
+            'status'     => 'pending',
+            'user'       => $this->getUser(),
         ]);
 
         if (!$result->ok()) {
@@ -85,9 +81,8 @@ class FilesController extends RestController
         return $this->success(['resource' => $this->manager->serializer->serialize($result->getResource(), $this->keys->selectable)->toArray()]);
     }
 
-
     /**
-     * Create a new instance for query
+     * Create a new instance for query.
      *
      * @return \Illuminate\Database\Query\Builder
      */

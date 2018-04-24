@@ -6,7 +6,6 @@ use Illuminate\Database\Seeder;
 
 class UserSeeder extends Seeder
 {
-
     /**
      * Run the database seeds.
      *
@@ -16,11 +15,11 @@ class UserSeeder extends Seeder
     {
         $users = [
             [
-                'name' => 'admin',
-                'email' => 'admin@admin.com',
+                'name'     => 'admin',
+                'email'    => 'admin@admin.com',
                 'password' => 'vercingetorige',
-                'role' => 'admin',
-                'enabled' => 1
+                'role'     => 'admin',
+                'enabled'  => 1,
             ],
         ];
 

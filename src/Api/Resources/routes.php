@@ -8,7 +8,7 @@ if (!function_exists('rest')) {
     {
         Route::group(['prefix' => $prefix], function () use ($controller, $group) {
             $group && is_callable($group) && $group($controller);
-            
+
             Route::get('/', ['uses' => $controller.'@index']);
             Route::post('/', ['uses' => $controller.'@create']);
             Route::put('/{id}', ['uses' => $controller.'@update']);
@@ -31,7 +31,6 @@ Route::group(['prefix' => 'api/v1'], function () {
     Route::get('/files/{token}', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\File\FilesController@get']);
     Route::delete('/files/{token}', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\File\FilesController@remove']);
 
-
     Route::group(['middleware' => ['auth:api']], function () {
         Route::group(['prefix' => 'notifications'], function () {
             Route::get('/', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\User\NotificationsController@index']);
@@ -43,18 +42,15 @@ Route::group(['prefix' => 'api/v1'], function () {
         Route::get('/user', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\User\UserController@index']);
     });
 
-
     Route::group(['middleware' => ['auth:api', 'admin'], 'prefix' => 'admin'], function () {
         Route::post('/files/upload', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Admin\FilesController@upload']);
         Route::get('/files/{id}', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Admin\FilesController@show']);
         Route::delete('/files/{id}', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Admin\FilesController@remove']);
 
-
         Route::group(['prefix' => 'configs'], function () {
             Route::get('/', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Admin\ConfigsController@index']);
             Route::patch('/', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Admin\ConfigsController@update']);
         });
-
 
         rest('users', 'Railken\LaraOre\Api\Http\Controllers\Admin\UsersController');
         rest('addresses', 'Railken\LaraOre\Api\Http\Controllers\Admin\AddressesController');
@@ -66,13 +62,12 @@ Route::group(['prefix' => 'api/v1'], function () {
             Route::get('/stats', ['uses' => $controller.'@stats']);
         });
 
-
         Route::group(['prefix' => 'logs'], function () {
             Route::get('/', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Admin\LogsController@index']);
             Route::delete('/{id}', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Admin\LogsController@remove']);
             Route::get('/{id}', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Admin\LogsController@show']);
         });
-        
+
         Route::group(['prefix' => 'mail-logs'], function () {
             Route::get('/', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Admin\MailLogsController@index']);
             Route::delete('/{id}', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Admin\MailLogsController@remove']);

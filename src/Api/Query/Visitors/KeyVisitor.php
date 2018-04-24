@@ -2,14 +2,13 @@
 
 namespace Railken\LaraOre\Api\Query\Visitors;
 
-use Railken\SQ\Contracts\NodeContract;
-use Railken\SQ\Languages\BoomTree\Nodes as Nodes;
 use Railken\Laravel\ApiHelpers\Query\Visitors\BaseVisitor;
+use Railken\SQ\Contracts\NodeContract;
 use Railken\SQ\Exceptions\QuerySyntaxException;
+use Railken\SQ\Languages\BoomTree\Nodes as Nodes;
 
 class KeyVisitor extends BaseVisitor
 {
-
     /**
      * @var \Railken\Laravel\Manager\Contracts\ManagerContract
      */
@@ -38,11 +37,11 @@ class KeyVisitor extends BaseVisitor
 
         return $this;
     }
-    
+
     /**
      * Visit the node and update the query.
      *
-     * @param mixed $query
+     * @param mixed                              $query
      * @param \Railken\SQ\Contracts\NodeContract $node
      * @param string                             $context
      */
@@ -55,8 +54,7 @@ class KeyVisitor extends BaseVisitor
                 throw new QuerySyntaxException();
             }
 
-            $keys = explode(".", $key);
-
+            $keys = explode('.', $key);
 
             if (count($keys) === 1) {
                 $keys = [$this->manager->repository->newEntity()->getTable(), $keys[0]];

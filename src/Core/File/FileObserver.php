@@ -6,7 +6,6 @@ use Railken\Laravel\Manager\Contracts\EntityContract;
 
 class FileObserver
 {
-
     /**
      * Listen to the entity retrieved event.
      *

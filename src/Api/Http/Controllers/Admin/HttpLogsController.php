@@ -3,14 +3,11 @@
 namespace Railken\LaraOre\Api\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Railken\LaraOre\Core\HttpLog\HttpLogManager;
-
-use Railken\LaraOre\Api\Http\Controllers\Traits\RestIndexTrait;
-use Railken\LaraOre\Api\Http\Controllers\Traits\RestShowTrait;
-use Railken\LaraOre\Api\Http\Controllers\Traits\RestCreateTrait;
-use Railken\LaraOre\Api\Http\Controllers\Traits\RestUpdateTrait;
-use Railken\LaraOre\Api\Http\Controllers\Traits\RestRemoveTrait;
 use Railken\LaraOre\Api\Http\Controllers\RestController;
+use Railken\LaraOre\Api\Http\Controllers\Traits\RestIndexTrait;
+use Railken\LaraOre\Api\Http\Controllers\Traits\RestRemoveTrait;
+use Railken\LaraOre\Api\Http\Controllers\Traits\RestShowTrait;
+use Railken\LaraOre\Core\HttpLog\HttpLogManager;
 
 class HttpLogsController extends RestController
 {
@@ -19,7 +16,7 @@ class HttpLogsController extends RestController
     use RestRemoveTrait;
 
     /**
-     * List of params that can be used to perform a search in the index
+     * List of params that can be used to perform a search in the index.
      *
      * @var array
      */
@@ -37,7 +34,7 @@ class HttpLogsController extends RestController
     ];
 
     /**
-     * List of params that can be selected in the index
+     * List of params that can be selected in the index.
      *
      * @var array
      */
@@ -61,7 +58,7 @@ class HttpLogsController extends RestController
     }
 
     /**
-     * Create a new instance for query
+     * Create a new instance for query.
      *
      * @return \Illuminate\DataBase\Query\Builder
      */

@@ -5,7 +5,6 @@ namespace Railken\LaraOre\Action\Notification\Attributes\Template;
 use Railken\Laravel\Manager\Attributes\BaseAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;
 use Railken\Laravel\Manager\Tokens;
-use Respect\Validation\Validator as v;
 
 class TemplateAttribute extends BaseAttribute
 {
@@ -64,7 +63,7 @@ class TemplateAttribute extends BaseAttribute
     }
 
     /**
-     * Retrieve default value
+     * Retrieve default value.
      *
      * @param EntityContract $entity
      *
@@ -72,6 +71,6 @@ class TemplateAttribute extends BaseAttribute
      */
     public function getDefault(EntityContract $entity)
     {
-        return "Hello {{ user.name }}";
+        return 'Hello {{ user.name }}';
     }
 }

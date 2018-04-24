@@ -1,12 +1,12 @@
 <?php
+
 namespace Railken\LaraOre\Api\Http\Controllers\Admin;
 
-use Railken\LaraOre\Api\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Railken\LaraOre\Core\Config\ConfigManager;
-use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
-use Railken\LaraOre\Api\Http\Controllers\RestController;
 use Railken\Bag;
+use Railken\LaraOre\Api\Http\Controllers\RestController;
+use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
+use Railken\LaraOre\Core\Config\ConfigManager;
 
 class ConfigsController extends RestController
 {
@@ -27,8 +27,7 @@ class ConfigsController extends RestController
     ];
 
     /**
-     * Construct
-     *
+     * Construct.
      */
     public function __construct(ConfigManager $manager)
     {
@@ -37,7 +36,7 @@ class ConfigsController extends RestController
     }
 
     /**
-     * Create a new instance for query
+     * Create a new instance for query.
      *
      * @return \Illuminate\Database\Query\Builder
      */
@@ -46,12 +45,10 @@ class ConfigsController extends RestController
         return $this->manager->repository->getQuery();
     }
 
-
-
     /**
-     * Create a resource
+     * Create a resource.
      *
-     * @param integer $id
+     * @param int                      $id
      * @param \Illuminate\Http\Request $request
      *
      * @return \Illuminate\Http\Response
@@ -60,7 +57,6 @@ class ConfigsController extends RestController
     {
         $params = new Bag($request->all());
 
-        
         $params = $params->only(['mail_host', 'mail_port', 'mail_username', 'mail_password', 'mail_encryption', 'mail_from_name', 'mail_from_address']);
 
         $result = $this->manager->massive($params);
@@ -85,7 +81,7 @@ class ConfigsController extends RestController
         }
 
         return $this->error([
-            'errors' => $result->getSimpleErrors()
+            'errors' => $result->getSimpleErrors(),
         ]);
     }
 }

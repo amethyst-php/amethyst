@@ -2,20 +2,19 @@
 
 namespace Railken\LaraOre\Api\Http\Controllers\User;
 
-use Railken\LaraOre\Api\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Railken\LaraOre\Api\Http\Controllers\Controller;
 use Railken\LaraOre\Core\User\UserManager;
 
 class AccountController extends Controller
 {
-
     /**
      * @var \Railken\LaraOre\Core\User\UserManager
      */
     protected $manager;
-    
+
     /**
-     * Construct
+     * Construct.
      */
     public function __construct(UserManager $manager)
     {
@@ -23,7 +22,7 @@ class AccountController extends Controller
     }
 
     /**
-     * Change user password
+     * Change user password.
      *
      * @param \Illuminate\Http\Request $request
      *
@@ -40,9 +39,8 @@ class AccountController extends Controller
         return $this->success();
     }
 
-
     /**
-     * Change user email
+     * Change user email.
      *
      * @param \Illuminate\Http\Request $request
      *
@@ -60,7 +58,7 @@ class AccountController extends Controller
     }
 
     /**
-     * Delete account
+     * Delete account.
      *
      * @param \Illuminate\Http\Request $request
      *
@@ -78,7 +76,7 @@ class AccountController extends Controller
     }
 
     /**
-     * Change user username
+     * Change user username.
      *
      * @param \Illuminate\Http\Request $request
      *

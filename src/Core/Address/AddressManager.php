@@ -2,17 +2,14 @@
 
 namespace Railken\LaraOre\Core\Address;
 
-use Railken\Laravel\Manager\Contracts\EntityContract;
 use Railken\Laravel\Manager\Contracts\AgentContract;
 use Railken\Laravel\Manager\ModelManager;
-use Railken\Laravel\Manager\ParameterBag;
 use Railken\Laravel\Manager\Tokens;
 
 class AddressManager extends ModelManager
 {
-
     /**
-     * List of all attributes
+     * List of all attributes.
      *
      * @var array
      */
@@ -30,19 +27,18 @@ class AddressManager extends ModelManager
     ];
 
     /**
-     * List of all exceptions
+     * List of all exceptions.
      *
      * @var array
      */
     protected $exceptions = [
-        Tokens::NOT_AUTHORIZED => Exceptions\AddressNotAuthorizedException::class
+        Tokens::NOT_AUTHORIZED => Exceptions\AddressNotAuthorizedException::class,
     ];
 
     /**
-     * Construct
+     * Construct.
      *
      * @param AgentContract $agent
-     *
      */
     public function __construct(AgentContract $agent = null)
     {

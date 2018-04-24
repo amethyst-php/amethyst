@@ -22,7 +22,7 @@ class ListenerManager extends ModelManager
         Attributes\EventClass\EventClassAttribute::class,
         Attributes\ActionType\ActionTypeAttribute::class,
         Attributes\ActionId\ActionIdAttribute::class,
-        Attributes\Enabled\EnabledAttribute::class
+        Attributes\Enabled\EnabledAttribute::class,
     ];
 
     /**

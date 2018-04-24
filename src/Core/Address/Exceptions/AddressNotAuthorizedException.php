@@ -4,16 +4,15 @@ namespace Railken\LaraOre\Core\Address\Exceptions;
 
 class AddressNotAuthorizedException extends AddressException
 {
-
     /**
-     * The code to identify the error
+     * The code to identify the error.
      *
      * @var string
      */
     protected $code = 'ADDRESS_NOT_AUTHORIZED';
 
     /**
-     * The message
+     * The message.
      *
      * @var string
      */

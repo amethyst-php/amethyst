@@ -6,25 +6,24 @@ use Railken\LaraOre\Core\Log\Exceptions\LogAttributeException;
 
 class LogIdNotDefinedException extends LogAttributeException
 {
-
     /**
-     * The reason (attribute) for which this exception is thrown
+     * The reason (attribute) for which this exception is thrown.
      *
      * @var string
      */
     protected $attribute = 'id';
 
     /**
-     * The code to identify the error
+     * The code to identify the error.
      *
      * @var string
      */
     protected $code = 'LOG_ID_NOT_DEFINED';
 
     /**
-     * The message
+     * The message.
      *
      * @var string
      */
-    protected $message = "The %s is required";
+    protected $message = 'The %s is required';
 }

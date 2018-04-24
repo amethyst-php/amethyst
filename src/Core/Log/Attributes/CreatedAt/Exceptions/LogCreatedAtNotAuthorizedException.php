@@ -6,23 +6,22 @@ use Railken\LaraOre\Core\Log\Exceptions\LogAttributeException;
 
 class LogCreatedAtNotAuthorizedException extends LogAttributeException
 {
-
     /**
-     * The reason (attribute) for which this exception is thrown
+     * The reason (attribute) for which this exception is thrown.
      *
      * @var string
      */
     protected $attribute = 'created_at';
 
     /**
-     * The code to identify the error
+     * The code to identify the error.
      *
      * @var string
      */
     protected $code = 'LOG_CREATED_AT_NOT_AUTHTORIZED';
-    
+
     /**
-     * The message
+     * The message.
      *
      * @var string
      */

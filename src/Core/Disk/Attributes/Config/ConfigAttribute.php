@@ -2,11 +2,10 @@
 
 namespace Railken\LaraOre\Core\Disk\Attributes\Config;
 
+use Illuminate\Support\Collection;
 use Railken\Laravel\Manager\Attributes\BaseAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;
 use Railken\Laravel\Manager\Tokens;
-use Respect\Validation\Validator as v;
-use Illuminate\Support\Collection;
 
 class ConfigAttribute extends BaseAttribute
 {
@@ -66,8 +65,8 @@ class ConfigAttribute extends BaseAttribute
         }
 
         $availables = [
-            's3' => ['key', 'secret', 'region', 'bucket', 'url'],
-            'local' => ['root', 'url', 'visibility']
+            's3'    => ['key', 'secret', 'region', 'bucket', 'url'],
+            'local' => ['root', 'url', 'visibility'],
         ];
 
         if (!isset($availables[$entity->driver])) {
@@ -80,7 +79,7 @@ class ConfigAttribute extends BaseAttribute
     }
 
     /**
-     * Retrieve default value
+     * Retrieve default value.
      *
      * @param EntityContract $entity
      *

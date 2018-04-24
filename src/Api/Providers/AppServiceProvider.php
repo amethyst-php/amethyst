@@ -3,11 +3,9 @@
 namespace Railken\LaraOre\Api\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Route;
 
 class AppServiceProvider extends ServiceProvider
 {
-
     /**
      * Bootstrap any application services.
      *

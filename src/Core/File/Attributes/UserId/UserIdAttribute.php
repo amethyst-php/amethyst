@@ -5,7 +5,6 @@ namespace Railken\LaraOre\Core\File\Attributes\UserId;
 use Railken\Laravel\Manager\Attributes\BelongsToAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;
 use Railken\Laravel\Manager\Tokens;
-use Respect\Validation\Validator as v;
 
 class UserIdAttribute extends BelongsToAttribute
 {
@@ -49,7 +48,7 @@ class UserIdAttribute extends BelongsToAttribute
         Tokens::PERMISSION_FILL => 'file.attributes.user_id.fill',
         Tokens::PERMISSION_SHOW => 'file.attributes.user_id.show',
     ];
-    
+
     /**
      * Retrieve the name of the relation.
      *
@@ -59,6 +58,7 @@ class UserIdAttribute extends BelongsToAttribute
     {
         return 'user';
     }
+
     /**
      * Retrieve eloquent relation.
      *
@@ -70,6 +70,7 @@ class UserIdAttribute extends BelongsToAttribute
     {
         return $entity->user();
     }
+
     /**
      * Retrieve relation manager.
      *

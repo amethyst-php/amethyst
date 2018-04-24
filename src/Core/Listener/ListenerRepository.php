@@ -14,7 +14,7 @@ class ListenerRepository extends ModelRepository
     public $entity = Listener::class;
 
     /**
-     * Find a listener given a event_class
+     * Find a listener given a event_class.
      *
      * @param string $event_class
      *

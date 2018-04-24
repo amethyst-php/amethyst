@@ -4,16 +4,15 @@ namespace Railken\LaraOre\Core\User\Exceptions;
 
 class UserNotAuthorizedException extends UserException
 {
-
     /**
-     * The code to identify the error
+     * The code to identify the error.
      *
      * @var string
      */
     protected $code = 'USER_NOT_AUTHORIZED';
 
     /**
-     * The message
+     * The message.
      *
      * @var string
      */

@@ -4,8 +4,8 @@ namespace Railken\LaraOre\Core\Config;
 
 use Railken\Laravel\Manager\Contracts\AgentContract;
 use Railken\Laravel\Manager\ModelManager;
-use Railken\Laravel\Manager\Tokens;
 use Railken\Laravel\Manager\ResultAction;
+use Railken\Laravel\Manager\Tokens;
 
 class ConfigManager extends ModelManager
 {
@@ -47,7 +47,7 @@ class ConfigManager extends ModelManager
     }
 
     /**
-     * massive
+     * massive.
      */
     public function massive($params)
     {

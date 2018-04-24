@@ -2,23 +2,23 @@
 
 namespace Railken\LaraOre\Core\User;
 
+use DateTime;
+use Exception;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Railken\Bag;
+use Railken\Laravel\Manager\Contracts\AgentContract;
 use Railken\Laravel\Manager\Contracts\EntityContract;
 use Railken\Laravel\Manager\ModelManager;
 use Railken\Laravel\Manager\ParameterBag;
-use Railken\Laravel\Manager\Contracts\AgentContract;
-use Railken\Laravel\Manager\Tokens;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Hash;
-use Railken\Bag;
 use Railken\Laravel\Manager\ResultAction;
-use Illuminate\Support\Facades\DB;
-use DateTime;
-use Exception;
+use Railken\Laravel\Manager\Tokens;
 
 class UserManager extends ModelManager
 {
     /**
-     * Attributes
+     * Attributes.
      *
      * @var array
      */
@@ -34,16 +34,16 @@ class UserManager extends ModelManager
     ];
 
     /**
-     * List of all exceptions
+     * List of all exceptions.
      *
      * @var array
      */
     protected $exceptions = [
-        Tokens::NOT_AUTHORIZED => Exceptions\UserNotAuthorizedException::class
+        Tokens::NOT_AUTHORIZED => Exceptions\UserNotAuthorizedException::class,
     ];
 
     /**
-     * Construct
+     * Construct.
      */
     public function __construct(AgentContract $agent = null)
     {
@@ -51,14 +51,14 @@ class UserManager extends ModelManager
         $this->setSerializer(new UserSerializer($this));
         $this->setAuthorizer(new UserAuthorizer($this));
         $this->setValidator(new UserValidator($this));
-        
+
         parent::__construct($agent);
     }
 
     /**
-     * Create a confirmation email token for given user
+     * Create a confirmation email token for given user.
      *
-     * @param User $user
+     * @param User   $user
      * @param string $email
      *
      * @return UserPendingEmail
@@ -72,7 +72,7 @@ class UserManager extends ModelManager
         }
 
         do {
-            $token = strtoupper(str_random(4)."-".str_random(4));
+            $token = strtoupper(str_random(4).'-'.str_random(4));
             $exists = (new UserPendingEmail())->newQuery()->where('token', $token)->count();
         } while ($exists > 0);
 
@@ -80,7 +80,7 @@ class UserManager extends ModelManager
     }
 
     /**
-     * Find UserPendingEmail by token
+     * Find UserPendingEmail by token.
      *
      * @param string $token
      *
@@ -120,11 +120,11 @@ class UserManager extends ModelManager
     }
 
     /**
-     * Change user password
+     * Change user password.
      *
      * @param EntityContract $user
-     * @param string $password_old
-     * @param string $password_new
+     * @param string         $password_old
+     * @param string         $password_new
      *
      * @return \Railken\Laravel\Manager\ResultAction
      */
@@ -146,12 +146,11 @@ class UserManager extends ModelManager
         return $this->update($user, new Bag(['password' => $password_new]));
     }
 
-
     /**
-     * Change user email
+     * Change user email.
      *
      * @param EntityContract $user
-     * @param string $email
+     * @param string         $email
      *
      * @return \Railken\Laravel\Manager\ResultAction
      */
@@ -162,7 +161,7 @@ class UserManager extends ModelManager
         $this->attributes->filter(function ($attribute) {
             return $attribute->getName() === 'email';
         })->first()->validate($user, new Bag(['email' => $email]));
-        
+
         $result = new \Railken\Laravel\Manager\ResultAction();
 
         if ($errors->count() > 0) {
@@ -176,20 +175,18 @@ class UserManager extends ModelManager
         return $result;
     }
 
-
     /**
-     * Is current password
+     * Is current password.
      *
      * @param EntityContract $user
-     * @param string $password
+     * @param string         $password
      *
-     * @return boolean
+     * @return bool
      */
     public function checkPassword(EntityContract $user, $password)
     {
         return Hash::check($password, $user->password);
     }
-
 
     /**
      * Update a EntityContract given parameters.
@@ -204,7 +201,6 @@ class UserManager extends ModelManager
     {
         $parameters = $this->castParameters($parameters);
 
-
         // This will permit to edit the password without overwriting if empty is sent.
         if ($entity->exists && $parameters->exists('password') && empty($parameters->get('password'))) {
             $parameters->remove('password');
@@ -213,9 +209,8 @@ class UserManager extends ModelManager
         return parent::update($entity, $parameters, $permission);
     }
 
-
     /**
-     * Register a new account
+     * Register a new account.
      *
      * @param array $params
      *
@@ -224,12 +219,12 @@ class UserManager extends ModelManager
     public function register(array $params)
     {
         $params = new Bag($params);
- 
+
         $result = $this->create($params->only(['name', 'password', 'email']));
 
         if ($result->ok()) {
             $user = $result->getResource();
-            
+
             $this->createConfirmationEmailToken($user, $user->email);
 
             event(new Events\UserRegistered($user));
@@ -239,9 +234,8 @@ class UserManager extends ModelManager
         return $result;
     }
 
-
     /**
-     * Request confirmation email
+     * Request confirmation email.
      *
      * @param User $user
      *
@@ -264,7 +258,7 @@ class UserManager extends ModelManager
     }
 
     /**
-     * Confirm an account
+     * Confirm an account.
      *
      * @param string $token
      *
@@ -283,12 +277,10 @@ class UserManager extends ModelManager
 
             return $user;
         }
-
-        return null;
     }
 
     /**
-     * Request confirmation email
+     * Request confirmation email.
      *
      * @param User $user
      *
@@ -298,14 +290,11 @@ class UserManager extends ModelManager
     {
         $result = $this->changeEmail($user, $email);
 
-
         if (!$result->ok()) {
             return $result;
         }
 
-
         $email = $result->getResource();
-
 
         // Prevent spam
         if (!$email->notified_at || ($email->notified_at < (new DateTime())->modify('+10 minutes'))) {

@@ -3,19 +3,13 @@
 namespace Railken\LaraOre\Api\Http\Controllers\Traits;
 
 use Illuminate\Http\Request;
-use Railken\LaraOre\Api\Helper\Paginator;
-use Railken\LaraOre\Api\Helper\Filter;
-use Railken\LaraOre\Api\Helper\Sorter;
-
-use Railken\LaraOre\Api\Helper\Exceptions\FilterSyntaxException;
 
 trait RestRemoveTrait
 {
-
     /**
-     * Display a resource
+     * Display a resource.
      *
-     * @param integer $id
+     * @param int                      $id
      * @param \Illuminate\Http\Request $request
      *
      * @return \Illuminate\Http\Response
@@ -27,30 +21,29 @@ trait RestRemoveTrait
         if (!$resource) {
             return $this->not_found();
         }
-        
+
         $before = $this->manager->serializer->serialize($resource)->toArray();
 
         $result = $this->manager->remove($resource);
 
-
         if ($result->ok()) {
             $m = new \Railken\LaraOre\Core\Log\LogManager();
             $m->create([
-                'type' => 'api',
+                'type'     => 'api',
                 'category' => 'remove',
-                'message' => null,
-                'vars' => [
+                'message'  => null,
+                'vars'     => [
                     'entity_class' => $this->manager->getRepository()->getEntity(),
-                    'entity_id' => $resource->id,
-                    'before' => $before,
-                    'after' => null,
-                    'user_id' => $this->getUser()->id
-                ]
+                    'entity_id'    => $resource->id,
+                    'before'       => $before,
+                    'after'        => null,
+                    'user_id'      => $this->getUser()->id,
+                ],
             ]);
 
             return $this->success(['message' => 'ok']);
         }
-    
+
         return $this->error(['errors' => $result->getSimpleErrors()]);
     }
 }

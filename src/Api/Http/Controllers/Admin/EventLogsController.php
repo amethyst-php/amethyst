@@ -3,18 +3,17 @@
 namespace Railken\LaraOre\Api\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Railken\LaraOre\Core\EventLog\EventLogManager;
-
-use Railken\LaraOre\Api\Http\Controllers\Traits\RestIndexTrait;
-use Railken\LaraOre\Api\Http\Controllers\Traits\RestShowTrait;
-use Railken\LaraOre\Api\Http\Controllers\Traits\RestCreateTrait;
-use Railken\LaraOre\Api\Http\Controllers\Traits\RestUpdateTrait;
-use Railken\LaraOre\Api\Http\Controllers\Traits\RestRemoveTrait;
-use Railken\LaraOre\Api\Http\Controllers\RestController;
-use Railken\SQ\Exceptions\QuerySyntaxException;
-use Railken\Laravel\ApiHelpers\Paginator;
-use Railken\Laravel\ApiHelpers\Filter;
 use Illuminate\Support\Facades\DB;
+use Railken\LaraOre\Api\Http\Controllers\RestController;
+use Railken\LaraOre\Api\Http\Controllers\Traits\RestCreateTrait;
+use Railken\LaraOre\Api\Http\Controllers\Traits\RestIndexTrait;
+use Railken\LaraOre\Api\Http\Controllers\Traits\RestRemoveTrait;
+use Railken\LaraOre\Api\Http\Controllers\Traits\RestShowTrait;
+use Railken\LaraOre\Api\Http\Controllers\Traits\RestUpdateTrait;
+use Railken\LaraOre\Core\EventLog\EventLogManager;
+use Railken\Laravel\ApiHelpers\Filter;
+use Railken\Laravel\ApiHelpers\Paginator;
+use Railken\SQ\Exceptions\QuerySyntaxException;
 
 class EventLogsController extends RestController
 {
@@ -25,7 +24,7 @@ class EventLogsController extends RestController
     use RestRemoveTrait;
 
     /**
-     * List of params that can be used to perform a search in the index
+     * List of params that can be used to perform a search in the index.
      *
      * @var array
      */
@@ -37,7 +36,7 @@ class EventLogsController extends RestController
     ];
 
     /**
-     * List of params that can be selected in the index
+     * List of params that can be selected in the index.
      *
      * @var array
      */
@@ -53,7 +52,7 @@ class EventLogsController extends RestController
     }
 
     /**
-     * Create a new instance for query
+     * Create a new instance for query.
      *
      * @return \Illuminate\DataBase\Query\Builder
      */
@@ -63,7 +62,7 @@ class EventLogsController extends RestController
     }
 
     /**
-     * Render a template
+     * Render a template.
      *
      * @param \Illuminate\Http\Request $request
      *
@@ -73,19 +72,16 @@ class EventLogsController extends RestController
     {
         $query = $this->getQuery();
 
-
-        # Select
-        $select = collect(explode(",", $request->input("select", "")));
+        // Select
+        $select = collect(explode(',', $request->input('select', '')));
 
         $select->count() > 0 &&
             $select = $this->keys->selectable->filter(function ($attr) use ($select) {
                 return $select->contains($attr);
             });
 
-       
         $select->count() == 0 &&
             $select = $this->keys->selectable;
-
 
         $selectable = $select;
 
@@ -94,14 +90,13 @@ class EventLogsController extends RestController
                 $query = $this->filterQuery($query, $request->input('query'), $selectable);
             }
         } catch (QuerySyntaxException $e) {
-            return $this->error(["code" => "QUERY_SYNTAX_ERROR", "message" => "syntax error detected in filter"]);
+            return $this->error(['code' => 'QUERY_SYNTAX_ERROR', 'message' => 'syntax error detected in filter']);
         }
-
 
         $query->select(DB::raw("DATE_FORMAT(created_at, '%Y-%m-%d') as created_at"), DB::raw('count(*) as total'));
         $query->groupBy(DB::raw("DATE_FORMAT(created_at, '%Y-%m-%d')"));
 
-        # Pagination
+        // Pagination
         $paginator = new Paginator();
         $paginator = $paginator->paginate($query->count(), $request->input('page', 1), $request->input('show', 10));
 

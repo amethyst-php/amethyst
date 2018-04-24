@@ -5,7 +5,6 @@ namespace Railken\LaraOre\Action\Email\Attributes\Template;
 use Railken\Laravel\Manager\Attributes\BaseAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;
 use Railken\Laravel\Manager\Tokens;
-use Respect\Validation\Validator as v;
 
 class TemplateAttribute extends BaseAttribute
 {
@@ -64,7 +63,7 @@ class TemplateAttribute extends BaseAttribute
     }
 
     /**
-     * Retrieve default value
+     * Retrieve default value.
      *
      * @param EntityContract $entity
      *
@@ -72,7 +71,7 @@ class TemplateAttribute extends BaseAttribute
      */
     public function getDefault(EntityContract $entity)
     {
-        return "".
+        return ''.
             "{% extends 'emails/layout' %}\n".
             "{% block main %}\n".
             "    <div class='title'>\n".
@@ -82,7 +81,7 @@ class TemplateAttribute extends BaseAttribute
             "       <p>Hello {{ user.name }}</p>\n".
             "       <a class='btn btn-primary' href='{{ web_url }}/home'>Visit our home</a>\n".
             "    </div>\n".
-            "{% endblock %}".
-            "";
+            '{% endblock %}'.
+            '';
     }
 }

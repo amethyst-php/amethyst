@@ -6,7 +6,6 @@ use Illuminate\Database\Seeder;
 
 class UserRegisteredMailSeeder extends Seeder
 {
-
     /**
      * Run the database seeds.
      *
@@ -17,8 +16,8 @@ class UserRegisteredMailSeeder extends Seeder
         $am = new \Railken\LaraOre\Action\Email\EmailManager();
 
         $result = $am->create([
-            'name' => 'EMAIL_REGISTRATION',
-            'targets' => ["{{user.email}}","admin@admin.com"],
+            'name'      => 'EMAIL_REGISTRATION',
+            'targets'   => ['{{user.email}}', 'admin@admin.com'],
             'mock_data' => '{
     "user": {
         "id":1,
@@ -27,7 +26,7 @@ class UserRegisteredMailSeeder extends Seeder
     },
     "token": "ABCD"
 }',
-            'subject' => 'Welcome to ApertureScience!!',
+            'subject'  => 'Welcome to ApertureScience!!',
             'template' => "{% extends 'emails/layout' %}
     {% block main %}
     <div class='title'>
@@ -49,18 +48,17 @@ class UserRegisteredMailSeeder extends Seeder
 
       <p class='small'>Full link: <i>{{ web_url }}/confirm-email/{{ token }}</i></p>
     </div>
-{% endblock %}"
+{% endblock %}",
         ]);
-
 
         $lm = new \Railken\LaraOre\Core\Listener\ListenerManager();
         $lm->create([
-            'name' => 'SEND_EMAIL_ON_REGISTRATION',
+            'name'        => 'SEND_EMAIL_ON_REGISTRATION',
             'description' => 'Uhm...',
             'event_class' => 'Core\User\Events\UserRegistered',
             'action_type' => 'Action\Email\Email',
-            'action_id' => $result->getResource()->id,
-            'enabled' => 1,
+            'action_id'   => $result->getResource()->id,
+            'enabled'     => 1,
         ]);
     }
 }

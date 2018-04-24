@@ -2,20 +2,19 @@
 
 namespace Railken\LaraOre\Api\Http\Controllers\User;
 
-use Railken\LaraOre\Api\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Railken\LaraOre\Api\Http\Controllers\Controller;
 use Railken\LaraOre\Core\User\UserManager;
 
 class UserController extends Controller
 {
-
     /**
      * @var \Railken\LaraOre\Core\User\UserManager
      */
     protected $manager;
 
     /**
-     * Construct
+     * Construct.
      */
     public function __construct(UserManager $manager)
     {
@@ -23,7 +22,7 @@ class UserController extends Controller
     }
 
     /**
-     * Display current user
+     * Display current user.
      *
      * @param \Illuminate\Http\Request $request
      *
@@ -40,9 +39,9 @@ class UserController extends Controller
                     'name',
                     'email',
                     'password',
-                    'created_at'
+                    'created_at',
                 ])
-            )->all()
+            )->all(),
         ]);
     }
 }

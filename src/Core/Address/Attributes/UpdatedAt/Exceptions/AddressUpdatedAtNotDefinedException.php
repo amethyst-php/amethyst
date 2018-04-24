@@ -6,25 +6,24 @@ use Railken\LaraOre\Core\Address\Exceptions\AddressAttributeException;
 
 class AddressUpdatedAtNotDefinedException extends AddressAttributeException
 {
-
     /**
-     * The reason (attribute) for which this exception is thrown
+     * The reason (attribute) for which this exception is thrown.
      *
      * @var string
      */
     protected $attribute = 'updated_at';
 
     /**
-     * The code to identify the error
+     * The code to identify the error.
      *
      * @var string
      */
     protected $code = 'ADDRESS_UPDATED_AT_NOT_DEFINED';
 
     /**
-     * The message
+     * The message.
      *
      * @var string
      */
-    protected $message = "The %s is required";
+    protected $message = 'The %s is required';
 }

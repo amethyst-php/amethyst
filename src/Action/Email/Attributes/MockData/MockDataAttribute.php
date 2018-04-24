@@ -6,7 +6,6 @@ use Railken\Laravel\Manager\Attributes\BaseAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;
 use Railken\Laravel\Manager\Tokens;
 use Respect\Validation\Validator as v;
-use Railken\LaraOre\Action\Email\Attributes\MockData\Exceptions;
 
 class MockDataAttribute extends BaseAttribute
 {
@@ -65,7 +64,7 @@ class MockDataAttribute extends BaseAttribute
     }
 
     /**
-     * Retrieve default value
+     * Retrieve default value.
      *
      * @param EntityContract $entity
      *

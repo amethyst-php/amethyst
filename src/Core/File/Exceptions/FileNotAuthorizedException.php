@@ -4,16 +4,15 @@ namespace Railken\LaraOre\Core\File\Exceptions;
 
 class FileNotAuthorizedException extends FileException
 {
-
     /**
-     * The code to identify the error
+     * The code to identify the error.
      *
      * @var string
      */
     protected $code = 'FILE_NOT_AUTHORIZED';
 
     /**
-     * The message
+     * The message.
      *
      * @var string
      */

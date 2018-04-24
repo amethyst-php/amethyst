@@ -18,7 +18,7 @@ use League\OAuth2\Server\CryptKey;
 class AccessToken extends Model
 {
     /**
-     * Generate a JWT from the access token
+     * Generate a JWT from the access token.
      *
      * @param CryptKey $privateKey
      *

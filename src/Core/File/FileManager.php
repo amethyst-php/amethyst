@@ -2,22 +2,14 @@
 
 namespace Railken\LaraOre\Core\File;
 
-use Railken\Laravel\Manager\Contracts\EntityContract;
 use Railken\Laravel\Manager\Contracts\AgentContract;
-use Railken\Laravel\Manager\Contracts\ParameterBagContract;
 use Railken\Laravel\Manager\ModelManager;
-use Railken\Laravel\Manager\ParameterBag;
-use Railken\Laravel\Manager\ResultAction;
-use Illuminate\Support\Facades\DB;
 use Railken\Laravel\Manager\Tokens;
-use Illuminate\Support\Facades\Storage;
-use Laravel\Illuminate\Support\Facades;
 
 class FileManager extends ModelManager
 {
-
     /**
-     * List of all attributes
+     * List of all attributes.
      *
      * @var array
      */
@@ -41,19 +33,18 @@ class FileManager extends ModelManager
     ];
 
     /**
-     * List of all exceptions
+     * List of all exceptions.
      *
      * @var array
      */
     protected $exceptions = [
-        Tokens::NOT_AUTHORIZED => Exceptions\FileNotAuthorizedException::class
+        Tokens::NOT_AUTHORIZED => Exceptions\FileNotAuthorizedException::class,
     ];
 
     /**
-     * Construct
+     * Construct.
      *
      * @param AgentContract $agent
-     *
      */
     public function __construct(AgentContract $agent = null)
     {
