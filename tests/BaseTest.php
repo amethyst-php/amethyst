@@ -44,9 +44,22 @@ class BaseTest extends \Orchestra\Testbench\TestCase
         $this->artisan('passport:install');
         $this->artisan('db:seed', ['--class' => 'Railken\LaraOre\Resources\Seeds\UserSeeder']);
 
+        $this->signIn();
+
     }
 
-    public function testSomething()
+    public function testSignIn()
+    {
+        $response = $this->signIn();
+
+        if ($response->getStatusCode() === 500) {
+            print_r($response->getContent());
+        }
+
+        $response->assertStatus(200);
+    }
+
+    public function signIn()
     {
         $response = $this->post('/api/v1/sign-in', [
             'username' => 'admin@admin.com',
@@ -54,16 +67,13 @@ class BaseTest extends \Orchestra\Testbench\TestCase
         ]);
 
         $access_token = $response->getContent();
-
-        if ($response->getStatusCode() === 500) {
-            print_r($response->getContent());
-        }
-
-        $response->assertStatus(200);
         $access_token = json_decode($response->getContent())->data->access_token;
 
-        // print_r($access_token);
 
+        $this->withHeaders(['Authorization' => 'Bearer ' . $access_token]);
+
+        return $response;
     }
+
 
 }

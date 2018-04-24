@@ -17,10 +17,10 @@ class DiskManager extends ModelManager
         Attributes\Id\IdAttribute::class,
         Attributes\Driver\DriverAttribute::class,
         Attributes\Name\NameAttribute::class,
-        Attributes\CreatedAt\CreatedAtAttribute::class,
-        Attributes\UpdatedAt\UpdatedAtAttribute::class,
         Attributes\Enabled\EnabledAttribute::class,
         Attributes\Config\ConfigAttribute::class,
+        Attributes\CreatedAt\CreatedAtAttribute::class,
+        Attributes\UpdatedAt\UpdatedAtAttribute::class,
     ];
 
     /**
