@@ -3,6 +3,7 @@
 namespace Railken\LaraOre\Tests;
 
 use Railken\Bag;
+use Railken\LaraOre\Core\Disk\DiskManager;
 
 /**
  * Testing disk
@@ -18,6 +19,16 @@ class DiskTest extends BaseTest
     public function getBaseUrl()
     {
         return '/api/v1/admin/disks';
+    }
+
+    /**
+     * Retrieve basic url.
+     *
+     * @return \Railken\Laravel\Manager\Contracts\ManagerContract
+     */
+    public function getManager()
+    {
+        return new DiskManager();
     }
 
     /**
@@ -50,7 +61,24 @@ class DiskTest extends BaseTest
     {
         $response = $this->post($this->getBaseUrl(), $this->getParameters()->toArray());
         $response->assertStatus(200);
-    }
+
+        $resource = json_decode($response->getContent(), true)['resource'];
+
+        foreach (['driver', 'name', 'enabled', 'config'] as $param) {
+            $this->assertEquals($this->getParameters()->get($param), $resource[$param]);
+        }
+    }   
+
+    public function testSuccessUpdate()
+    {
+        $response = $this->post($this->getBaseUrl(), $this->getParameters()->toArray());
+        $resource = json_decode($response->getContent())->resource;
+
+        $response = $this->put($this->getBaseUrl() . "/". $resource->id, $this->getParameters()->set('enabled', 0)->toArray());
+        $resource = json_decode($response->getContent())->resource;
+        $response->assertStatus(200);
+        $this->assertEquals(0, $resource->enabled);
+    }   
 
     public function testWrongCreate()
     {
@@ -103,4 +131,5 @@ class DiskTest extends BaseTest
             ],
         ]);
     }
+
 }
