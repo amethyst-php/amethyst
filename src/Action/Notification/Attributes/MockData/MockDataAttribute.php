@@ -62,9 +62,9 @@ class MockDataAttribute extends BaseAttribute
     {
         return v::length(1, 255)->validate($value);
     }
-    
+
     /**
-     * Retrieve default value
+     * Retrieve default value.
      *
      * @param EntityContract $entity
      *

@@ -6,23 +6,22 @@ use Railken\LaraOre\Core\User\Exceptions\UserAttributeException;
 
 class UserEmailNotAuthorizedException extends UserAttributeException
 {
-
     /**
-     * The reason (attribute) for which this exception is thrown
+     * The reason (attribute) for which this exception is thrown.
      *
      * @var string
      */
     protected $attribute = 'email';
 
     /**
-     * The code to identify the error
+     * The code to identify the error.
      *
      * @var string
      */
     protected $code = 'USER_EMAIL_NOT_AUTHTORIZED';
-    
+
     /**
-     * The message
+     * The message.
      *
      * @var string
      */

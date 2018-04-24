@@ -2,14 +2,12 @@
 
 namespace Railken\LaraOre\Core\Log;
 
-use Railken\Laravel\Manager\Contracts\ManagerContract;
 use Railken\Laravel\Manager\ParameterBag;
 
 class LogParameterBag extends ParameterBag
 {
-
     /**
-     * Filter current bag
+     * Filter current bag.
      *
      * @return $this
      */
@@ -19,7 +17,7 @@ class LogParameterBag extends ParameterBag
     }
 
     /**
-     * Filter current bag for a search
+     * Filter current bag for a search.
      *
      * @return $this
      */

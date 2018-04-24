@@ -2,8 +2,8 @@
 
 namespace Railken\LaraOre\Api\Http\Middleware;
 
-use Symfony\Component\HttpFoundation\HeaderBag;
 use Closure;
+use Symfony\Component\HttpFoundation\HeaderBag;
 
 class AcceptJsonMiddleware
 {
@@ -11,6 +11,7 @@ class AcceptJsonMiddleware
     {
         $request->server->set('HTTP_ACCEPT', 'application/json');
         $request->headers = new HeaderBag($request->server->getHeaders());
+
         return $next($request);
     }
 }

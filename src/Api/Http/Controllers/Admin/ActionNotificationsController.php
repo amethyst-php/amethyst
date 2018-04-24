@@ -4,13 +4,12 @@ namespace Railken\LaraOre\Api\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use Railken\LaraOre\Action\Notification\NotificationManager;
-
-use Railken\LaraOre\Api\Http\Controllers\Traits\RestIndexTrait;
-use Railken\LaraOre\Api\Http\Controllers\Traits\RestShowTrait;
-use Railken\LaraOre\Api\Http\Controllers\Traits\RestCreateTrait;
-use Railken\LaraOre\Api\Http\Controllers\Traits\RestUpdateTrait;
-use Railken\LaraOre\Api\Http\Controllers\Traits\RestRemoveTrait;
 use Railken\LaraOre\Api\Http\Controllers\RestController;
+use Railken\LaraOre\Api\Http\Controllers\Traits\RestCreateTrait;
+use Railken\LaraOre\Api\Http\Controllers\Traits\RestIndexTrait;
+use Railken\LaraOre\Api\Http\Controllers\Traits\RestRemoveTrait;
+use Railken\LaraOre\Api\Http\Controllers\Traits\RestShowTrait;
+use Railken\LaraOre\Api\Http\Controllers\Traits\RestUpdateTrait;
 
 class ActionNotificationsController extends RestController
 {
@@ -21,7 +20,7 @@ class ActionNotificationsController extends RestController
     use RestRemoveTrait;
 
     /**
-     * List of params that can be used to perform a search in the index
+     * List of params that can be used to perform a search in the index.
      *
      * @var array
      */
@@ -37,7 +36,7 @@ class ActionNotificationsController extends RestController
     ];
 
     /**
-     * List of params that can be selected in the index
+     * List of params that can be selected in the index.
      *
      * @var array
      */
@@ -46,7 +45,7 @@ class ActionNotificationsController extends RestController
         'targets',
         'description',
         'template',
-        'mock_data'
+        'mock_data',
     ];
 
     public function __construct(NotificationManager $manager)
@@ -56,7 +55,7 @@ class ActionNotificationsController extends RestController
     }
 
     /**
-     * Create a new instance for query
+     * Create a new instance for query.
      *
      * @return \Illuminate\DataBase\Query\Builder
      */
@@ -66,7 +65,7 @@ class ActionNotificationsController extends RestController
     }
 
     /**
-     * Render a template
+     * Render a template.
      *
      * @param \Illuminate\Http\Request $request
      *
@@ -79,7 +78,7 @@ class ActionNotificationsController extends RestController
 
         $filename = $this->manager->generateViewFile($template, $request->input('data'));
 
-        $response = view($filename, (array)$data);
+        $response = view($filename, (array) $data);
 
         return $this->success(['resource' => ['rendered' => $response->render()]]);
     }

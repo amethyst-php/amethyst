@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserPendingEmail extends Model
 {
-    
     /**
      * The table associated with the model.
      *
@@ -20,7 +19,7 @@ class UserPendingEmail extends Model
      * @var array
      */
     protected $fillable = [
-        'token', 'user_id', 'email'
+        'token', 'user_id', 'email',
     ];
 
     /**
@@ -33,7 +32,8 @@ class UserPendingEmail extends Model
     ];
 
     /**
-     * Retrieve user
+     * Retrieve user.
+     *
      * @return \Illuminate\Database\Eloquent\Relations\belongsTo
      */
     public function user()

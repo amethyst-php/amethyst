@@ -2,21 +2,20 @@
 
 namespace Railken\LaraOre\Core\User;
 
-use Railken\Laravel\Manager\ModelRepository;
 use DateTime;
+use Railken\Laravel\Manager\ModelRepository;
 
 class UserRepository extends ModelRepository
 {
-
     /**
-     * Class name entity
+     * Class name entity.
      *
      * @var string
      */
     public $entity = User::class;
 
     /**
-     * Find one user by email
+     * Find one user by email.
      *
      * @param string $email
      *
@@ -27,9 +26,8 @@ class UserRepository extends ModelRepository
         return $this->findOneBy(['email' => $email]);
     }
 
-
     /**
-     * Find all pending users expired
+     * Find all pending users expired.
      *
      * @return \Illuminate\Database\Query\Builder
      */
@@ -39,7 +37,7 @@ class UserRepository extends ModelRepository
     }
 
     /**
-     * Find a user by uid and year
+     * Find a user by uid and year.
      *
      * @param string $year
      *

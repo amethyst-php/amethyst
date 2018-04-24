@@ -2,8 +2,8 @@
 
 namespace Railken\LaraOre\Api\Http\Middleware;
 
-use Symfony\Component\HttpFoundation\HeaderBag;
 use Closure;
+use Symfony\Component\HttpFoundation\HeaderBag;
 
 class AccessTokenMiddleware
 {

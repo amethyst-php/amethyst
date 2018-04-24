@@ -6,7 +6,6 @@ use Railken\Laravel\Manager\Contracts\EntityContract;
 
 class LogObserver
 {
-
     /**
      * Listen to the entity retrieved event.
      *

@@ -4,19 +4,16 @@ namespace Railken\LaraOre\Core\User;
 
 use Illuminate\Database\Eloquent\Model;
 // use Illuminate\Database\Eloquent\SoftDeletes;
-use Railken\Laravel\Manager\Contracts\EntityContract;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
-use Railken\LaraOre\Core\Manga\Manga;
-use Railken\LaraOre\Core\Address\Address;
 use Railken\LaraOre\Core\File\File;
-use DateTime;
+use Railken\Laravel\Manager\Contracts\EntityContract;
 
 class User extends Authenticatable implements EntityContract
 {
     use HasApiTokens, Notifiable;
-    
+
     /**
      * The table associated with the model.
      *
@@ -65,7 +62,7 @@ class User extends Authenticatable implements EntityContract
      */
     protected $dates = [
         'valid_from_at',
-        'valid_to_at'
+        'valid_to_at',
     ];
 
     /**
@@ -76,7 +73,6 @@ class User extends Authenticatable implements EntityContract
         return $this->hasOne(UserPendingEmail::class, 'user_id')->latest();
     }
 
-
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -86,7 +82,7 @@ class User extends Authenticatable implements EntityContract
     }
 
     /**
-     * Set password attribute
+     * Set password attribute.
      *
      * @param string $pass
      *
@@ -98,7 +94,7 @@ class User extends Authenticatable implements EntityContract
     }
 
     /**
-     * Retrieve user for passport oauth
+     * Retrieve user for passport oauth.
      *
      * @param string $identifier
      *

@@ -6,16 +6,15 @@ use Railken\Laravel\Manager\ModelRepository;
 
 class FileRepository extends ModelRepository
 {
-
     /**
-     * Class name entity
+     * Class name entity.
      *
      * @var string
      */
     public $entity = File::class;
 
     /**
-     * Find a file that have the path
+     * Find a file that have the path.
      *
      * @param string $path
      *

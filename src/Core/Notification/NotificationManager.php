@@ -21,7 +21,7 @@ class NotificationManager extends ModelManager
         Attributes\NotifiableType\NotifiableTypeAttribute::class,
         Attributes\NotifiableId\NotifiableIdAttribute::class,
         Attributes\ReadAt\ReadAtAttribute::class,
-        Attributes\Data\DataAttribute::class
+        Attributes\Data\DataAttribute::class,
     ];
 
     /**

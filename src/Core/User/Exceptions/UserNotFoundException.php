@@ -4,18 +4,17 @@ namespace Railken\LaraOre\Core\User\Exceptions;
 
 class UserNotFoundException extends UserException
 {
-
     /**
-     * The code to identify the error
+     * The code to identify the error.
      *
      * @var string
      */
     protected $code = 'User_NOT_FOUND';
 
     /**
-     * The message
+     * The message.
      *
      * @var string
      */
-    protected $message = "Not found";
+    protected $message = 'Not found';
 }

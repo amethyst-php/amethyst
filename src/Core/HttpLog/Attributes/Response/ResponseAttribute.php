@@ -5,7 +5,6 @@ namespace Railken\LaraOre\Core\HttpLog\Attributes\Response;
 use Railken\Laravel\Manager\Attributes\BaseAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;
 use Railken\Laravel\Manager\Tokens;
-use Respect\Validation\Validator as v;
 
 class ResponseAttribute extends BaseAttribute
 {

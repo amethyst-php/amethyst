@@ -25,7 +25,7 @@ class HttpLogManager extends ModelManager
         Attributes\Category\CategoryAttribute::class,
         Attributes\Request\RequestAttribute::class,
         Attributes\Response\ResponseAttribute::class,
-        Attributes\Ip\IpAttribute::class
+        Attributes\Ip\IpAttribute::class,
     ];
 
     /**

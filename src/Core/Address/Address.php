@@ -7,7 +7,6 @@ use Railken\Laravel\Manager\Contracts\EntityContract;
 
 class Address extends Model implements EntityContract
 {
-
     /**
      * The table associated with the model.
      *

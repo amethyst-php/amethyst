@@ -6,25 +6,24 @@ use Railken\LaraOre\Core\User\Exceptions\UserAttributeException;
 
 class UserPasswordNotDefinedException extends UserAttributeException
 {
-
     /**
-     * The reason (attribute) for which this exception is thrown
+     * The reason (attribute) for which this exception is thrown.
      *
      * @var string
      */
     protected $attribute = 'password';
 
     /**
-     * The code to identify the error
+     * The code to identify the error.
      *
      * @var string
      */
     protected $code = 'USER_PASSWORD_NOT_DEFINED';
 
     /**
-     * The message
+     * The message.
      *
      * @var string
      */
-    protected $message = "The %s is required";
+    protected $message = 'The %s is required';
 }

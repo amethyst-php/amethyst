@@ -1,11 +1,10 @@
 <?php
+
 namespace Railken\LaraOre\Api\Http\Controllers\Admin;
 
-use Railken\LaraOre\Api\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Railken\LaraOre\Core\User\UserManager;
-use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
 use Railken\LaraOre\Api\Http\Controllers\RestController;
+use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
+use Railken\LaraOre\Core\User\UserManager;
 
 class UsersController extends RestController
 {
@@ -14,7 +13,6 @@ class UsersController extends RestController
     // use RestTraits\RestCreateTrait;
     use RestTraits\RestUpdateTrait;
     use RestTraits\RestRemoveTrait;
-
 
     protected static $query = [
         'id',
@@ -34,8 +32,7 @@ class UsersController extends RestController
     ];
 
     /**
-     * Construct
-     *
+     * Construct.
      */
     public function __construct(UserManager $manager)
     {
@@ -43,9 +40,8 @@ class UsersController extends RestController
         parent::__construct();
     }
 
-
     /**
-     * Create a new instance for query
+     * Create a new instance for query.
      *
      * @return \Illuminate\Database\Query\Builder
      */

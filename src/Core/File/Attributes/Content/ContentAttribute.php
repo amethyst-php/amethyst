@@ -2,12 +2,11 @@
 
 namespace Railken\LaraOre\Core\File\Attributes\Content;
 
+use Illuminate\Support\Facades\Storage;
 use Railken\Laravel\Manager\Attributes\BaseAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;
-use Railken\Laravel\Manager\Tokens;
-use Respect\Validation\Validator as v;
 use Railken\Laravel\Manager\Contracts\ParameterBagContract;
-use Illuminate\Support\Facades\Storage;
+use Railken\Laravel\Manager\Tokens;
 
 class ContentAttribute extends BaseAttribute
 {
@@ -65,7 +64,6 @@ class ContentAttribute extends BaseAttribute
         return true;
     }
 
-
     /**
      * Update entity value.
      *
@@ -85,7 +83,7 @@ class ContentAttribute extends BaseAttribute
             $ext = array_search($mimetype, config('filesystems.mime_types'));
             Storage::disk('local')->delete($filename);
         }
-        $path = $filename.".".$ext;
+        $path = $filename.'.'.$ext;
         $entity->ext = $ext;
         $entity->path = $path;
         $entity->content_type = $mimetype;
@@ -94,7 +92,7 @@ class ContentAttribute extends BaseAttribute
     }
 
     /**
-     * Decode content
+     * Decode content.
      *
      * @param string $encoding
      * @param string $encoded
@@ -105,7 +103,8 @@ class ContentAttribute extends BaseAttribute
     {
         switch ($encoding) {
             case 'base64': default:
-                $content = preg_replace("/^data\:image\/([\w]*)\;base64\,/", "", $content);
+                $content = preg_replace("/^data\:image\/([\w]*)\;base64\,/", '', $content);
+
                 return base64_decode($content);
             break;
         }

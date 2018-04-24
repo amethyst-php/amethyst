@@ -7,7 +7,6 @@ use Railken\Laravel\Manager\Contracts\EntityContract;
 
 class Log extends Model implements EntityContract
 {
-
     /**
      * The table associated with the model.
      *
@@ -24,7 +23,7 @@ class Log extends Model implements EntityContract
         'type',
         'category',
         'message',
-        'vars'
+        'vars',
     ];
 
     /**
@@ -41,6 +40,6 @@ class Log extends Model implements EntityContract
      */
     public function parent()
     {
-        return $this->belongsTo(Log::class);
+        return $this->belongsTo(self::class);
     }
 }

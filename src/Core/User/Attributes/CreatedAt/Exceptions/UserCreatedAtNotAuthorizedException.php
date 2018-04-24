@@ -6,23 +6,22 @@ use Railken\LaraOre\Core\User\Exceptions\UserAttributeException;
 
 class UserCreatedAtNotAuthorizedException extends UserAttributeException
 {
-
     /**
-     * The reason (attribute) for which this exception is thrown
+     * The reason (attribute) for which this exception is thrown.
      *
      * @var string
      */
     protected $attribute = 'created_at';
 
     /**
-     * The code to identify the error
+     * The code to identify the error.
      *
      * @var string
      */
     protected $code = 'USER_CREATED_AT_NOT_AUTHTORIZED';
-    
+
     /**
-     * The message
+     * The message.
      *
      * @var string
      */

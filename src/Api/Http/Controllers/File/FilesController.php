@@ -2,22 +2,21 @@
 
 namespace Railken\LaraOre\Api\Http\Controllers\File;
 
-use Railken\LaraOre\Api\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Railken\LaraOre\Core\File\FileManager;
-use Railken\Bag;
 use Illuminate\Support\Collection;
+use Railken\Bag;
+use Railken\LaraOre\Api\Http\Controllers\Controller;
+use Railken\LaraOre\Core\File\FileManager;
 
 class FilesController extends Controller
 {
-
     /**
      * @var \Railken\LaraOre\Core\File\FileManager
      */
     protected $manager;
-    
+
     /**
-     * Construct
+     * Construct.
      */
     public function __construct(FileManager $manager)
     {
@@ -38,9 +37,9 @@ class FilesController extends Controller
         $params = new Bag($request->all());
 
         $result = $manager->create([
-            'type' => $params->get('type', 'default'),
-            'path' => $manager->upload($manager->decode('base64_decode', $params->get('content'))),
-            'status' => 'pending'
+            'type'   => $params->get('type', 'default'),
+            'path'   => $manager->upload($manager->decode('base64_decode', $params->get('content'))),
+            'status' => 'pending',
         ]);
 
         if (!$result->ok()) {
@@ -53,7 +52,7 @@ class FilesController extends Controller
     /**
      * Retrieve a file.
      *
-     * @param string $id
+     * @param string                   $id
      * @param \Illuminate\Http\Request $request
      *
      * @return \Illuminate\Http\Response
@@ -67,15 +66,14 @@ class FilesController extends Controller
         }
 
         return $this->success([
-            'resource' => $this->manager->serializer->serialize($resource)->all()
+            'resource' => $this->manager->serializer->serialize($resource)->all(),
         ]);
     }
-
 
     /**
      * Retrieve a file.
      *
-     * @param string $token
+     * @param string                   $token
      * @param \Illuminate\Http\Request $request
      *
      * @return \Illuminate\Http\Response

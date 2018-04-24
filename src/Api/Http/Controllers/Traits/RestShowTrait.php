@@ -3,19 +3,13 @@
 namespace Railken\LaraOre\Api\Http\Controllers\Traits;
 
 use Illuminate\Http\Request;
-use Railken\LaraOre\Api\Helper\Paginator;
-use Railken\LaraOre\Api\Helper\Filter;
-use Railken\LaraOre\Api\Helper\Sorter;
-
-use Railken\LaraOre\Api\Helper\Exceptions\FilterSyntaxException;
 
 trait RestShowTrait
 {
-
     /**
-     * Display a resource
+     * Display a resource.
      *
-     * @param mixed $id
+     * @param mixed                    $id
      * @param \Illuminate\Http\Request $request
      *
      * @return \Illuminate\Http\Response
@@ -29,7 +23,7 @@ trait RestShowTrait
         }
 
         return $this->success([
-            'resource' => $this->manager->serializer->serialize($resource, $this->keys->selectable)->all()
+            'resource' => $this->manager->serializer->serialize($resource, $this->keys->selectable)->all(),
         ]);
     }
 }

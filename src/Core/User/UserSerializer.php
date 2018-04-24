@@ -2,23 +2,20 @@
 
 namespace Railken\LaraOre\Core\User;
 
-use Railken\Laravel\Manager\Contracts\ModelSerializerContract;
+use Illuminate\Support\Collection;
+use Laravolt\Avatar\Avatar;
+use Railken\Bag;
 use Railken\Laravel\Manager\Contracts\EntityContract;
 use Railken\Laravel\Manager\ModelSerializer;
 use Railken\Laravel\Manager\Tokens;
-use Illuminate\Support\Collection;
-use Railken\Bag;
-use Laravolt\Avatar\Avatar;
-use Illuminate\Support\Facades\Storage;
 
 class UserSerializer extends ModelSerializer
 {
-
     /**
-     * Serialize entity
+     * Serialize entity.
      *
      * @param EntityContract $entity
-     * @param Collection $select
+     * @param Collection     $select
      *
      * @return array
      */
@@ -34,6 +31,7 @@ class UserSerializer extends ModelSerializer
 
         $bag->set('avatar', (new Avatar())->create($entity->name)->toBase64()->getEncoded());
         $bag->set('notifications', $entity->unreadNotifications);
+
         return $bag;
     }
 }

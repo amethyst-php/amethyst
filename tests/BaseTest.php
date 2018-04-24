@@ -2,10 +2,6 @@
 
 namespace Railken\LaraOre\Tests;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Psr7;
-use GuzzleHttp\Exception\RequestException;
-
 class BaseTest extends \Orchestra\Testbench\TestCase
 {
     /**
@@ -17,7 +13,6 @@ class BaseTest extends \Orchestra\Testbench\TestCase
      */
     protected function getEnvironmentSetUp($app)
     {
-    
     }
 
     protected function getPackageProviders($app)
@@ -25,7 +20,7 @@ class BaseTest extends \Orchestra\Testbench\TestCase
         return [
 
             \Laravel\Passport\PassportServiceProvider::class,
-            \Railken\LaraOre\CoreServiceProvider::class
+            \Railken\LaraOre\CoreServiceProvider::class,
         ];
     }
 
@@ -38,14 +33,13 @@ class BaseTest extends \Orchestra\Testbench\TestCase
         $dotenv->load();
 
         parent::setUp();
-    
+
         $this->artisan('migrate:refresh');
         $this->artisan('migrate');
         $this->artisan('passport:install');
         $this->artisan('db:seed', ['--class' => 'Railken\LaraOre\Resources\Seeds\UserSeeder']);
 
         $this->signIn();
-
     }
 
     public function testSignIn()
@@ -69,11 +63,8 @@ class BaseTest extends \Orchestra\Testbench\TestCase
         $access_token = $response->getContent();
         $access_token = json_decode($response->getContent())->data->access_token;
 
-
-        $this->withHeaders(['Authorization' => 'Bearer ' . $access_token]);
+        $this->withHeaders(['Authorization' => 'Bearer '.$access_token]);
 
         return $response;
     }
-
-
 }

@@ -6,31 +6,29 @@ use Illuminate\Http\Request;
 
 class FacebookProvider extends Provider
 {
-
     /**
-     * Name
+     * Name.
      *
      * @var string
      */
     protected $name = 'facebook';
 
     /**
-     * URL
+     * URL.
      *
      * @var string
      */
     protected $url = 'https://graph.facebook.com/v2.9';
 
     /**
-     * Construct
-     *
+     * Construct.
      */
     public function __construct()
     {
     }
 
     /**
-     * Issue access token
+     * Issue access token.
      *
      * @return array
      */
@@ -38,23 +36,20 @@ class FacebookProvider extends Provider
     {
         $client = new \GuzzleHttp\Client();
 
-
         try {
-            $params =  [
+            $params = [
                 'query' => [
-                    'client_id' => $request->input('client_id'),
+                    'client_id'     => $request->input('client_id'),
                     'client_secret' => $request->input('client_secret'),
-                    'redirect_uri' => $request->input('redirect_uri'),
-                    'code' => $request->input('code')
+                    'redirect_uri'  => $request->input('redirect_uri'),
+                    'code'          => $request->input('code'),
                 ],
                 'headers' => [
-                    'Accept' => 'application/json'
-                ]
+                    'Accept' => 'application/json',
+                ],
             ];
 
-
-
-            $response = $client->request('GET', $this->url."/oauth/access_token", $params);
+            $response = $client->request('GET', $this->url.'/oauth/access_token', $params);
         } catch (\Exception $e) {
             throw $e;
         }
@@ -65,28 +60,27 @@ class FacebookProvider extends Provider
     }
 
     /**
-     * Retrieve User
+     * Retrieve User.
      *
      * @return array
      */
     public function getUser($token)
     {
         $client = new \GuzzleHttp\Client();
-        $user = new \stdClass;
+        $user = new \stdClass();
 
         try {
-            $response = $client->request('GET', $this->url."/me", [
+            $response = $client->request('GET', $this->url.'/me', [
                 'query' => [
-                    'fields' => 'id,name,email,first_name,last_name',
-                    'access_token' => $token
+                    'fields'       => 'id,name,email,first_name,last_name',
+                    'access_token' => $token,
                 ],
                 'headers' => [
-                    'Accept' => 'application/json',
-                    'Authorization' => "token {$token}"
+                    'Accept'        => 'application/json',
+                    'Authorization' => "token {$token}",
                 ],
-                'http_errors' => false
+                'http_errors' => false,
             ]);
-
 
             $body = json_decode($response->getBody());
         } catch (\Exception $e) {
@@ -101,7 +95,7 @@ class FacebookProvider extends Provider
         $user->email = $body->email;
 
         $user->id = $body->id;
-       
+
         $user->avatar = "{$this->url}/{$user->id}/picture";
 
         return $user;

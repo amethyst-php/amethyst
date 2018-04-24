@@ -6,23 +6,22 @@ use Railken\LaraOre\Core\Log\Exceptions\LogAttributeException;
 
 class LogMessageNotAuthorizedException extends LogAttributeException
 {
-
     /**
-     * The reason (attribute) for which this exception is thrown
+     * The reason (attribute) for which this exception is thrown.
      *
      * @var string
      */
     protected $attribute = 'message';
 
     /**
-     * The code to identify the error
+     * The code to identify the error.
      *
      * @var string
      */
     protected $code = 'LOG_MESSAGE_NOT_AUTHTORIZED';
-    
+
     /**
-     * The message
+     * The message.
      *
      * @var string
      */

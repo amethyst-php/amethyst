@@ -7,7 +7,6 @@ use Railken\Laravel\Manager\Contracts\EntityContract;
 
 class Notification extends Model implements EntityContract
 {
-
     /**
      * The table associated with the model.
      *
@@ -23,7 +22,7 @@ class Notification extends Model implements EntityContract
     protected $fillable = ['id', 'name', 'created_at', 'updated_at', 'description', 'targets', 'message', 'template', 'mock_data'];
 
     /**
-     * Set the the email targets
+     * Set the the email targets.
      *
      * @param mixed $value
      *
@@ -31,12 +30,11 @@ class Notification extends Model implements EntityContract
      */
     public function setTargetsAttribute($value)
     {
-        $this->attributes['targets'] = json_encode(is_array($value) ? $value : explode(",", str_replace(" ", "", $value)));
+        $this->attributes['targets'] = json_encode(is_array($value) ? $value : explode(',', str_replace(' ', '', $value)));
     }
 
-
     /**
-     * Get the the email targets
+     * Get the the email targets.
      *
      * @param mixed $value
      *
@@ -48,7 +46,7 @@ class Notification extends Model implements EntityContract
     }
 
     /**
-     * Resolve event
+     * Resolve event.
      *
      * @param $event
      */

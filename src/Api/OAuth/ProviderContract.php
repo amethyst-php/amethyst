@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 interface ProviderContract
 {
     public function getName();
-    
+
     public function setClientId($client_id);
 
     public function setClientSecret($client_secret);

@@ -7,7 +7,6 @@ use Railken\Laravel\Manager\Contracts\EntityContract;
 
 class Listener extends Model implements EntityContract
 {
-
     /**
      * The table associated with the model.
      *
@@ -26,7 +25,7 @@ class Listener extends Model implements EntityContract
         'event_class',
         'action_id',
         'action_type',
-        'enabled'
+        'enabled',
     ];
 
     /**

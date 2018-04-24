@@ -2,18 +2,16 @@
 
 namespace Railken\LaraOre\Core\Log\Attributes\Id;
 
-use Railken\Laravel\Manager\Contracts\EntityContract;
-use Railken\Laravel\Manager\Attributes\BaseAttribute;
-use Railken\Laravel\Manager\Traits\AttributeValidateTrait;
 use Railken\LaraOre\Core\Log\Attributes\Id\Exceptions as Exceptions;
-use Respect\Validation\Validator as v;
+use Railken\Laravel\Manager\Attributes\BaseAttribute;
+use Railken\Laravel\Manager\Contracts\EntityContract;
 use Railken\Laravel\Manager\Tokens;
+use Respect\Validation\Validator as v;
 
 class IdAttribute extends BaseAttribute
 {
-
     /**
-     * Name attribute
+     * Name attribute.
      *
      * @var string
      */
@@ -21,45 +19,45 @@ class IdAttribute extends BaseAttribute
 
     /**
      * Is the attribute required
-     * This will throw not_defined exception for non defined value and non existent model
+     * This will throw not_defined exception for non defined value and non existent model.
      *
-     * @var boolean
+     * @var bool
      */
     protected $required = false;
 
     /**
-     * Is the attribute unique
+     * Is the attribute unique.
      *
-     * @var boolean
+     * @var bool
      */
     protected $unique = false;
 
     /**
-     * List of all exceptions used in validation
+     * List of all exceptions used in validation.
      *
      * @var array
      */
     protected $exceptions = [
-        Tokens::NOT_DEFINED => Exceptions\LogIdNotDefinedException::class,
-        Tokens::NOT_VALID => Exceptions\LogIdNotValidException::class,
-        Tokens::NOT_AUTHORIZED => Exceptions\LogIdNotAuthorizedException::class
+        Tokens::NOT_DEFINED    => Exceptions\LogIdNotDefinedException::class,
+        Tokens::NOT_VALID      => Exceptions\LogIdNotValidException::class,
+        Tokens::NOT_AUTHORIZED => Exceptions\LogIdNotAuthorizedException::class,
     ];
 
     /**
-     * List of all permissions
+     * List of all permissions.
      */
     protected $permissions = [
         Tokens::PERMISSION_FILL => 'log.attributes.id.fill',
-        Tokens::PERMISSION_SHOW => 'log.attributes.id.show'
+        Tokens::PERMISSION_SHOW => 'log.attributes.id.show',
     ];
 
     /**
      * Is a value valid ?
      *
      * @param EntityContract $entity
-     * @param mixed $value
+     * @param mixed          $value
      *
-     * @return boolean
+     * @return bool
      */
     public function valid(EntityContract $entity, $value)
     {

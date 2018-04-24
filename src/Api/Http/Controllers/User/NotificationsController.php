@@ -3,14 +3,10 @@
 namespace Railken\LaraOre\Api\Http\Controllers\User;
 
 use Illuminate\Http\Request;
-use Railken\LaraOre\Core\Notification\NotificationManager;
-
-use Railken\LaraOre\Api\Http\Controllers\Traits\RestIndexTrait;
-use Railken\LaraOre\Api\Http\Controllers\Traits\RestShowTrait;
-use Railken\LaraOre\Api\Http\Controllers\Traits\RestCreateTrait;
-use Railken\LaraOre\Api\Http\Controllers\Traits\RestUpdateTrait;
-use Railken\LaraOre\Api\Http\Controllers\Traits\RestRemoveTrait;
 use Railken\LaraOre\Api\Http\Controllers\RestController;
+use Railken\LaraOre\Api\Http\Controllers\Traits\RestIndexTrait;
+use Railken\LaraOre\Api\Http\Controllers\Traits\RestRemoveTrait;
+use Railken\LaraOre\Core\Notification\NotificationManager;
 
 class NotificationsController extends RestController
 {
@@ -18,7 +14,7 @@ class NotificationsController extends RestController
     use RestRemoveTrait;
 
     /**
-     * List of params that can be used to perform a search in the index
+     * List of params that can be used to perform a search in the index.
      *
      * @var array
      */
@@ -34,7 +30,7 @@ class NotificationsController extends RestController
     ];
 
     /**
-     * List of params that can be selected in the index
+     * List of params that can be selected in the index.
      *
      * @var array
      */
@@ -56,7 +52,7 @@ class NotificationsController extends RestController
     }
 
     /**
-     * Create a new instance for query
+     * Create a new instance for query.
      *
      * @return \Illuminate\DataBase\Query\Builder
      */
@@ -65,11 +61,10 @@ class NotificationsController extends RestController
         return $this->manager->repository->getQuery()->where(['notifiable_type' => 'Core\User\User', 'notifiable_id' => $this->getUser()->id]);
     }
 
-
     /**
-     * Mark a notification as read
+     * Mark a notification as read.
      *
-     * @param integer $id
+     * @param int                      $id
      * @param \Illuminate\Http\Request $request
      *
      * @return \Illuminate\Http\Response
@@ -88,9 +83,9 @@ class NotificationsController extends RestController
     }
 
     /**
-     * Mark a notification as unread
+     * Mark a notification as unread.
      *
-     * @param integer $id
+     * @param int                      $id
      * @param \Illuminate\Http\Request $request
      *
      * @return \Illuminate\Http\Response
@@ -104,7 +99,7 @@ class NotificationsController extends RestController
         }
 
         $resource->markAsUnread();
-        
+
         return $this->success([]);
     }
 }

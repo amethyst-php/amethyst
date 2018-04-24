@@ -3,15 +3,14 @@
 namespace Railken\LaraOre\Action\Email;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Mail\Mailer as MailerContract;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable as BaseMailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Contracts\Mail\Mailer as MailerContract;
 
 class Mailable extends BaseMailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
-
 
     /**
      * Create a new message instance.
@@ -32,11 +31,11 @@ class Mailable extends BaseMailable implements ShouldQueue
         return $this;
     }
 
-    
     /**
      * Send the message using the given mailer.
      *
-     * @param  \Illuminate\Contracts\Mail\Mailer  $mailer
+     * @param \Illuminate\Contracts\Mail\Mailer $mailer
+     *
      * @return void
      */
     public function send(MailerContract $mailer)
@@ -46,10 +45,10 @@ class Mailable extends BaseMailable implements ShouldQueue
         foreach ($this->to as $i => $to) {
             $result = (new \Railken\LaraOre\Core\MailLog\MailLogManager())->create([
                 'subject' => $this->subject,
-                'to' => $this->to[$i]['address'],
+                'to'      => $this->to[$i]['address'],
                 'to_name' => $this->to[$i]['name'],
-                'body' => view($this->buildView(), $this->buildViewData()),
-                'sent' => 1,
+                'body'    => view($this->buildView(), $this->buildViewData()),
+                'sent'    => 1,
             ]);
         }
     }

@@ -20,7 +20,6 @@ use Railken\Laravel\Manager\Contracts\EntityContract;
  */
 class File extends Model implements EntityContract
 {
-
     /**
      * The table associated with the model.
      *
@@ -54,7 +53,7 @@ class File extends Model implements EntityContract
      * @var array
      */
     protected $dates = [
-        'expire_at'
+        'expire_at',
     ];
 
     /**

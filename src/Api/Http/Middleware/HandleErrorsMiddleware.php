@@ -3,10 +3,9 @@
 namespace Railken\LaraOre\Api\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\DB;
-use Exception;
-use Railken\LaraOre\Api\Exceptions\BadRequestException;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\DB;
+use Railken\LaraOre\Api\Exceptions\BadRequestException;
 
 class HandleErrorsMiddleware
 {
@@ -29,7 +28,7 @@ class HandleErrorsMiddleware
         if (!$exception) {
             DB::commit();
         }
-        
+
         return $response;
     }
 

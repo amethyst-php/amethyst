@@ -3,18 +3,17 @@
 namespace Railken\LaraOre\Api\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Route;
 use Railken\LaraOre\Api\Http\Controllers\Controller;
-use Railken\LaraOre\Core\User\UserManager;
+use Railken\LaraOre\Api\OAuth\FacebookProvider;
 use Railken\LaraOre\Api\OAuth\GithubProvider;
 use Railken\LaraOre\Api\OAuth\GitlabProvider;
 use Railken\LaraOre\Api\OAuth\GoogleProvider;
-use Railken\LaraOre\Api\OAuth\FacebookProvider;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Route;
+use Railken\LaraOre\Core\User\UserManager;
 
 class SignInController extends Controller
 {
-
     /**
      * @var UserManager
      */
@@ -23,9 +22,10 @@ class SignInController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @param  \League\OAuth2\Server\AuthorizationServer  $server
-     * @param  \Laravel\Passport\TokenRepository  $tokens
-     * @param  \Lcobucci\JWT\Parser  $jwt
+     * @param \League\OAuth2\Server\AuthorizationServer $server
+     * @param \Laravel\Passport\TokenRepository         $tokens
+     * @param \Lcobucci\JWT\Parser                      $jwt
+     *
      * @return void
      */
     public function __construct(UserManager $manager)
@@ -34,19 +34,19 @@ class SignInController extends Controller
     }
 
     /**
-     * List of all providers
+     * List of all providers.
      *
      * @var array
      */
     protected $providers = [
-        'github' => GithubProvider::class,
-        'gitlab' => GitlabProvider::class,
-        'google' => GoogleProvider::class,
+        'github'   => GithubProvider::class,
+        'gitlab'   => GitlabProvider::class,
+        'google'   => GoogleProvider::class,
         'facebook' => FacebookProvider::class,
     ];
 
     /**
-     * Get provider
+     * Get provider.
      *
      * @param string $name
      *
@@ -57,14 +57,14 @@ class SignInController extends Controller
         $class = isset($this->providers[$name]) ? $this->providers[$name] : null;
 
         if (!$class) {
-            return null;
+            return;
         }
 
-        return new $class;
+        return new $class();
     }
 
     /**
-     * Sign in a user
+     * Sign in a user.
      *
      * @param \Illuminate\Http\Request $request
      *
@@ -75,11 +75,11 @@ class SignInController extends Controller
         $oauth_client = DB::table('oauth_clients')->where('password_client', 1)->first();
 
         $request->request->add([
-            'username' => $request->input('username'),
-            'password' => $request->input('password'),
-            'scope' => '*',
-            'grant_type' => 'password',
-            'client_id' => $oauth_client->id,
+            'username'      => $request->input('username'),
+            'password'      => $request->input('password'),
+            'scope'         => '*',
+            'grant_type'    => 'password',
+            'client_id'     => $oauth_client->id,
             'client_secret' => $oauth_client->secret,
         ]);
         $request = Request::create('api/v1/oauth/token', 'POST', []);
@@ -100,13 +100,13 @@ class SignInController extends Controller
             return $response;
         }
 
-        throw new \Exception("Uhm...");
+        throw new \Exception('Uhm...');
     }
 
     /**
-     * Request token and generate a new one
+     * Request token and generate a new one.
      *
-     * @param string $provider
+     * @param string  $provider
      * @param Request $request
      *
      * @return \Illuminate\Http\Response
@@ -117,8 +117,8 @@ class SignInController extends Controller
 
         if (!$provider) {
             return $this->error([
-                'code' => 'AUTH.PROVIDER.PROVIDER_NOT_FOUND',
-                'message' => 'No provider found'
+                'code'    => 'AUTH.PROVIDER.PROVIDER_NOT_FOUND',
+                'message' => 'No provider found',
             ]);
         }
 
@@ -127,19 +127,19 @@ class SignInController extends Controller
             $access_token = $response->access_token;
         } catch (\Exception $e) {
             return $this->error([
-                'code' => 'AUTH.PROVIDER.CODE_NOT_VALID',
-                'message' => 'Code invalid or expired'
+                'code'    => 'AUTH.PROVIDER.CODE_NOT_VALID',
+                'message' => 'Code invalid or expired',
             ]);
         }
 
         return $this->success([
             'access_token' => $access_token,
-            'provider' => $provider->getName(),
+            'provider'     => $provider->getName(),
         ]);
     }
 
     /**
-     * Serialize token
+     * Serialize token.
      *
      * @param \Railken\LaraOre\Api\OAuth\AccessToken $token
      *
@@ -149,15 +149,15 @@ class SignInController extends Controller
     {
         return [
             'access_token' => $token->accessToken,
-            'token_type' => 'Bearer',
-            'expire_in' => 0
+            'token_type'   => 'Bearer',
+            'expire_in'    => 0,
         ];
     }
 
     /**
-     * Request token and generate a new one
+     * Request token and generate a new one.
      *
-     * @param string $provider
+     * @param string  $provider
      * @param Request $request
      *
      * @return \Illuminate\Http\Response
@@ -168,8 +168,8 @@ class SignInController extends Controller
 
         if (!$provider) {
             return $this->error([
-                'code' => 'AUTH.PROVIDER.PROVIDER_NOT_FOUND',
-                'message' => 'No provider found'
+                'code'    => 'AUTH.PROVIDER.PROVIDER_NOT_FOUND',
+                'message' => 'No provider found',
             ]);
         }
 
@@ -177,8 +177,8 @@ class SignInController extends Controller
 
         if (!$access_token) {
             return $this->error([
-                "code" => "AUTH.PROVIDER.ACCESS_TOKEN_MISSING",
-                "message" => "access_token is missing"
+                'code'    => 'AUTH.PROVIDER.ACCESS_TOKEN_MISSING',
+                'message' => 'access_token is missing',
             ]);
         }
 
@@ -186,13 +186,13 @@ class SignInController extends Controller
             $provider_user = $provider->getUser($access_token);
         } catch (\Railken\LaraOre\Api\OAuth\Exceptions\EmailNotFoundException $e) {
             return $this->error([
-                'code' => 'AUTH.PROVIDER.EMAIL_NOT_FOUND',
-                'message' => 'Email not found'
+                'code'    => 'AUTH.PROVIDER.EMAIL_NOT_FOUND',
+                'message' => 'Email not found',
             ]);
         } catch (\Exception $e) {
             return $this->error([
-                'code' => 'AUTH.PROVIDER.ACCESS_TOKEN_NOT_VALID',
-                'message' => 'Token invalid or expired'
+                'code'    => 'AUTH.PROVIDER.ACCESS_TOKEN_NOT_VALID',
+                'message' => 'Token invalid or expired',
             ]);
         }
 
@@ -201,10 +201,10 @@ class SignInController extends Controller
         if (!$user) {
             $result = $this->manager->create([
                 'username' => $provider_user->username,
-                'role' => 'user',
+                'role'     => 'user',
                 'password' => sha1(str_random()),
-                'avatar' => $provider_user->avatar,
-                'email' => $provider_user->email
+                'avatar'   => $provider_user->avatar,
+                'email'    => $provider_user->email,
             ]);
 
             if (!$result->ok()) {

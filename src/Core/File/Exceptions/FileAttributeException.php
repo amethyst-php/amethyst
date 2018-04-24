@@ -4,30 +4,29 @@ namespace Railken\LaraOre\Core\File\Exceptions;
 
 abstract class FileAttributeException extends FileException
 {
-
     /**
-     * The reason (attribute) for which this exception is thrown
+     * The reason (attribute) for which this exception is thrown.
      *
      * @var string
      */
     protected $attribute;
 
     /**
-     * The code to identify the error
+     * The code to identify the error.
      *
      * @var string
      */
     protected $code = 'FILE_ATTRIBUTE_NOT_VALID';
 
     /**
-     * The message
+     * The message.
      *
      * @var string
      */
-    protected $message = "The %s is invalid";
+    protected $message = 'The %s is invalid';
 
     /**
-     * Construct
+     * Construct.
      *
      * @param mixed $value
      */

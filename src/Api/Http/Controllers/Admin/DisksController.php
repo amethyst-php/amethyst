@@ -1,13 +1,10 @@
 <?php
+
 namespace Railken\LaraOre\Api\Http\Controllers\Admin;
 
-use Railken\LaraOre\Api\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Railken\LaraOre\Core\Disk\DiskManager;
-use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
 use Railken\LaraOre\Api\Http\Controllers\RestController;
-use Railken\Bag;
-use Illuminate\Support\Collection;
+use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
+use Railken\LaraOre\Core\Disk\DiskManager;
 
 class DisksController extends RestController
 {
@@ -17,7 +14,6 @@ class DisksController extends RestController
     use RestTraits\RestShowTrait;
     use RestTraits\RestRemoveTrait;
 
-
     protected static $query = [
         'id',
         'name',
@@ -25,7 +21,7 @@ class DisksController extends RestController
         'driver',
         'config',
         'created_at',
-        'updated_at'
+        'updated_at',
     ];
 
     protected static $fillable = [
@@ -36,8 +32,7 @@ class DisksController extends RestController
     ];
 
     /**
-     * Construct
-     *
+     * Construct.
      */
     public function __construct(DiskManager $manager)
     {
@@ -46,7 +41,7 @@ class DisksController extends RestController
     }
 
     /**
-     * Create a new instance for query
+     * Create a new instance for query.
      *
      * @return \Illuminate\Database\Query\Builder
      */

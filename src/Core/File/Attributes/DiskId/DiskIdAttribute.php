@@ -5,7 +5,6 @@ namespace Railken\LaraOre\Core\File\Attributes\DiskId;
 use Railken\Laravel\Manager\Attributes\BelongsToAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;
 use Railken\Laravel\Manager\Tokens;
-use Respect\Validation\Validator as v;
 
 class DiskIdAttribute extends BelongsToAttribute
 {
@@ -59,7 +58,7 @@ class DiskIdAttribute extends BelongsToAttribute
     {
         return 'disk';
     }
-    
+
     /**
      * Retrieve eloquent relation.
      *

@@ -3,9 +3,7 @@
 namespace Railken\LaraOre\Core\Config;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Railken\Laravel\Manager\Contracts\EntityContract;
-use AustinHeap\Database\Encryption\Traits\HasEncryptedAttributes;
 
 class Config extends Model implements EntityContract
 {
@@ -23,23 +21,23 @@ class Config extends Model implements EntityContract
      */
     protected $fillable = [
         'value',
-        'key'
+        'key',
     ];
 
     protected $encrypted = [
         'key',
-        'value'
+        'value',
     ];
 
     public function resolveKey($key)
     {
         $configs = [
-            'mail_host' => 'mail.host',
-            'mail_port' => 'mail.port',
-            'mail_username' => 'mail.username',
-            'mail_password' => 'mail.password',
-            'mail_encryption' => 'mail.encryption',
-            'mail_from_name' => 'mail.from.name',
+            'mail_host'         => 'mail.host',
+            'mail_port'         => 'mail.port',
+            'mail_username'     => 'mail.username',
+            'mail_password'     => 'mail.password',
+            'mail_encryption'   => 'mail.encryption',
+            'mail_from_name'    => 'mail.from.name',
             'mail_from_address' => 'mail.from.address',
         ];
 

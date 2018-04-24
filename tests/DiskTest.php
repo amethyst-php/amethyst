@@ -2,20 +2,16 @@
 
 namespace Railken\LaraOre\Tests;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Psr7;
-use GuzzleHttp\Exception\RequestException;
 use Railken\Bag;
 
 /**
  * Testing disk
- * Attributes to fill are: name, driver, enabled, config
+ * Attributes to fill are: name, driver, enabled, config.
  */
 class DiskTest extends BaseTest
-{   
-
+{
     /**
-     * Retrieve basic url
+     * Retrieve basic url.
      *
      * @return string
      */
@@ -25,7 +21,7 @@ class DiskTest extends BaseTest
     }
 
     /**
-     * Retrieve correct bag of parameters 
+     * Retrieve correct bag of parameters.
      *
      * @return Bag
      */
@@ -36,37 +32,36 @@ class DiskTest extends BaseTest
         $bag->set('name', 'a common name');
         $bag->set('enabled', 1);
         $bag->set('config', [
-            'url' => 'http://localhost:8000',
+            'url'        => 'http://localhost:8000',
             'visibility' => 'public',
-            'root' => '...'
+            'root'       => '...',
         ]);
 
         return $bag;
-
     }
 
     public function testSuccessIndex()
-    {   
+    {
         $response = $this->get($this->getBaseUrl(), []);
         $response->assertStatus(200);
     }
 
     public function testSuccessCreate()
-    {   
+    {
         $response = $this->post($this->getBaseUrl(), $this->getParameters()->toArray());
         $response->assertStatus(200);
     }
 
     public function testWrongCreate()
-    {   
+    {
         $response = $this->post($this->getBaseUrl(), []);
         $response->assertStatus(400);
         $response->assertJson([
             'errors' => [
                 ['code' => 'DISK_DRIVER_NOT_DEFINED'],
                 ['code' => 'DISK_NAME_NOT_DEFINED'],
-                ['code' => 'DISK_ENABLED_NOT_DEFINED']
-            ]
+                ['code' => 'DISK_ENABLED_NOT_DEFINED'],
+            ],
         ]);
     }
 
@@ -77,7 +72,7 @@ class DiskTest extends BaseTest
         $response->assertJson([
             'errors' => [
                 ['code' => 'DISK_DRIVER_NOT_VALID'],
-            ]
+            ],
         ]);
     }
 
@@ -88,14 +83,14 @@ class DiskTest extends BaseTest
         $response->assertJson([
             'errors' => [
                 ['code' => 'DISK_ENABLED_NOT_VALID'],
-            ]
+            ],
         ]);
 
         $response = $this->post($this->getBaseUrl(), $this->getParameters()->set('enabled', 'A')->toArray());
         $response->assertJson([
             'errors' => [
                 ['code' => 'DISK_ENABLED_NOT_VALID'],
-            ]
+            ],
         ]);
     }
 
@@ -105,7 +100,7 @@ class DiskTest extends BaseTest
         $response->assertJson([
             'errors' => [
                 ['code' => 'DISK_CONFIG_NOT_VALID'],
-            ]
+            ],
         ]);
     }
 }

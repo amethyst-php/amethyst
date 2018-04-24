@@ -4,29 +4,27 @@ namespace Railken\LaraOre\Api\OAuth;
 
 abstract class Provider implements ProviderContract
 {
-
     /**
-     * Client ID
+     * Client ID.
      *
      * @var string
      */
     protected $client_id;
 
     /**
-     * Client Secret
+     * Client Secret.
      *
      * @var string
      */
     protected $client_secret;
 
     protected $name;
-    
+
     public function getName()
     {
         return $this->name;
     }
 
-    
     public function setClientId($client_id)
     {
         $this->client_id = $client_id;
@@ -37,7 +35,7 @@ abstract class Provider implements ProviderContract
     public function setClientSecret($client_secret)
     {
         $this->client_secret = $client_secret;
-    
+
         return $this;
     }
 

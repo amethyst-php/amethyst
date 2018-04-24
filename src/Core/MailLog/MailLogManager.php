@@ -22,7 +22,7 @@ class MailLogManager extends ModelManager
         Attributes\Body\BodyAttribute::class,
         Attributes\ToName\ToNameAttribute::class,
         Attributes\Sent\SentAttribute::class,
-        Attributes\Subject\SubjectAttribute::class
+        Attributes\Subject\SubjectAttribute::class,
      ];
 
     /**

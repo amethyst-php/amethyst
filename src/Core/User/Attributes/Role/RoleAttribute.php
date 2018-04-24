@@ -5,7 +5,6 @@ namespace Railken\LaraOre\Core\User\Attributes\Role;
 use Railken\Laravel\Manager\Attributes\BaseAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;
 use Railken\Laravel\Manager\Tokens;
-use Respect\Validation\Validator as v;
 
 class RoleAttribute extends BaseAttribute
 {
@@ -64,7 +63,7 @@ class RoleAttribute extends BaseAttribute
     }
 
     /**
-     * Retrieve default value
+     * Retrieve default value.
      *
      * @param EntityContract $entity
      *

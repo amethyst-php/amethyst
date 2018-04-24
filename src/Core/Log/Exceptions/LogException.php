@@ -2,41 +2,41 @@
 
 namespace Railken\LaraOre\Core\Log\Exceptions;
 
-use Railken\Laravel\Manager\Contracts\ExceptionContract;
 use Exception;
+use Railken\Laravel\Manager\Contracts\ExceptionContract;
 
 abstract class LogException extends Exception implements ExceptionContract
 {
     /**
-     * The reason (label) for which this exception is thrown
+     * The reason (label) for which this exception is thrown.
      *
      * @var string
      */
     protected $label = 'log';
 
     /**
-     * The code to identify the error
+     * The code to identify the error.
      *
      * @var string
      */
     protected $code = 'LOG_ERROR';
 
     /**
-     * The message
+     * The message.
      *
      * @var string
      */
-    protected $message = "An error occurred with %s";
+    protected $message = 'An error occurred with %s';
 
     /**
-     * Value of attribute
+     * Value of attribute.
      *
      * @var mixed
      */
     protected $value;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param mixed $value
      */
@@ -54,22 +54,22 @@ abstract class LogException extends Exception implements ExceptionContract
     }
 
     /**
-     * Rapresents the exception in the array format
+     * Rapresents the exception in the array format.
      *
      * @return array
      */
     public function toArray()
     {
         return [
-            'code' => $this->getCode(),
-            'label' => $this->getLabel(),
+            'code'    => $this->getCode(),
+            'label'   => $this->getLabel(),
             'message' => $this->getMessage(),
-            'value' => $this->getValue(),
+            'value'   => $this->getValue(),
         ];
     }
 
     /**
-     * Get value of attribute
+     * Get value of attribute.
      *
      * @return mixed
      */
@@ -79,7 +79,7 @@ abstract class LogException extends Exception implements ExceptionContract
     }
 
     /**
-     * Get attribute
+     * Get attribute.
      *
      * @return string
      */

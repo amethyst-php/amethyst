@@ -2,19 +2,14 @@
 
 namespace Railken\LaraOre\Api\Http\Controllers\Auth;
 
-use Railken\LaraOre\Api\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\User\UserService;
-use Railken\Bag;
-use Railken\LaraOre\Api\Exceptions\BadRequestException;
-use Illuminate\Support\Collection;
+use Railken\LaraOre\Api\Http\Controllers\Controller;
 use Railken\LaraOre\Core\User\UserManager;
 
 class RegistrationController extends Controller
 {
-
     /**
-     * Serialize token
+     * Serialize token.
      *
      * @param \Railken\LaraOre\Api\OAuth\AccessToken $token
      *
@@ -24,14 +19,13 @@ class RegistrationController extends Controller
     {
         return [
             'access_token' => $token->accessToken,
-            'token_type' => 'Bearer',
-            'expire_in' => 0
+            'token_type'   => 'Bearer',
+            'expire_in'    => 0,
         ];
     }
 
-
     /**
-     * Register a user
+     * Register a user.
      *
      * @param \Illuminate\Http\Request $request
      *
@@ -50,7 +44,7 @@ class RegistrationController extends Controller
 
             if ($request->header('Test', 0) === 'validate') {
                 $errors = $errors->filter(function ($error) {
-                    return strpos($error['code'], "_NOT_DEFINED") === false && $error['value'] !== null;
+                    return strpos($error['code'], '_NOT_DEFINED') === false && $error['value'] !== null;
                 });
 
                 if (count($errors) === 0) {
@@ -64,13 +58,13 @@ class RegistrationController extends Controller
         $user = $result->getResource();
 
         return $this->success([
-            'code' => 'USER_REGISTERED',
-            'message' => 'ok'
+            'code'    => 'USER_REGISTERED',
+            'message' => 'ok',
         ]);
     }
 
     /**
-     * Confirm email
+     * Confirm email.
      *
      * @param \Illuminate\Http\Request $request
      *
@@ -79,14 +73,13 @@ class RegistrationController extends Controller
     public function confirmEmail(Request $request)
     {
         $um = new UserManager();
-            
+
         $user = $um->confirmEmail($request->input('token'));
 
-        
         if (!$user) {
             return $this->error([
-                'code' => 'SIGNUP.CONFIRM_EMAIL_TOKEN_INVALID',
-                'message' => "Token invalid"
+                'code'    => 'SIGNUP.CONFIRM_EMAIL_TOKEN_INVALID',
+                'message' => 'Token invalid',
             ]);
         }
 
@@ -96,7 +89,7 @@ class RegistrationController extends Controller
     }
 
     /**
-     * Request Confirm email
+     * Request Confirm email.
      *
      * @param \Illuminate\Http\Request $request
      *
@@ -105,7 +98,7 @@ class RegistrationController extends Controller
     public function requestConfirmEmail(Request $request)
     {
         $um = new UserManager();
-            
+
         $user = $um->repository->findOneByEmail($request->input('email'));
 
         if ($user && !$user->enabled) {

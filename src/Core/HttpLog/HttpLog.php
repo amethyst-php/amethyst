@@ -7,7 +7,6 @@ use Railken\Laravel\Manager\Contracts\EntityContract;
 
 class HttpLog extends Model implements EntityContract
 {
-
     /**
      * The table associated with the model.
      *
@@ -31,6 +30,6 @@ class HttpLog extends Model implements EntityContract
         'category',
         'request',
         'response',
-        'ip'
+        'ip',
     ];
 }

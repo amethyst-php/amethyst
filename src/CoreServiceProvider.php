@@ -1,27 +1,24 @@
-<?php 
+<?php
 
 namespace Railken\LaraOre;
 
-use Illuminate\Support\ServiceProvider;
-use Railken\Laravel\App\Commands as Commands;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
-use File;
+use Illuminate\Support\ServiceProvider;
 use Laravel\Passport\Passport;
 use Laravel\Passport\RouteRegistrar;
-use Illuminate\Support\Facades\Route;
 
 class CoreServiceProvider extends ServiceProvider
 {
-
     /**
      * The application instance.
      *
      * @var \Illuminate\Contracts\Foundation\Application
      */
     public $app;
-    
+
     /**
-     * Current version
+     * Current version.
      *
      * @var string
      */
@@ -66,17 +63,16 @@ class CoreServiceProvider extends ServiceProvider
 
         $options = array_merge([
             'namespace' => '\Laravel\Passport\Http\Controllers',
-            'prefix' => 'api/v1/oauth',
+            'prefix'    => 'api/v1/oauth',
         ], []);
 
         Route::group($options, function ($router) use ($callback) {
             $callback(new RouteRegistrar($router));
         });
-        
+
         Passport::tokensExpireIn(now()->addDays(15));
 
         Passport::refreshTokensExpireIn(now()->addDays(30));
-
 
         if (Schema::hasTable('configs')) {
             $configs = (new \Railken\LaraOre\Core\Config\ConfigManager())->getRepository()->findToLoad();
@@ -88,7 +84,6 @@ class CoreServiceProvider extends ServiceProvider
             config($configs);
         }
 
-
         if (Schema::hasTable('disks')) {
             $disks = (new \Railken\LaraOre\Core\Disk\DiskManager())->getRepository()->newQuery()->get();
 
@@ -97,10 +92,10 @@ class CoreServiceProvider extends ServiceProvider
                     $base = 'filesystems.disks';
                     $name = $disk->getConfigName();
 
-                    config([$base . '.' . $name . '.driver' => $disk->driver]);
+                    config([$base.'.'.$name.'.driver' => $disk->driver]);
 
                     foreach ($disk->config as $key => $value) {
-                        config([$base . '.' . $name . '.' . $key => $value]);
+                        config([$base.'.'.$name.'.'.$key => $value]);
                     }
                 }
             }

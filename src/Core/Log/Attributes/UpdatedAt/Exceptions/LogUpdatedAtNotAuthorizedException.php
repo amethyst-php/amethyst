@@ -6,23 +6,22 @@ use Railken\LaraOre\Core\Log\Exceptions\LogAttributeException;
 
 class LogUpdatedAtNotAuthorizedException extends LogAttributeException
 {
-
     /**
-     * The reason (attribute) for which this exception is thrown
+     * The reason (attribute) for which this exception is thrown.
      *
      * @var string
      */
     protected $attribute = 'updated_at';
 
     /**
-     * The code to identify the error
+     * The code to identify the error.
      *
      * @var string
      */
     protected $code = 'LOG_UPDATED_AT_NOT_AUTHTORIZED';
-    
+
     /**
-     * The message
+     * The message.
      *
      * @var string
      */
