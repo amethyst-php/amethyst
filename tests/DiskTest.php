@@ -67,7 +67,7 @@ class DiskTest extends BaseTest
         foreach (['driver', 'name', 'enabled', 'config'] as $param) {
             $this->assertEquals($this->getParameters()->get($param), $resource[$param]);
         }
-    }   
+    }
 
     public function testSuccessUpdate()
     {
@@ -78,7 +78,7 @@ class DiskTest extends BaseTest
         $resource = json_decode($response->getContent())->resource;
         $response->assertStatus(200);
         $this->assertEquals(0, $resource->enabled);
-    }   
+    }
 
     public function testWrongCreate()
     {
@@ -131,5 +131,4 @@ class DiskTest extends BaseTest
             ],
         ]);
     }
-
 }
