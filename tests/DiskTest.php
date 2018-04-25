@@ -51,33 +51,9 @@ class DiskTest extends BaseTest
         return $bag;
     }
 
-    public function testSuccessIndex()
+    public function testSuccessCommon()
     {
-        $response = $this->get($this->getBaseUrl(), []);
-        $response->assertStatus(200);
-    }
-
-    public function testSuccessCreate()
-    {
-        $response = $this->post($this->getBaseUrl(), $this->getParameters()->toArray());
-        $response->assertStatus(200);
-
-        $resource = json_decode($response->getContent(), true)['resource'];
-
-        foreach (['driver', 'name', 'enabled', 'config'] as $param) {
-            $this->assertEquals($this->getParameters()->get($param), $resource[$param]);
-        }
-    }
-
-    public function testSuccessUpdate()
-    {
-        $response = $this->post($this->getBaseUrl(), $this->getParameters()->toArray());
-        $resource = json_decode($response->getContent())->resource;
-
-        $response = $this->put($this->getBaseUrl() . "/". $resource->id, $this->getParameters()->set('enabled', 0)->toArray());
-        $resource = json_decode($response->getContent())->resource;
-        $response->assertStatus(200);
-        $this->assertEquals(0, $resource->enabled);
+        $this->commonTest(['driver', 'name', 'enabled', 'config']);
     }
 
     public function testWrongCreate()
