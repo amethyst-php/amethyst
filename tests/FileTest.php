@@ -97,6 +97,15 @@ class FileTest extends BaseTest
         );
 
         $response->assertStatus(200);
+
+        $resource = json_decode($response->getContent())->resource;
+
+        if ($driver !== 'local') {
+            $client = new \GuzzleHttp\Client();
+            $response = $client->request('GET', $resource->readable);
+            $this->assertEquals(200, $response->getStatusCode());
+        }
+
     }
 
     public function testUpload()
