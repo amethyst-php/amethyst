@@ -11,6 +11,8 @@ use Railken\LaraOre\Core\Disk\DiskManager;
  */
 class DiskTest extends BaseTest
 {
+    use Traits\ApiTestCommonTrait;
+    
     /**
      * Retrieve basic url.
      *
@@ -36,17 +38,31 @@ class DiskTest extends BaseTest
      *
      * @return Bag
      */
-    public function getParameters()
+    public function getParameters($driver = "s3")
     {
+
+        $drivers = [
+            'local' => [
+                'url'           => 'http://localhost:8000',
+                'visibility'    => 'public',
+                'root'          => '...',
+            ],
+            's3' => [
+                'key'           => env('TEST_DISK_DRIVER_S3_KEY'),
+                'secret'        => env('TEST_DISK_DRIVER_S3_SECRET'),
+                'bucket'         => env('TEST_DISK_DRIVER_S3_BUCKET'),
+                'region'        => env('TEST_DISK_DRIVER_S3_REGION'),
+                'url'           => env('TEST_DISK_DRIVER_S3_URL'),
+
+            ],
+
+        ];
+
         $bag = new bag();
-        $bag->set('driver', 'local');
+        $bag->set('driver', $driver);
         $bag->set('name', 'a common name');
         $bag->set('enabled', 1);
-        $bag->set('config', [
-            'url'        => 'http://localhost:8000',
-            'visibility' => 'public',
-            'root'       => '...',
-        ]);
+        $bag->set('config', $drivers[$driver]);
 
         return $bag;
     }
