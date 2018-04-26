@@ -8,7 +8,7 @@ use Railken\LaraOre\Core\File\FileManager;
 /**
  * Testing File
  * Attributes to fill are: disk_id,type,path,status,checksum,permission,access
- */ 
+ */
 class FileTest extends BaseTest
 {
     use Traits\ApiTestCommonTrait;
@@ -46,7 +46,7 @@ class FileTest extends BaseTest
         $bag->set('access', 'private');
 
         return $bag;
-    }   
+    }
 
     /**
      * Retrieve correct bag of parameters.
@@ -55,7 +55,6 @@ class FileTest extends BaseTest
      */
     public function getDiskParameters($driver = "s3")
     {
-
         $drivers = [
             'local' => [
                 'url'           => 'http://localhost:8000',
@@ -90,7 +89,7 @@ class FileTest extends BaseTest
 
 
         $response = $this->post(
-            $this->getBaseUrl() . "/upload", 
+            $this->getBaseUrl() . "/upload",
             $this->getParameters()
                 ->set('disk_id', $resource->id)
                 ->set('access', $access)
@@ -101,9 +100,8 @@ class FileTest extends BaseTest
     }
 
     public function testUpload()
-    {  
+    {
         $this->upload('s3', 'private');
         $this->upload('local', 'public');
     }
-
 }

@@ -3,10 +3,9 @@
 namespace Railken\LaraOre\Tests\Traits;
 
 trait ApiTestCommonTrait
-{ 
-	public function commonTest($params)
+{
+    public function commonTest($params)
     {
-        print_r($this->getParameters());
         
         # GET /
         $response = $this->get($this->getBaseUrl(), []);
@@ -18,7 +17,7 @@ trait ApiTestCommonTrait
 
         $resource = json_decode($response->getContent())->resource;
 
-        foreach ($params as $param) {  
+        foreach ($params as $param) {
             $p = $resource->$param;
 
             if (is_object($p)) {
@@ -43,7 +42,5 @@ trait ApiTestCommonTrait
         $response->assertStatus(200);
         $response = $this->get($this->getBaseUrl() . "/". $resource->id);
         $response->assertStatus(404);
-
     }
-	
 }

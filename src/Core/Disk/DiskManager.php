@@ -62,5 +62,4 @@ class DiskManager extends ModelManager
 
         $entity->reloadConfig();
     }
-
 }

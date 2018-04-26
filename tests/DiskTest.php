@@ -40,7 +40,6 @@ class DiskTest extends BaseTest
      */
     public function getParameters($driver = "s3")
     {
-
         $drivers = [
             'local' => [
                 'url'           => 'http://localhost:8000',

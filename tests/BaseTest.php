@@ -2,7 +2,6 @@
 
 namespace Railken\LaraOre\Tests;
 
-
 abstract class BaseTest extends \Orchestra\Testbench\TestCase
 {
     /**
@@ -68,6 +67,4 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
 
         return $response;
     }
-
-  
 }
