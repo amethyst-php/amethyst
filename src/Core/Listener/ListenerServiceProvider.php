@@ -16,7 +16,10 @@ class ListenerServiceProvider extends ServiceProvider
     {
         Listener::observe(ListenerObserver::class);
 
-        Event::listen('Core*', function ($event_name, $events) {
+        Event::listen(['Railken\LaraOre*'], function ($event_name, $events) {
+
+            //print_r($event_name);
+
             $lm = new \Railken\LaraOre\Core\Listener\ListenerManager();
             $elm = new \Railken\LaraOre\Core\EventLog\EventLogManager();
             $listeners = $lm->getRepository()->findByEventClass($event_name);

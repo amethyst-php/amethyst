@@ -4,23 +4,18 @@ namespace Railken\LaraOre\Tests\Admin;
 
 abstract class BaseTest extends \Orchestra\Testbench\TestCase
 {
-    /**
-     * Define environment setup.
-     *
-     * @param \Illuminate\Foundation\Application $app
-     *
-     * @return void
-     */
-    protected function getEnvironmentSetUp($app)
-    {
+    protected function getPackageAliases($app) {
+        return [
+            'config' => 'Illuminate\Config\Repository'
+        ];
     }
-
+    
     protected function getPackageProviders($app)
     {
         return [
-
             \Laravel\Passport\PassportServiceProvider::class,
             \Railken\LaraOre\CoreServiceProvider::class,
+            \Railken\LaraOre\Core\Listener\ListenerServiceProvider::class
         ];
     }
 

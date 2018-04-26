@@ -49,7 +49,7 @@ class DiskTest extends BaseTest
             's3' => [
                 'key'           => env('TEST_DISK_DRIVER_S3_KEY'),
                 'secret'        => env('TEST_DISK_DRIVER_S3_SECRET'),
-                'bucket'         => env('TEST_DISK_DRIVER_S3_BUCKET'),
+                'bucket'        => env('TEST_DISK_DRIVER_S3_BUCKET'),
                 'region'        => env('TEST_DISK_DRIVER_S3_REGION'),
                 'url'           => env('TEST_DISK_DRIVER_S3_URL'),
 
