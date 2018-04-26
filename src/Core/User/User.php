@@ -61,8 +61,7 @@ class User extends Authenticatable implements EntityContract
      * @var array
      */
     protected $dates = [
-        'valid_from_at',
-        'valid_to_at',
+    
     ];
 
     /**

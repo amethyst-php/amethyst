@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\LaraOre\Api\Http\Controllers\Auth;
+namespace Railken\LaraOre\Api\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;

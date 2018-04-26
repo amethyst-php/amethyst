@@ -18,31 +18,33 @@ if (!function_exists('rest')) {
     }
 }
 
-Route::group(['prefix' => 'api/v1'], function () {
-    Route::post('/sign-in', ['as' => 'login', 'uses' => 'Railken\LaraOre\Api\Http\Controllers\Auth\SignInController@signIn']);
-    Route::post('/sign-up', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Auth\RegistrationController@index']);
-    Route::post('/confirm-email', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Auth\RegistrationController@confirmEmail']);
-    Route::post('/request-confirm-email', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Auth\RegistrationController@requestConfirmEmail']);
+Route::group(['namespace' => 'Railken\LaraOre\Api\Http\Controllers', 'prefix' => 'api/v1'], function () {
 
-    Route::post('/oauth/{name}/access_token', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Auth\SignInController@accessToken']);
-    Route::post('/oauth/{name}/exchange_token', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Auth\SignInController@exchangeToken']);
+    Route::post('/sign-in', ['uses' => 'User\SignInController@signIn']);
+    Route::post('/sign-up', ['uses' => 'User\RegistrationController@index']);
 
-    Route::post('/files/upload', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\File\FilesController@upload']);
-    Route::get('/files/{token}', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\File\FilesController@get']);
-    Route::delete('/files/{token}', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\File\FilesController@remove']);
+    Route::post('/confirm-email', ['uses' => 'User\RegistrationController@confirmEmail']);
+    Route::post('/request-confirm-email', ['uses' => 'User\RegistrationController@requestConfirmEmail']);
+
+    Route::post('/oauth/{name}/access_token', ['uses' => 'User\SignInController@accessToken']);
+    Route::post('/oauth/{name}/exchange_token', ['uses' => 'User\SignInController@exchangeToken']);
+
+    Route::post('/files/upload', ['uses' => 'File\FilesController@upload']);
+    Route::get('/files/{token}', ['uses' => 'File\FilesController@get']);
+    Route::delete('/files/{token}', ['uses' => 'File\FilesController@remove']);
 
     Route::group(['middleware' => ['auth:api']], function () {
         Route::group(['prefix' => 'notifications'], function () {
-            Route::get('/', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\User\NotificationsController@index']);
-            Route::get('/{id}', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\User\NotificationsController@show']);
-            Route::post('/{id}/read', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\User\NotificationsController@markAsRead']);
-            Route::post('/{id}/unread', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\User\NotificationsController@markAsUnread']);
+            Route::get('/', ['uses' => 'User\NotificationsController@index']);
+            Route::get('/{id}', ['uses' => 'User\NotificationsController@show']);
+            Route::post('/{id}/read', ['uses' => 'User\NotificationsController@markAsRead']);
+            Route::post('/{id}/unread', ['uses' => 'User\NotificationsController@markAsUnread']);
         });
 
-        Route::get('/user', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\User\UserController@index']);
+        Route::get('/user', ['uses' => 'User\UserController@index']);
     });
 
-    Route::group(['namespace' => 'Railken\LaraOre\Api\Http\Controllers\Admin', 'middleware' => ['auth:api', 'admin'], 'prefix' => 'admin'], function () {
+    Route::group(['namespace' => 'Admin', 'middleware' => ['auth:api', 'admin'], 'prefix' => 'admin'], function () {
 
         rest('http-logs', 'HttpLogsController');
 

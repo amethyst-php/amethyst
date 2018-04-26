@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\LaraOre\Api\Http\Controllers\File;
+namespace Railken\LaraOre\Api\Http\Controllers\Common;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
