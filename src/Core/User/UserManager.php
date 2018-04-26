@@ -107,8 +107,6 @@ class UserManager extends ModelManager
         try {
             DB::beginTransaction();
             $entity->delete();
-            $entity->residence1()->delete();
-            $entity->residence2()->delete();
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();

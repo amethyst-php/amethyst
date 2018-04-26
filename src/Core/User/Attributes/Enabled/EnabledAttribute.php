@@ -60,6 +60,6 @@ class EnabledAttribute extends BaseAttribute
      */
     public function valid(EntityContract $entity, $value)
     {
-        return v::length(1, 255)->validate($value);
+        return $value === 1 || $value === 0 || $value === true || $value === false;
     }
 }

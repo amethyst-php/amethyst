@@ -10,7 +10,7 @@ class UsersController extends RestController
 {
     use RestTraits\RestIndexTrait;
     use RestTraits\RestShowTrait;
-    // use RestTraits\RestCreateTrait;
+    use RestTraits\RestCreateTrait;
     use RestTraits\RestUpdateTrait;
     use RestTraits\RestRemoveTrait;
 
