@@ -88,16 +88,7 @@ class CoreServiceProvider extends ServiceProvider
             $disks = (new \Railken\LaraOre\Core\Disk\DiskManager())->getRepository()->newQuery()->get();
 
             foreach ($disks as $disk) {
-                if ($disk->config) {
-                    $base = 'filesystems.disks';
-                    $name = $disk->getConfigName();
-
-                    config([$base.'.'.$name.'.driver' => $disk->driver]);
-
-                    foreach ($disk->config as $key => $value) {
-                        config([$base.'.'.$name.'.'.$key => $value]);
-                    }
-                }
+                $disk->reloadConfig();
             }
         }
     }

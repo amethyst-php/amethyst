@@ -46,4 +46,18 @@ class Disk extends Model implements EntityContract
     {
         return \Illuminate\Support\Facades\Storage::disk($this->getConfigName());
     }
+
+    public function reloadConfig()
+    {
+        if ($this->config) {
+            $base = 'filesystems.disks';
+            $name = $this->getConfigName();
+
+            config([$base.'.'.$name.'.driver' => $this->driver]);
+
+            foreach ($this->config as $key => $value) {
+                config([$base.'.'.$name.'.'.$key => $value]);
+            }
+        }
+    }
 }

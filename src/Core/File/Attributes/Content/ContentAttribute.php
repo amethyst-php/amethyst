@@ -80,7 +80,11 @@ class ContentAttribute extends BaseAttribute
         if (!$entity->ext) {
             Storage::disk('local')->put($filename, $content);
             $mimetype = Storage::disk('local')->mimeType($filename);
-            $ext = array_search($mimetype, config('filesystems.mime_types'));
+            $ext = array_search($mimetype, [
+                "png"           =>  "image/png",
+                "jpeg"          =>  "image/jpeg",
+                "jpg"           =>  "image/jpeg",
+            ]);
             Storage::disk('local')->delete($filename);
         }
         $path = $filename.'.'.$ext;

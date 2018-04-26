@@ -3,6 +3,7 @@
 namespace Railken\LaraOre\Core\Disk;
 
 use Railken\Laravel\Manager\Contracts\AgentContract;
+use Railken\Laravel\Manager\Contracts\EntityContract;
 use Railken\Laravel\Manager\ModelManager;
 use Railken\Laravel\Manager\Tokens;
 
@@ -46,4 +47,20 @@ class DiskManager extends ModelManager
 
         parent::__construct($agent);
     }
+
+
+    /**
+     * Save the entity.
+     *
+     * @param EntityContract $entity
+     *
+     * @return EntityContract
+     */
+    public function save(EntityContract $entity)
+    {
+        parent::save($entity);
+
+        $entity->reloadConfig();
+    }
+
 }

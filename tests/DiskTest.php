@@ -45,7 +45,7 @@ class DiskTest extends BaseTest
             'local' => [
                 'url'           => 'http://localhost:8000',
                 'visibility'    => 'public',
-                'root'          => '...',
+                'root'          => 'var/cache',
             ],
             's3' => [
                 'key'           => env('TEST_DISK_DRIVER_S3_KEY'),

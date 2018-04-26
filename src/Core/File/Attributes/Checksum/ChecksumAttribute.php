@@ -55,18 +55,11 @@ class ChecksumAttribute extends BaseAttribute
      * Fill entity EntityContract with array.
      *
      * @param EntityContract       $entity
-     * @param ParameterBagContract $parameters
      *
      * @return void
      */
-    public function fill(EntityContract $entity, ParameterBagContract $parameters)
+    public function getDefault(EntityContract $entity)
     {
-        if ($entity->storage === 'url') {
-            $entity->checksum = hash('sha1', file_get_contents($entity->path));
-        }
-
-        if ($entity->storage === 'disk') {
-            $entity->checksum = hash('sha1', $entity->getStorage()->get($entity->path));
-        }
+        return hash('sha1', $entity->getStorage()->get($entity->path));
     }
 }
