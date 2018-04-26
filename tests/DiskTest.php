@@ -106,6 +106,7 @@ class DiskTest extends BaseTest
         ]);
 
         $response = $this->post($this->getBaseUrl(), $this->getParameters()->set('enabled', 'A')->toArray());
+        $response->assertStatus(400);
         $response->assertJson([
             'errors' => [
                 ['code' => 'DISK_ENABLED_NOT_VALID'],
