@@ -42,43 +42,53 @@ Route::group(['prefix' => 'api/v1'], function () {
         Route::get('/user', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\User\UserController@index']);
     });
 
-    Route::group(['middleware' => ['auth:api', 'admin'], 'prefix' => 'admin'], function () {
-        Route::post('/files/upload', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Admin\FilesController@upload']);
-        Route::get('/files/{id}', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Admin\FilesController@show']);
-        Route::delete('/files/{id}', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Admin\FilesController@remove']);
+    Route::group(['namespace' => 'Railken\LaraOre\Api\Http\Controllers\Admin', 'middleware' => ['auth:api', 'admin'], 'prefix' => 'admin'], function () {
 
+        rest('http-logs', 'HttpLogsController');
+
+        # Storage
+        rest('disks', 'DisksController');
+        rest('files', 'FilesController');
+        Route::post('/files/upload', ['uses' => 'FilesController@upload']);
+
+        # Configs
         Route::group(['prefix' => 'configs'], function () {
-            Route::get('/', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Admin\ConfigsController@index']);
-            Route::patch('/', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Admin\ConfigsController@update']);
+            Route::get('/', ['uses' => 'ConfigsController@index']);
+            Route::patch('/', ['uses' => 'ConfigsController@update']);
         });
 
-        rest('users', 'Railken\LaraOre\Api\Http\Controllers\Admin\UsersController');
-        rest('addresses', 'Railken\LaraOre\Api\Http\Controllers\Admin\AddressesController');
-        rest('files', 'Railken\LaraOre\Api\Http\Controllers\Admin\FilesController');
-        rest('http-logs', 'Railken\LaraOre\Api\Http\Controllers\Admin\HttpLogsController');
-        rest('listeners', 'Railken\LaraOre\Api\Http\Controllers\Admin\ListenersController');
-        rest('disks', 'Railken\LaraOre\Api\Http\Controllers\Admin\DisksController');
-        rest('event-logs', 'Railken\LaraOre\Api\Http\Controllers\Admin\EventLogsController', function ($controller) {
+        # Users
+        rest('users', 'UsersController');
+        // Customer?
+        rest('addresses', 'AddressesController');
+
+        # Event driven data
+        rest('listeners', 'ListenersController');
+
+        rest('action-notifications', 'ActionNotificationsController', function ($controller) {
+            Route::post('/render', ['uses' => $controller.'@renderTemplate']);
+        });
+
+        rest('action-emails', 'ActionEmailsController', function ($controller) {
+            Route::post('/render', ['uses' => $controller.'@renderTemplate']);
+        });
+
+        Route::group(['prefix' => 'mail-logs'], function () {
+            Route::get('/', ['uses' => 'MailLogsController@index']);
+            Route::delete('/{id}', ['uses' => 'MailLogsController@remove']);
+            Route::get('/{id}', ['uses' => 'MailLogsController@show']);
+        });
+
+        # Logs
+        rest('event-logs', 'EventLogsController', function ($controller) {
             Route::get('/stats', ['uses' => $controller.'@stats']);
         });
 
         Route::group(['prefix' => 'logs'], function () {
-            Route::get('/', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Admin\LogsController@index']);
-            Route::delete('/{id}', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Admin\LogsController@remove']);
-            Route::get('/{id}', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Admin\LogsController@show']);
+            Route::get('/', ['uses' => 'LogsController@index']);
+            Route::delete('/{id}', ['uses' => 'LogsController@remove']);
+            Route::get('/{id}', ['uses' => 'LogsController@show']);
         });
 
-        Route::group(['prefix' => 'mail-logs'], function () {
-            Route::get('/', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Admin\MailLogsController@index']);
-            Route::delete('/{id}', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Admin\MailLogsController@remove']);
-            Route::get('/{id}', ['uses' => 'Railken\LaraOre\Api\Http\Controllers\Admin\MailLogsController@show']);
-        });
-
-        rest('action-emails', 'Railken\LaraOre\Api\Http\Controllers\Admin\ActionEmailsController', function ($controller) {
-            Route::post('/render', ['uses' => $controller.'@renderTemplate']);
-        });
-        rest('action-notifications', 'Railken\LaraOre\Api\Http\Controllers\Admin\ActionNotificationsController', function ($controller) {
-            Route::post('/render', ['uses' => $controller.'@renderTemplate']);
-        });
     });
 });
