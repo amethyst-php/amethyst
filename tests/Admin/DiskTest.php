@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\LaraOre\Tests;
+namespace Railken\LaraOre\Tests\Admin;
 
 use Railken\Bag;
 use Railken\LaraOre\Core\Disk\DiskManager;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\LaraOre\Tests\Traits;
+namespace Railken\LaraOre\Tests\Admin\Traits;
 
 trait ApiTestCommonTrait
 {
