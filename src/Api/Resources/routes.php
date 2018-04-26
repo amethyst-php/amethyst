@@ -20,15 +20,16 @@ if (!function_exists('rest')) {
 
 Route::group(['namespace' => 'Railken\LaraOre\Api\Http\Controllers', 'prefix' => 'api/v1'], function () {
 
-    Route::post('/sign-in', ['uses' => 'User\SignInController@signIn']);
+    
     Route::post('/sign-up', ['uses' => 'User\RegistrationController@index']);
-
     Route::post('/confirm-email', ['uses' => 'User\RegistrationController@confirmEmail']);
     Route::post('/request-confirm-email', ['uses' => 'User\RegistrationController@requestConfirmEmail']);
 
+    Route::post('/sign-in', ['uses' => 'User\SignInController@signIn']);
+
     Route::post('/oauth/{name}/access_token', ['uses' => 'User\SignInController@accessToken']);
     Route::post('/oauth/{name}/exchange_token', ['uses' => 'User\SignInController@exchangeToken']);
-
+    
     Route::post('/files/upload', ['uses' => 'File\FilesController@upload']);
     Route::get('/files/{token}', ['uses' => 'File\FilesController@get']);
     Route::delete('/files/{token}', ['uses' => 'File\FilesController@remove']);
