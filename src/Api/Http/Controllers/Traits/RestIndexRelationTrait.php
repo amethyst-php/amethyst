@@ -5,8 +5,8 @@ namespace Railken\LaraOre\Api\Http\Controllers\Traits;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Railken\Laravel\ApiHelpers\Filter;
-use Railken\Laravel\ApiHelpers\Paginator;
-use Railken\Laravel\ApiHelpers\Sorter;
+use Railken\LaraOre\Api\Support\Paginator;
+use Railken\LaraOre\Api\Support\Sorter;
 use Railken\SQ\Exceptions\QuerySyntaxException;
 
 trait RestIndexRelationTrait

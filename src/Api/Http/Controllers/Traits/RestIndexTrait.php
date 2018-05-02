@@ -4,11 +4,9 @@ namespace Railken\LaraOre\Api\Http\Controllers\Traits;
 
 use Illuminate\Http\Request;
 use Railken\Laravel\ApiHelpers\Exceptions\InvalidSorterFieldException;
-use Railken\Laravel\ApiHelpers\Filter;
-use Railken\Laravel\ApiHelpers\Paginator;
-use Railken\Laravel\ApiHelpers\Query\Builder;
-use Railken\Laravel\ApiHelpers\Query\Visitors;
-use Railken\Laravel\ApiHelpers\Sorter;
+use Railken\LaraEye\Filter;
+use Railken\LaraOre\Api\Support\Paginator;
+use Railken\LaraOre\Api\Support\Sorter;
 use Railken\SQ\Exceptions\QuerySyntaxException;
 
 trait RestIndexTrait
@@ -58,7 +56,9 @@ trait RestIndexTrait
 
         try {
             if ($request->input('query')) {
-                $query = $this->filterQuery($query, $request->input('query'), $selectable);
+
+                $filter = new Filter();
+                $filter->filter($this->manager->getTableName(), $selectable->toArray());
             }
         } catch (QuerySyntaxException $e) {
             return $this->error(['code' => 'QUERY_SYNTAX_ERROR', 'message' => 'syntax error detected in filter']);
@@ -88,38 +88,4 @@ trait RestIndexTrait
         return $response;
     }
 
-    public function filterQuery($query, $raw, $selectable)
-    {
-        $filter = new Filter();
-
-        $parser = $filter->getParser();
-
-        $builder = new Builder([]);
-        $builder->setVisitors([
-            (new \Railken\LaraOre\Api\Query\Visitors\KeyVisitor($builder))->setManager($this->manager)->setKeys($selectable),
-            new Visitors\EqVisitor($builder),
-            new Visitors\NotEqVisitor($builder),
-            new Visitors\GtVisitor($builder),
-            new Visitors\GteVisitor($builder),
-            new Visitors\LtVisitor($builder),
-            new Visitors\LteVisitor($builder),
-            new Visitors\CtVisitor($builder),
-            new Visitors\SwVisitor($builder),
-            new Visitors\EwVisitor($builder),
-            new Visitors\AndVisitor($builder),
-            new Visitors\OrVisitor($builder),
-            new Visitors\NotInVisitor($builder),
-            new Visitors\InVisitor($builder),
-            new Visitors\NullVisitor($builder),
-            new Visitors\NotNullVisitor($builder),
-        ]);
-
-        try {
-            $builder->build($query, $parser->parse($raw));
-        } catch (\Railken\SQ\Exceptions\QuerySyntaxException $e) {
-            throw new \Railken\SQ\Exceptions\QuerySyntaxException($raw);
-        }
-
-        return $query;
-    }
 }

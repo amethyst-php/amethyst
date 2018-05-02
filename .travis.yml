@@ -22,7 +22,6 @@ matrix:
 env:
   matrix:
     - DEPENDENCIES="high"
-    - DEPENDENCIES="low"
   global:
     - DEFAULT_COMPOSER_FLAGS="--no-interaction --no-ansi --no-progress --no-suggest"
 
