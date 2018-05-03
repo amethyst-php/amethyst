@@ -1,9 +1,29 @@
 <?php
 
 namespace Railken\LaraOre\Tests\Admin;
+use Illuminate\Contracts\Debug\ExceptionHandler;
+use Illuminate\Foundation\Exceptions\Handler as BaseHandler;
+
 
 abstract class BaseTest extends \Orchestra\Testbench\TestCase
-{
+{ 
+
+    protected function disableExceptionHandling()
+    {
+        $this->app->instance(ExceptionHandler::class, new class extends BaseHandler {
+            public function __construct() {}
+
+            public function report(\Exception $e)
+            {
+                // no-op
+            }
+
+            public function render($request, \Exception $e) {
+                throw $e;
+            }
+        });
+    }
+
     protected function getPackageAliases($app) {
         return [
             'config' => 'Illuminate\Config\Repository'
@@ -15,7 +35,8 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         return [
             \Laravel\Passport\PassportServiceProvider::class,
             \Railken\LaraOre\CoreServiceProvider::class,
-            \Railken\LaraOre\Core\Listener\ListenerServiceProvider::class
+            \Railken\LaraOre\Core\Listener\ListenerServiceProvider::class,
+            \Superbalist\LaravelGoogleCloudStorage\GoogleCloudStorageServiceProvider::class,
         ];
     }
 
@@ -28,13 +49,13 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         $dotenv->load();
 
         parent::setUp();
-
-        $this->artisan('migrate:refresh');
+        $this->artisan('migrate:fresh');
         $this->artisan('migrate');
         $this->artisan('passport:install');
         $this->artisan('db:seed', ['--class' => 'Railken\LaraOre\Resources\Seeds\UserSeeder']);
 
         $this->signIn();
+        $this->disableExceptionHandling();
     }
 
     public function testSignIn()
