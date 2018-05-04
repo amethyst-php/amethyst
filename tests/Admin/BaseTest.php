@@ -24,12 +24,6 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         });
     }
 
-    protected function getPackageAliases($app) {
-        return [
-            'config' => 'Illuminate\Config\Repository'
-        ];
-    }
-    
     protected function getPackageProviders($app)
     {
         return [
@@ -37,6 +31,8 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
             \Railken\LaraOre\CoreServiceProvider::class,
             \Railken\LaraOre\Core\Listener\ListenerServiceProvider::class,
             \Superbalist\LaravelGoogleCloudStorage\GoogleCloudStorageServiceProvider::class,
+            \Railken\Laravel\Manager\ManagerServiceProvider::class,
+            \Railken\Laravel\App\AppServiceProvider::class,
         ];
     }
 
@@ -49,6 +45,7 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         $dotenv->load();
 
         parent::setUp();
+
         $this->artisan('migrate:fresh');
         $this->artisan('migrate');
         $this->artisan('passport:install');
