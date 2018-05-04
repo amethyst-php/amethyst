@@ -11,9 +11,11 @@ use Railken\LaraOre\Api\Http\Controllers\Traits\RestRemoveTrait;
 use Railken\LaraOre\Api\Http\Controllers\Traits\RestShowTrait;
 use Railken\LaraOre\Api\Http\Controllers\Traits\RestUpdateTrait;
 use Railken\LaraOre\Core\EventLog\EventLogManager;
-use Railken\Laravel\ApiHelpers\Filter;
-use Railken\Laravel\ApiHelpers\Paginator;
+use Railken\LaraEye\Filter;
 use Railken\SQ\Exceptions\QuerySyntaxException;
+use Railken\LaraOre\Api\Support\Paginator;
+use Railken\LaraOre\Api\Support\Sorter;
+use Railken\LaraOre\Api\Support\Exceptions\InvalidSorterFieldException;
 
 class EventLogsController extends RestController
 {
@@ -84,14 +86,17 @@ class EventLogsController extends RestController
             $select = $this->keys->selectable;
 
         $selectable = $select;
-
+    
         try {
             if ($request->input('query')) {
-                $query = $this->filterQuery($query, $request->input('query'), $selectable);
+
+                $filter = new Filter($this->manager->getTableName(), $selectable->toArray());
+                $filter->buid($query, $request->input('query'));
             }
         } catch (QuerySyntaxException $e) {
             return $this->error(['code' => 'QUERY_SYNTAX_ERROR', 'message' => 'syntax error detected in filter']);
         }
+
 
         $query->select(DB::raw("DATE_FORMAT(created_at, '%Y-%m-%d') as created_at"), DB::raw('count(*) as total'));
         $query->groupBy(DB::raw("DATE_FORMAT(created_at, '%Y-%m-%d')"));

@@ -3,11 +3,11 @@
 namespace Railken\LaraOre\Api\Http\Controllers\Traits;
 
 use Illuminate\Http\Request;
-use Railken\Laravel\ApiHelpers\Exceptions\InvalidSorterFieldException;
 use Railken\LaraEye\Filter;
+use Railken\SQ\Exceptions\QuerySyntaxException;
 use Railken\LaraOre\Api\Support\Paginator;
 use Railken\LaraOre\Api\Support\Sorter;
-use Railken\SQ\Exceptions\QuerySyntaxException;
+use Railken\LaraOre\Api\Support\Exceptions\InvalidSorterFieldException;
 
 trait RestIndexTrait
 {
@@ -57,8 +57,8 @@ trait RestIndexTrait
         try {
             if ($request->input('query')) {
 
-                $filter = new Filter();
-                $filter->filter($this->manager->getTableName(), $selectable->toArray());
+                $filter = new Filter($this->manager->getTableName(), $selectable->toArray());
+                $filter->buid($query, $request->input('query'));
             }
         } catch (QuerySyntaxException $e) {
             return $this->error(['code' => 'QUERY_SYNTAX_ERROR', 'message' => 'syntax error detected in filter']);

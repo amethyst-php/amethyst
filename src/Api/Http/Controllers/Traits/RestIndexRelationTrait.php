@@ -8,6 +8,7 @@ use Railken\Laravel\ApiHelpers\Filter;
 use Railken\LaraOre\Api\Support\Paginator;
 use Railken\LaraOre\Api\Support\Sorter;
 use Railken\SQ\Exceptions\QuerySyntaxException;
+use Railken\LaraOre\Api\Support\Exceptions\InvalidSorterFieldException;
 
 trait RestIndexRelationTrait
 {
@@ -24,20 +25,6 @@ trait RestIndexRelationTrait
         $query = $this->getQuery($id);
         DB::enableQueryLog();
 
-        // FilterSyntaxException
-        try {
-            $filter = new Filter();
-
-            if ($request->input('query')) {
-                $filter->setKeys($this->keys->query);
-                $filter->setParseKey(function ($key) {
-                    return $this->parseKey($key);
-                });
-                $filter->build($query, $request->input('query'));
-            }
-        } catch (QuerySyntaxException $e) {
-            return $this->error(['code' => 'QUERY_SYNTAX_ERROR', 'message' => 'syntax error detected in filter']);
-        }
 
         // Sorter
         $sort = new Sorter();
@@ -65,6 +52,16 @@ trait RestIndexRelationTrait
             ->map(function ($key) {
                 return $this->parseKey($key);
             });
+
+        try {
+            if ($request->input('query')) {
+
+                $filter = new Filter($this->manager->getTableName(), $selectable->toArray());
+                $filter->buid($query, $request->input('query'));
+            }
+        } catch (QuerySyntaxException $e) {
+            return $this->error(['code' => 'QUERY_SYNTAX_ERROR', 'message' => 'syntax error detected in filter']);
+        }
 
         // Pagination
         $paginator = new Paginator();
