@@ -30,9 +30,9 @@ Route::group(['namespace' => 'Railken\LaraOre\Api\Http\Controllers', 'prefix' =>
     Route::post('/oauth/{name}/access_token', ['uses' => 'User\SignInController@accessToken']);
     Route::post('/oauth/{name}/exchange_token', ['uses' => 'User\SignInController@exchangeToken']);
     
-    Route::post('/files/upload', ['uses' => 'File\FilesController@upload']);
-    Route::get('/files/{token}', ['uses' => 'File\FilesController@get']);
-    Route::delete('/files/{token}', ['uses' => 'File\FilesController@remove']);
+    //Route::post('/files/upload', ['uses' => 'File\FilesController@upload']);
+    //Route::get('/files/{token}', ['uses' => 'File\FilesController@get']);
+    //Route::delete('/files/{token}', ['uses' => 'File\FilesController@remove']);
 
     Route::group(['middleware' => ['auth:api']], function () {
         Route::group(['prefix' => 'notifications'], function () {
