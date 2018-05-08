@@ -17,12 +17,11 @@ class PdfManager extends ModelManager
     protected $attributes = [
         Attributes\Id\IdAttribute::class, 
         Attributes\Name\NameAttribute::class, 
-        Attributes\CreatedAt\CreatedAtAttribute::class, 
-        Attributes\UpdatedAt\UpdatedAtAttribute::class, 
-        Attributes\DeletedAt\DeletedAtAttribute::class, 
+        Attributes\Filename\FilenameAttribute::class,
         Attributes\Template\TemplateAttribute::class,
         Attributes\MockData\MockDataAttribute::class, 
-        Attributes\Filename\FilenameAttribute::class,
+        Attributes\CreatedAt\CreatedAtAttribute::class, 
+        Attributes\UpdatedAt\UpdatedAtAttribute::class, 
         Attributes\Description\DescriptionAttribute::class
     ];
 

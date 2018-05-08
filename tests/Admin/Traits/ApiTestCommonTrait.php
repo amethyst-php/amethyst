@@ -33,10 +33,9 @@ trait ApiTestCommonTrait
         $response->assertStatus(200);
 
         # PUT /id
-        $response = $this->put($this->getBaseUrl() . "/". $resource->id, $parameters->set('enabled', 0)->toArray());
+        $response = $this->put($this->getBaseUrl() . "/". $resource->id, $parameters->toArray());
         $resource = json_decode($response->getContent())->resource;
         $response->assertStatus(200);
-        $this->assertEquals(0, $resource->enabled);
 
         # DELETE /id
         $response = $this->delete($this->getBaseUrl() . "/". $resource->id);

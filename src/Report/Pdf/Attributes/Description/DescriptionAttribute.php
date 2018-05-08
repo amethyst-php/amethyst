@@ -1,6 +1,6 @@
 <?php
 
-namespace Report\Pdf\Attributes\Description;
+namespace Railken\LaraOre\Report\Pdf\Attributes\Description;
 
 use Railken\Laravel\Manager\Attributes\BaseAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;

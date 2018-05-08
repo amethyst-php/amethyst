@@ -42,6 +42,7 @@ class ReportPdfController extends RestController
      */
     public static $fillable = [
         'name',
+        'filename',
         'subject',
         'template',
         'mock_data',

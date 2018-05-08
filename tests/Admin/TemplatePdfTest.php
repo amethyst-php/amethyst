@@ -58,23 +58,27 @@ class TemplatePdfTest extends BaseTest
         $response->assertStatus(400);
         $response->assertJson([
             'errors' => [
-                ['code' => 'USER_NAME_NOT_DEFINED'],
-                ['code' => 'USER_FILENAME_NOT_DEFINED'],
-                ['code' => 'USER_TEMPLATE_NOT_DEFINED'],
-                ['code' => 'USER_MOCK_DATA_NOT_DEFINED'],
+                ['code' => 'PDF_NAME_NOT_DEFINED'],
+                ['code' => 'PDF_FILENAME_NOT_DEFINED'],
+                ['code' => 'PDF_TEMPLATE_NOT_DEFINED'],
+                ['code' => 'PDF_MOCK_DATA_NOT_DEFINED'],
             ],
         ]);
     }
 
     public function testWrongName()
-    {
-        $response = $this->post($this->getBaseUrl(), $this->getParameters()->set('name', '?????')->toArray());
+    {  
+        $response = $this->post($this->getBaseUrl(), $this->getParameters()->set('name', 'A name')->toArray());
+        $response->assertStatus(200);
+
+        $response = $this->post($this->getBaseUrl(), $this->getParameters()->set('name', 'A name')->toArray());
         $response->assertStatus(400);
         $response->assertJson([
             'errors' => [
-                ['code' => 'USER_NAME_NOT_VALID'],
+                ['code' => 'PDF_NAME_NOT_UNIQUE'],
             ],
         ]);
+        
     }
 
 }

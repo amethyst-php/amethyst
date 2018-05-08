@@ -1,6 +1,6 @@
 <?php
 
-namespace Report\Pdf\Attributes\Description\Exceptions;
+namespace Railken\LaraOre\Report\Pdf\Attributes\Description\Exceptions;
 
 use Report\Pdf\Exceptions\PdfAttributeException;
 

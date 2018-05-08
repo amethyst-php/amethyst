@@ -37,6 +37,7 @@ class NameAttribute extends BaseAttribute
      * @var array
      */
     protected $exceptions = [
+        Tokens::NOT_UNIQUE    => Exceptions\PdfNameNotUniqueException::class,
         Tokens::NOT_DEFINED    => Exceptions\PdfNameNotDefinedException::class,
         Tokens::NOT_VALID      => Exceptions\PdfNameNotValidException::class,
         Tokens::NOT_AUTHORIZED => Exceptions\PdfNameNotAuthorizedException::class,
