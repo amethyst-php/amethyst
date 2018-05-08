@@ -76,6 +76,10 @@ Route::group(['namespace' => 'Railken\LaraOre\Api\Http\Controllers', 'prefix' =>
             Route::post('/render', ['uses' => $controller.'@renderTemplate']);
         });
 
+        rest('report-pdf', 'ReportPdfController', function ($controller) {
+            Route::post('/render', ['uses' => $controller.'@renderTemplate']);
+        });
+
         Route::group(['prefix' => 'mail-logs'], function () {
             Route::get('/', ['uses' => 'MailLogsController@index']);
             Route::delete('/{id}', ['uses' => 'MailLogsController@remove']);
