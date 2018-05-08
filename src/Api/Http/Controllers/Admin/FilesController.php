@@ -47,6 +47,7 @@ class FilesController extends RestController
     public function __construct(FileManager $manager)
     {
         $this->manager = $manager;
+        $this->manager->setAgent($this->getUser());
         parent::__construct();
     }
 

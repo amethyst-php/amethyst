@@ -41,6 +41,7 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
             \Railken\Laravel\App\AppServiceProvider::class,
             \Barryvdh\DomPDF\ServiceProvider::class,
             \TwigBridge\ServiceProvider::class,
+            \Zizaco\Entrust\EntrustServiceProvider::class,
         ];
     }
 
@@ -55,6 +56,24 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         parent::setUp();
 
         $this->artisan('migrate:fresh');
+        $this->artisan('railken:lara-ore:flush-permissions', [
+            'classes' => implode("," , [
+                '\Railken\LaraOre\Core\User\UserManager',
+                '\Railken\LaraOre\Core\Address\AddressManager',
+                '\Railken\LaraOre\Core\Config\ConfigManager',
+                '\Railken\LaraOre\Core\Disk\DiskManager',
+                '\Railken\LaraOre\Core\EventLog\EventLogManager',
+                '\Railken\LaraOre\Core\File\FileManager',
+                '\Railken\LaraOre\Core\HttpLog\HttpLogManager',
+                '\Railken\LaraOre\Core\Listener\ListenerManager',
+                '\Railken\LaraOre\Core\Log\LogManager',
+                '\Railken\LaraOre\Core\MailLog\MailLogManager',
+                '\Railken\LaraOre\Core\Notification\NotificationManager',
+                '\Railken\LaraOre\Action\Email\EmailManager',
+                '\Railken\LaraOre\Action\Notification\NotificationManager',
+                '\Railken\LaraOre\Report\Pdf\PdfManager',
+            ])
+        ]);
         $this->artisan('migrate');
         $this->artisan('passport:install');
         $this->artisan('db:seed', ['--class' => 'Railken\LaraOre\Resources\Seeds\UserSeeder']);

@@ -37,6 +37,7 @@ class UsersController extends RestController
     public function __construct(UserManager $manager)
     {
         $this->manager = $manager;
+        $this->manager->setAgent($this->getUser());
         parent::__construct();
     }
 

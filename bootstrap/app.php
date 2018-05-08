@@ -18,9 +18,11 @@ class AppTest extends \Orchestra\Testbench\TestCase
             \Laravel\Passport\PassportServiceProvider::class,
             \Railken\LaraOre\CoreServiceProvider::class,
             \Railken\LaraOre\Core\Listener\ListenerServiceProvider::class,
-            \Superbalist\LaravelGoogleCloudStorage\GoogleCloudStorageServiceProvider::class,
             \Railken\Laravel\Manager\ManagerServiceProvider::class,
             \Railken\Laravel\App\AppServiceProvider::class,
+            \Barryvdh\DomPDF\ServiceProvider::class,
+            \TwigBridge\ServiceProvider::class,
+            \Zizaco\Entrust\EntrustServiceProvider::class,
         ];
     }
 

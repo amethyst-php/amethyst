@@ -50,6 +50,7 @@ class EventLogsController extends RestController
     public function __construct(EventLogManager $manager)
     {
         $this->manager = $manager;
+        $this->manager->setAgent($this->getUser());
         parent::__construct();
     }
 

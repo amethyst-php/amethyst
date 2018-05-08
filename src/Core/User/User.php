@@ -9,11 +9,13 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 use Railken\LaraOre\Core\File\File;
 use Railken\Laravel\Manager\Contracts\EntityContract;
+use Railken\Laravel\Manager\Contracts\AgentContract;
+use Zizaco\Entrust\Traits\EntrustUserTrait;
 
-class User extends Authenticatable implements EntityContract
+class User extends Authenticatable implements EntityContract, AgentContract
 {
-    use HasApiTokens, Notifiable;
-
+    use HasApiTokens, Notifiable, EntrustUserTrait; 
+    
     /**
      * The table associated with the model.
      *

@@ -54,6 +54,7 @@ class HttpLogsController extends RestController
     public function __construct(HttpLogManager $manager)
     {
         $this->manager = $manager;
+        $this->manager->setAgent($this->getUser());
         parent::__construct();
     }
 

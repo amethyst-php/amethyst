@@ -51,6 +51,7 @@ class ActionNotificationsController extends RestController
     public function __construct(NotificationManager $manager)
     {
         $this->manager = $manager;
+        $this->manager->setAgent($this->getUser());
         parent::__construct();
     }
 

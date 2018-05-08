@@ -51,6 +51,7 @@ class ActionEmailsController extends RestController
     public function __construct(EmailManager $manager)
     {
         $this->manager = $manager;
+        $this->manager->setAgent($this->getUser());
         parent::__construct();
     }
 

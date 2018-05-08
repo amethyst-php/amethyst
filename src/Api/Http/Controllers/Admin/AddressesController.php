@@ -43,6 +43,7 @@ class AddressesController extends RestController
     public function __construct(AddressManager $manager)
     {
         $this->manager = $manager;
+        $this->manager->setAgent($this->getUser());
         parent::__construct();
     }
 

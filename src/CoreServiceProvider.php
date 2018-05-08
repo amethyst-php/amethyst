@@ -45,12 +45,21 @@ class CoreServiceProvider extends ServiceProvider
             \Railken\LaraOre\Api\Http\Middleware\LoggerMiddleware::class,
         ]);
 
+
+
+        $this->commands([\Railken\LaraOre\Permission\Console\Commands\FlushPermissionsCommand::class]);
         $router->aliasMiddleware('admin', \Railken\LaraOre\Api\Http\Middleware\AdminMiddleware::class);
 
         config(['auth.guards.api.driver' => 'passport']);
         config(['auth.guards.api.provider' => 'users']);
         config(['auth.providers.users.driver' => 'eloquent']);
         config(['auth.providers.users.model' => \Railken\LaraOre\Core\User\User::class]);
+
+        config(['entrust.role' => \Railken\LaraOre\Permission\Role::class]);
+        config(['entrust.role' => \Railken\LaraOre\Permission\Permission::class]);
+        config(['entrust.user' => \Railken\LaraOre\Core\User\User::class]);
+        config(['entrust.users_table' => 'ore_users']);
+
 
         $callback = function ($router) {
             $router->all();

@@ -52,6 +52,7 @@ class ReportPdfController extends RestController
     public function __construct(PdfManager $manager)
     {
         $this->manager = $manager;
+        $this->manager->setAgent($this->getUser());
         parent::__construct();
     }
 

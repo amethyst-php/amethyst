@@ -49,6 +49,7 @@ class MailLogsController extends RestController
     public function __construct(MailLogManager $manager)
     {
         $this->manager = $manager;
+        $this->manager->setAgent($this->getUser());
         parent::__construct();
     }
 

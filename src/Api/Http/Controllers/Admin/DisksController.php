@@ -37,6 +37,7 @@ class DisksController extends RestController
     public function __construct(DiskManager $manager)
     {
         $this->manager = $manager;
+        $this->manager->setAgent($this->getUser());
         parent::__construct();
     }
 
