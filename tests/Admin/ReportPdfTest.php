@@ -8,7 +8,7 @@ use Spatie\PdfToText\Pdf;
 
 /**
  */
-class TemplatePdfTest extends BaseTest
+class ReportPdfTest extends BaseTest
 {
     use Traits\ApiTestCommonTrait;
     

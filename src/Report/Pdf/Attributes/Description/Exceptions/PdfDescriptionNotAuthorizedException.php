@@ -2,7 +2,7 @@
 
 namespace Railken\LaraOre\Report\Pdf\Attributes\Description\Exceptions;
 
-use Report\Pdf\Exceptions\PdfAttributeException;
+use Railken\LaraOre\Report\Pdf\Exceptions\PdfAttributeException;
 
 class PdfDescriptionNotAuthorizedException extends PdfAttributeException
 {

@@ -79,7 +79,7 @@ class ReportPdfController extends RestController
         $filename = $this->manager->generateViewFile($template, 'tmp-'.md5($request->input('uid', microtime())));
 
         $pdf = App::make('dompdf.wrapper');
-        $pdf->loadHtml(Twig::render($filename, $data));
+        $pdf->loadHtml(App::make('twig')->render($filename, $data));
         return $pdf->stream();
     }
 }
