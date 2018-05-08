@@ -24,15 +24,23 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         });
     }
 
+    protected function getPackageAliases($app)
+    {
+        return [
+            'Twig' => \TwigBridge\Facade\Twig::class,
+        ];
+    }
+
     protected function getPackageProviders($app)
     {
         return [
             \Laravel\Passport\PassportServiceProvider::class,
             \Railken\LaraOre\CoreServiceProvider::class,
             \Railken\LaraOre\Core\Listener\ListenerServiceProvider::class,
-            \Superbalist\LaravelGoogleCloudStorage\GoogleCloudStorageServiceProvider::class,
             \Railken\Laravel\Manager\ManagerServiceProvider::class,
             \Railken\Laravel\App\AppServiceProvider::class,
+            \Barryvdh\DomPDF\ServiceProvider::class,
+            \TwigBridge\ServiceProvider::class,
         ];
     }
 

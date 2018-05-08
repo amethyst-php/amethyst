@@ -11,6 +11,7 @@ use Railken\LaraOre\Api\Http\Controllers\Traits\RestRemoveTrait;
 use Railken\LaraOre\Api\Http\Controllers\Traits\RestShowTrait;
 use Railken\LaraOre\Api\Http\Controllers\Traits\RestUpdateTrait;
 use Illuminate\Support\Facades\App;
+use Twig;
 
 class ReportPdfController extends RestController
 {
@@ -73,11 +74,12 @@ class ReportPdfController extends RestController
      */
     public function renderTemplate(Request $request)
     {
-        $data = json_decode(base64_decode($request->input('data')));
+        $data = $request->input('mock_data');
         $template = $request->input('template');
+        $filename = $this->manager->generateViewFile($template, 'tmp-'.md5($request->input('uid', microtime())));
 
         $pdf = App::make('dompdf.wrapper');
-        $pdf->loadHTML($template, $data);
+        $pdf->loadHtml(Twig::render($filename, $data));
         return $pdf->stream();
     }
 }

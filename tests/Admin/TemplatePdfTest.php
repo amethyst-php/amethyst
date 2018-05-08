@@ -4,6 +4,7 @@ namespace Railken\LaraOre\Tests\Admin;
 
 use Railken\Bag;
 use Railken\LaraOre\Report\Pdf\PdfManager;
+use Spatie\PdfToText\Pdf;
 
 /**
  */
@@ -66,6 +67,20 @@ class TemplatePdfTest extends BaseTest
         ]);
     }
 
+    public function testRender()
+    {  
+
+        $response = $this->post($this->getBaseUrl() . "/render", $this->getParameters()->toArray());
+        $response->assertStatus(200);
+            
+        $tmpfile = "var/cache/templatepdfrender.pdf";
+
+        file_put_contents($tmpfile, $response->getContent());
+
+        $this->assertEquals("The cake is a lie", Pdf::getText($tmpfile));
+
+    }
+
     public function testWrongName()
     {  
         $response = $this->post($this->getBaseUrl(), $this->getParameters()->set('name', 'A name')->toArray());
@@ -78,7 +93,7 @@ class TemplatePdfTest extends BaseTest
                 ['code' => 'PDF_NAME_NOT_UNIQUE'],
             ],
         ]);
-        
+
     }
 
 }
