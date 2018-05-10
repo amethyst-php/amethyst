@@ -5,7 +5,7 @@
 
 
 
-- Dinamic Disks
+- [Dinamic Disks](https://github.com/railken/lara-ore-disk)
 - File Manager
 - Events logs
 - Http Logs
