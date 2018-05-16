@@ -15,6 +15,7 @@
         "railken/laravel-manager": "^3.0.3",
         "railken/laravel-application": "^1.0.3",
         "railken/lara-eye": "^1.0.0",
+        "railken/lara-ore-disk": "^1.0.0",
         "ralouphie/mimey": "^1.0",
         "barryvdh/laravel-dompdf": "^0.8.2",
         "zizaco/entrust": "^1.9"

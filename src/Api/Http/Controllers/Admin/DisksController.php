@@ -4,7 +4,7 @@ namespace Railken\LaraOre\Api\Http\Controllers\Admin;
 
 use Railken\LaraOre\Api\Http\Controllers\RestController;
 use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
-use Railken\LaraOre\Core\Disk\DiskManager;
+use Railken\LaraOre\Disk\DiskManager;
 
 class DisksController extends RestController
 {
