@@ -25,22 +25,42 @@ Log all requests with the response to debug your api
 
 Log all events to know what's going on
 
+## File pdf [WIP]
+[Package]
+
+Create a .pdf template file
+
+## File csv [WIP]
+[Package]
+
+Create a .csv template file
+
+## File xls [WIP]
+[Package]
+
+Create a .xls template file
+
 ## Listeners [WIP]
 [Package](https://github.com/railken/lara-ore-listeners)
 
 Attach a listener to an event to perform user-custom action (For e.g. send an email when user is registered)
 
-## Listen Email [WIP]
-[Package](https://github.com/railken/lara-ore-listen-email)
+## Action Email [WIP]
+[Package]
 
-Create a template email to attach to a listeners
+Create a template email to attach to a listeners. This will send an email when the event is fired. You can attach multiple action files as attachments
+
+## Action Notification [WIP]
+[Package]
+
+Create a template notification to attach to a listeners. This will send a notification when the event is fired
+
+## Action File [WIP]
+[Package]
+
+Attach a template file (such as xls or pdf) to a listeners. This will create a file using that template
 
 ## TODO
 - File Manager
 - Users
 - Permissions
-- Attach "notification" to listeners
-- Attach "file generation" to listener
-- Template "pdf"
-- Template "csv"
-- Template "xls"
