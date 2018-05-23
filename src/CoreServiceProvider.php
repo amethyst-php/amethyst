@@ -92,14 +92,6 @@ class CoreServiceProvider extends ServiceProvider
 
             config($configs);
         }
-
-        if (Schema::hasTable('disks')) {
-            $disks = (new \Railken\LaraOre\Core\Disk\DiskManager())->getRepository()->newQuery()->get();
-
-            foreach ($disks as $disk) {
-                $disk->reloadConfig();
-            }
-        }
     }
 
     /**
