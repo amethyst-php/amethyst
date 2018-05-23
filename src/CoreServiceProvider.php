@@ -47,7 +47,7 @@ class CoreServiceProvider extends ServiceProvider
 
 
 
-        $this->commands([\Railken\LaraOre\Permission\Console\Commands\FlushPermissionsCommand::class]);
+        $this->commands([\Railken\LaraOre\Console\Commands\InstallCommand::class]);
         $router->aliasMiddleware('admin', \Railken\LaraOre\Api\Http\Middleware\AdminMiddleware::class);
 
         config(['auth.guards.api.driver' => 'passport']);
@@ -60,12 +60,11 @@ class CoreServiceProvider extends ServiceProvider
         config(['entrust.user' => \Railken\LaraOre\Core\User\User::class]);
         config(['entrust.users_table' => 'ore_users']);
 
-
         $callback = function ($router) {
             $router->all();
         };
 
-        $this->loadRoutesFrom(__DIR__.'/Api/Resources/routes.php');
+        $this->loadRoutesFrom(__DIR__.'/../routes/ore.php');
         $this->loadMigrationsFrom(__DIR__.'/Resources/Migrations');
 
         Schema::defaultStringLength(191);
@@ -82,16 +81,6 @@ class CoreServiceProvider extends ServiceProvider
         Passport::tokensExpireIn(now()->addDays(15));
 
         Passport::refreshTokensExpireIn(now()->addDays(30));
-
-        if (Schema::hasTable('configs')) {
-            $configs = (new \Railken\LaraOre\Core\Config\ConfigManager())->getRepository()->findToLoad();
-
-            $configs = $configs->mapWithKeys(function ($config, $key) {
-                return [$config->resolveKey($config->key) => $config->value];
-            })->toArray();
-
-            config($configs);
-        }
     }
 
     /**

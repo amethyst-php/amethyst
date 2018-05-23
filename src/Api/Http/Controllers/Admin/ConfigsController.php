@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Railken\Bag;
 use Railken\LaraOre\Api\Http\Controllers\RestController;
 use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
-use Railken\LaraOre\Core\Config\ConfigManager;
+use Railken\LaraOre\Config\ConfigManager;
 
 class ConfigsController extends RestController
 {

@@ -5,6 +5,10 @@
 
 This package is meant to be as a my personal starter-pack for every laravel project.
 
+
+## Users
+[Package](https://github.com/railken/lara-ore-user)
+
 ## Dinamic disks
 [Package](https://github.com/railken/lara-ore-disk)
 

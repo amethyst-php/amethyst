@@ -4,21 +4,22 @@ namespace Railken\LaraOre\Tests\Admin\Traits;
 
 trait ApiTestCommonTrait
 {
-    public function commonTest($params)
+    public function commonTest($url, $parameters)
     {   
-        $parameters = $this->getParameters();
         
         # GET /
-        $response = $this->get($this->getBaseUrl(), []);
+        $response = $this->get($url, []);
+        $response->debug();
         $response->assertStatus(200);
 
         # POST /
-        $response = $this->post($this->getBaseUrl(), $parameters->toArray());
+        $response = $this->post($url, $parameters->toArray());
+        $response->debug();
         $response->assertStatus(200);
 
         $resource = json_decode($response->getContent())->resource;
 
-        foreach ($params as $param) {
+        foreach ($parameters as $param) {
             $p = $resource->$param;
 
             if (is_object($p)) {
@@ -29,18 +30,22 @@ trait ApiTestCommonTrait
         }
         
         # GET /id
-        $response = $this->get($this->getBaseUrl() . "/". $resource->id);
+        $response = $this->get($url . "/". $resource->id);
+        $response->debug();
         $response->assertStatus(200);
 
         # PUT /id
-        $response = $this->put($this->getBaseUrl() . "/". $resource->id, $parameters->toArray());
+        $response = $this->put($url . "/". $resource->id, $parameters->toArray());
         $resource = json_decode($response->getContent())->resource;
+        $response->debug();
         $response->assertStatus(200);
 
         # DELETE /id
-        $response = $this->delete($this->getBaseUrl() . "/". $resource->id);
+        $response = $this->delete($url . "/". $resource->id);
+        $response->debug();
         $response->assertStatus(200);
-        $response = $this->get($this->getBaseUrl() . "/". $resource->id);
+        $response = $this->get($url . "/". $resource->id);
+        $response->debug();
         $response->assertStatus(404);
     }
 }
