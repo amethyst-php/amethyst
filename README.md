@@ -13,7 +13,7 @@ Save and load disks within the database
 ## Configs persited in the database
 [Package](https://github.com/railken/lara-ore-config)
 
-Sometimes you need to give the user/admin the ability to edit a bunch of configs. Without worrying too much
+Sometimes you need to give the user the ability to edit a bunch of configs without worrying too much.
 
 ## Request & Response logger
 [Package](https://github.com/railken/lara-ore-request-logger)
@@ -48,12 +48,12 @@ Attach a listener to an event to perform user-custom action (For e.g. send an em
 ## Action Email [WIP]
 [Package]
 
-Create a template email to attach to a listeners. This will send an email when the event is fired. You can attach multiple action files as attachments
+Create a template email to attach to a listeners. This will send an email when the event configured is fired. You can attach multiple action files as attachments.
 
 ## Action Notification [WIP]
 [Package]
 
-Create a template notification to attach to a listeners. This will send a notification when the event is fired
+Create a template notification to attach to a listeners. This will send a notification when the event configured is fired
 
 ## Action File [WIP]
 [Package]
