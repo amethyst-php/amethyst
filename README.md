@@ -6,13 +6,15 @@
 
 
 - [Dinamic Disks](https://github.com/railken/lara-ore-disk)
+- [Configs persited in the database](https://github.com/railken/lara-ore-config)
+- [Log all requests](https://github.com/railken/lara-ore-request-logger)
+- [Log all events](https://github.com/railken/lara-ore-event-logger)
+
 - File Manager
-- Events logs
-- Http Logs
 - Users
 - Permissions
-- Custom listeners
-- Attach "email" to listeners
+- [Listeners](https://github.com/railken/lara-ore-listeners)
+- [Listen Email](https://github.com/railken/lara-ore-listen-email)
 - Attach "notification" to listeners
 - Attach "file generation" to listener
 - Template "pdf"
