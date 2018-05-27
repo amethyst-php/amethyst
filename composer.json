@@ -15,6 +15,7 @@
         "railken/laravel-manager": "^3.0.3",
         "railken/laravel-application": "^1.0.3",
         "railken/lara-eye": "^1.0.0",
+        "railken/lara-ore-user": "dev-master",
         "railken/lara-ore-disk": "^1.0",
         "railken/lara-ore-config": "^1.0",
         "railken/lara-ore-request-logger": "^1.0",

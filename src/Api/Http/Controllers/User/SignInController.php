@@ -10,7 +10,7 @@ use Railken\LaraOre\Api\OAuth\FacebookProvider;
 use Railken\LaraOre\Api\OAuth\GithubProvider;
 use Railken\LaraOre\Api\OAuth\GitlabProvider;
 use Railken\LaraOre\Api\OAuth\GoogleProvider;
-use Railken\LaraOre\Core\User\UserManager;
+use Railken\LaraOre\User\UserManager;
 
 class SignInController extends Controller
 {

@@ -50,6 +50,7 @@ class CoreServiceProvider extends ServiceProvider
         $this->commands([\Railken\LaraOre\Console\Commands\InstallCommand::class]);
         $router->aliasMiddleware('admin', \Railken\LaraOre\Api\Http\Middleware\AdminMiddleware::class);
 
+        /*
         config(['auth.guards.api.driver' => 'passport']);
         config(['auth.guards.api.provider' => 'users']);
         config(['auth.providers.users.driver' => 'eloquent']);
@@ -59,6 +60,7 @@ class CoreServiceProvider extends ServiceProvider
         config(['entrust.role' => \Railken\LaraOre\Permission\Permission::class]);
         config(['entrust.user' => \Railken\LaraOre\Core\User\User::class]);
         config(['entrust.users_table' => 'ore_users']);
+        */
 
         $callback = function ($router) {
             $router->all();
