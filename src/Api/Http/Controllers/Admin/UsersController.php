@@ -4,7 +4,7 @@ namespace Railken\LaraOre\Api\Http\Controllers\Admin;
 
 use Railken\LaraOre\Api\Http\Controllers\RestController;
 use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
-use Railken\LaraOre\Core\User\UserManager;
+use Railken\LaraOre\User\UserManager;
 
 class UsersController extends RestController
 {

@@ -4,6 +4,7 @@ namespace Railken\LaraOre\Tests\Admin;
 
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Foundation\Exceptions\Handler as BaseHandler;
+use Illuminate\Support\Facades\File;
 
 abstract class BaseTest extends \Orchestra\Testbench\TestCase
 {
@@ -26,21 +27,14 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         });
     }
 
-    protected function getPackageAliases($app)
-    {
-        return [
-            'Twig' => \TwigBridge\Facade\Twig::class,
-        ];
-    }
-
     protected function getPackageProviders($app)
     {
         return [
             \Laravel\Passport\PassportServiceProvider::class,
             \Railken\LaraOre\CoreServiceProvider::class,
             \Railken\Laravel\Manager\ManagerServiceProvider::class,
-            \Railken\Laravel\App\AppServiceProvider::class,
-            \Barryvdh\DomPDF\ServiceProvider::class,
+            \Railken\LaraOre\UserServiceProvider::class,
+            \Railken\LaraOre\Config\ConfigServiceProvider::class,
             \Zizaco\Entrust\EntrustServiceProvider::class,
         ];
     }
@@ -55,23 +49,17 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
 
         parent::setUp();
 
+        File::cleanDirectory(database_path("migrations/"));
+
+        $this->artisan('lara-ore:install');
+
         $this->artisan('migrate:fresh');
-        $this->artisan('railken:lara-ore:install');
-        $this->artisan('migrate');
+        $this->artisan('migrate', ['--force' => true]);
+
+        $this->artisan('lara-ore:seed');
 
         $this->signIn();
         $this->disableExceptionHandling();
-    }
-
-    public function testSignIn()
-    {
-        $response = $this->signIn();
-
-        if ($response->getStatusCode() === 500) {
-            print_r($response->getContent());
-        }
-
-        $response->assertStatus(200);
     }
 
     public function signIn()
@@ -81,7 +69,6 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
             'password' => 'vercingetorige',
         ]);
 
-        $access_token = $response->getContent();
         $access_token = json_decode($response->getContent())->data->access_token;
 
         $this->withHeaders(['Authorization' => 'Bearer '.$access_token]);

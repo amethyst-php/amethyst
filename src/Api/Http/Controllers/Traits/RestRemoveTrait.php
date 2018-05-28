@@ -27,7 +27,7 @@ trait RestRemoveTrait
         $result = $this->manager->remove($resource);
 
         if ($result->ok()) {
-            $m = new \Railken\LaraOre\Core\Log\LogManager();
+            /*$m = new \Railken\LaraOre\Core\Log\LogManager();
             $m->create([
                 'type'     => 'api',
                 'category' => 'remove',
@@ -39,7 +39,7 @@ trait RestRemoveTrait
                     'after'        => null,
                     'user_id'      => $this->getUser()->id,
                 ],
-            ]);
+            ]);*/
 
             return $this->success(['message' => 'ok']);
         }

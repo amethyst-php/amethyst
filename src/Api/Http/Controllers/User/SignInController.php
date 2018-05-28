@@ -74,6 +74,12 @@ class SignInController extends Controller
     {
         $oauth_client = DB::table('oauth_clients')->where('password_client', 1)->first();
 
+        if (!$oauth_client) {
+            return $this->error([
+                'code' => 'CLIENT_NOT_FOUND',
+            ]);
+        }
+
         $request->request->add([
             'username'      => $request->input('username'),
             'password'      => $request->input('password'),

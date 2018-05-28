@@ -29,7 +29,7 @@ trait RestUpdateTrait
         $result = $this->manager->update($resource, $params);
 
         if ($result->ok()) {
-            $m = new \Railken\LaraOre\Core\Log\LogManager();
+            /*$m = new \Railken\LaraOre\Core\Log\LogManager();
             $m->create([
                 'type'     => 'api',
                 'category' => 'update',
@@ -41,7 +41,7 @@ trait RestUpdateTrait
                     'after'        => $this->manager->serializer->serialize($result->getResource())->toArray(),
                     'user_id'      => $this->getUser()->id,
                 ],
-            ]);
+            ]);*/
 
             return $this->success([
                 'resource' => $this->manager->serializer->serialize($result->getResource(), $this->keys->selectable)->all(),

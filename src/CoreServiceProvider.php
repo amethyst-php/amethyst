@@ -45,22 +45,19 @@ class CoreServiceProvider extends ServiceProvider
             \Railken\LaraOre\Api\Http\Middleware\LoggerMiddleware::class,
         ]);
 
+        $this->commands([
+            \Railken\LaraOre\Console\Commands\InstallCommand::class,
+            \Railken\LaraOre\Console\Commands\SeedCommand::class
+        ]);
 
 
-        $this->commands([\Railken\LaraOre\Console\Commands\InstallCommand::class]);
         $router->aliasMiddleware('admin', \Railken\LaraOre\Api\Http\Middleware\AdminMiddleware::class);
 
-        /*
         config(['auth.guards.api.driver' => 'passport']);
         config(['auth.guards.api.provider' => 'users']);
         config(['auth.providers.users.driver' => 'eloquent']);
-        config(['auth.providers.users.model' => \Railken\LaraOre\Core\User\User::class]);
+        config(['auth.providers.users.model' => \Railken\LaraOre\User\User::class]);
 
-        config(['entrust.role' => \Railken\LaraOre\Permission\Role::class]);
-        config(['entrust.role' => \Railken\LaraOre\Permission\Permission::class]);
-        config(['entrust.user' => \Railken\LaraOre\Core\User\User::class]);
-        config(['entrust.users_table' => 'ore_users']);
-        */
 
         $callback = function ($router) {
             $router->all();
@@ -83,6 +80,12 @@ class CoreServiceProvider extends ServiceProvider
         Passport::tokensExpireIn(now()->addDays(15));
 
         Passport::refreshTokensExpireIn(now()->addDays(30));
+
+
+        /*Route::group([
+        ],function ($router){
+            require __DIR__."/../routes/ore.php");
+        });*/
     }
 
     /**

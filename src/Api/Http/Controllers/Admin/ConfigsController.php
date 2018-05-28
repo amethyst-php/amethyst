@@ -12,6 +12,9 @@ class ConfigsController extends RestController
 {
     use RestTraits\RestIndexTrait;
     use RestTraits\RestCreateTrait;
+    use RestTraits\RestShowTrait;
+    use RestTraits\RestUpdateTrait;
+    use RestTraits\RestRemoveTrait;
 
     protected static $query = [
         'id',
@@ -53,7 +56,7 @@ class ConfigsController extends RestController
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    /*public function update(Request $request)
     {
         $params = new Bag($request->all());
 
@@ -63,25 +66,11 @@ class ConfigsController extends RestController
 
         if ($result->ok()) {
 
-            /*$m = new \Railken\LaraOre\Core\Log\LogManager();
-            $m->create([
-                'type' => 'api',
-                'category' => 'update',
-                'message' => null,
-                'vars' => [
-                    'entity_class' => $this->manager->getRepository()->getEntity(),
-                    'entity_id' => $result->getResource()->id,
-                    'before' => $before,
-                    'after' => $this->manager->serializer->serialize($result->getResource())->toArray(),
-                    'user_id' => $this->getUser()->id
-                ]
-            ]);*/
-
             return $this->success(['message' => 'ok']);
         }
 
         return $this->error([
             'errors' => $result->getSimpleErrors(),
         ]);
-    }
+    }*/
 }

@@ -47,9 +47,13 @@ Route::group(['namespace' => 'Railken\LaraOre\Api\Http\Controllers', 'prefix' =>
 
     Route::group(['namespace' => 'Admin', 'middleware' => ['auth:api', 'admin'], 'prefix' => 'admin'], function () {
 
-        rest('http-logs', 'HttpLogsController');
 
+        rest('users', 'UsersController');
+        rest('configs', 'ConfigsController');
         # Storage
+        /*
+
+        rest('http-logs', 'HttpLogsController');
         rest('disks', 'DisksController');
         rest('files', 'FilesController');
         Route::post('/files/upload', ['uses' => 'FilesController@upload']);
@@ -61,7 +65,6 @@ Route::group(['namespace' => 'Railken\LaraOre\Api\Http\Controllers', 'prefix' =>
         });
 
         # Users
-        rest('users', 'UsersController');
         // Customer?
         rest('addresses', 'AddressesController');
 
@@ -96,6 +99,6 @@ Route::group(['namespace' => 'Railken\LaraOre\Api\Http\Controllers', 'prefix' =>
             Route::delete('/{id}', ['uses' => 'LogsController@remove']);
             Route::get('/{id}', ['uses' => 'LogsController@show']);
         });
-
+        */
     });
 });

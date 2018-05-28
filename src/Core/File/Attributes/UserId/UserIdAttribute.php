@@ -80,6 +80,6 @@ class UserIdAttribute extends BelongsToAttribute
      */
     public function getRelationManager(EntityContract $entity)
     {
-        return new \Railken\LaraOre\Core\User\UserManager($this->getManager()->getAgent());
+        return new \Railken\LaraOre\User\UserManager($this->getManager()->getAgent());
     }
 }

@@ -4,12 +4,12 @@ namespace Railken\LaraOre\Api\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use Railken\LaraOre\Api\Http\Controllers\Controller;
-use Railken\LaraOre\Core\User\UserManager;
+use Railken\LaraOre\User\UserManager;
 
 class AccountController extends Controller
 {
     /**
-     * @var \Railken\LaraOre\Core\User\UserManager
+     * @var \Railken\LaraOre\User\UserManager
      */
     protected $manager;
 

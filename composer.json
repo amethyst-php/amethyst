@@ -20,7 +20,7 @@
         "railken/lara-ore-config": "dev-master",
         "railken/lara-ore-request-logger": "dev-master",
         "railken/lara-ore-template": "dev-master",
-        "ralouphie/mimey": "^1.0",
+        "ralouphie/mimey": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~7.0",

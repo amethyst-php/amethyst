@@ -4,7 +4,7 @@ namespace Railken\LaraOre\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class InstallCommand extends Command
+class SeedCommand extends Command
 {
 
     /**
@@ -12,14 +12,14 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'lara-ore:install {--force}';
+    protected $signature = 'lara-ore:seed';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Installs all lara-ore packages';
+    protected $description = 'Seed all lara-ore packages';
 
     /**
      * Create a new command instance.
@@ -38,7 +38,8 @@ class InstallCommand extends Command
      */
     public function handle()
     {
-        $this->call('vendor:publish', ['--provider' => 'Railken\LaraOre\UserServiceProvider', '--force' => $this->option('force')]);
-        $this->call('vendor:publish', ['--provider' => 'Railken\LaraOre\Config\ConfigServiceProvider', '--force' => $this->option('force')]);
+        $this->call('db:seed', ['--class' => 'Railken\LaraOre\User\Database\Seeds\UserSeeder']);
+
+        $this->call('passport:install');
     }
 }

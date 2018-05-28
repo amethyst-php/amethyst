@@ -9,7 +9,7 @@ use Railken\LaraOre\User\UserManager;
 class UserController extends Controller
 {
     /**
-     * @var \Railken\LaraOre\Core\User\UserManager
+     * @var \Railken\LaraOre\User\UserManager
      */
     protected $manager;
 
