@@ -63,7 +63,7 @@ class ConfigsTest extends BaseTest
     }
 
     public function testWrongName()
-    {  
+    {
         $response = $this->post($this->getBaseUrl(), $this->getParameters()->set('key', 'A name')->toArray());
         $response->assertStatus(200);
 
@@ -74,7 +74,5 @@ class ConfigsTest extends BaseTest
                 ['code' => 'CONFIG_KEY_NOT_UNIQUE'],
             ],
         ]);
-
     }
-
 }

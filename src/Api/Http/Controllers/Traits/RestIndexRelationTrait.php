@@ -55,7 +55,6 @@ trait RestIndexRelationTrait
 
         try {
             if ($request->input('query')) {
-
                 $filter = new Filter($this->manager->getTableName(), $selectable->toArray());
                 $filter->buid($query, $request->input('query'));
             }

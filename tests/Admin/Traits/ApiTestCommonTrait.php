@@ -5,7 +5,7 @@ namespace Railken\LaraOre\Tests\Admin\Traits;
 trait ApiTestCommonTrait
 {
     public function commonTest($url, $parameters)
-    {   
+    {
         
         # GET /
         $response = $this->get($url, []);

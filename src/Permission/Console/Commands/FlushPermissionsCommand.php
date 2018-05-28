@@ -60,7 +60,6 @@ class FlushPermissionsCommand extends Command
         $admin->display_name = 'User Administrator'; // optional
         $admin->description  = 'User is allowed to manage and edit other users'; // optional
         $admin->save();*/
-        
     }
 
     public function updatePermissions($permissions)

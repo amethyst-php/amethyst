@@ -38,10 +38,8 @@ class InstallCommand extends Command
      */
     public function handle()
     {
-
         $this->call('vendor:publish', ['--provider' => 'Railken\LaraOre\Config\ConfigServiceProvider']);
         $this->call('passport:install');
         $this->call('db:seed', ['--class' => 'Railken\LaraOre\Resources\Seeds\UserSeeder']);
-    
     }
 }

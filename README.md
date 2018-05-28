@@ -17,7 +17,7 @@ Handle users, permissions.
 
 [Package](https://github.com/railken/lara-ore-template)
 
-Create a template record
+Create a template record. This can be an html template, to be used as body for the email, or can be a .pdf template, to be used as invoice for an order
 
 ## Jobs
 [![Build Status](https://travis-ci.org/railken/lara-ore-job.svg?branch=master)](https://travis-ci.org/railken/lara-ore-job)

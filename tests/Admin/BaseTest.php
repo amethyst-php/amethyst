@@ -1,24 +1,26 @@
 <?php
 
 namespace Railken\LaraOre\Tests\Admin;
+
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Foundation\Exceptions\Handler as BaseHandler;
 
-
 abstract class BaseTest extends \Orchestra\Testbench\TestCase
-{ 
-
+{
     protected function disableExceptionHandling()
     {
         $this->app->instance(ExceptionHandler::class, new class extends BaseHandler {
-            public function __construct() {}
+            public function __construct()
+            {
+            }
 
             public function report(\Exception $e)
             {
                 // no-op
             }
 
-            public function render($request, \Exception $e) {
+            public function render($request, \Exception $e)
+            {
                 throw $e;
             }
         });
