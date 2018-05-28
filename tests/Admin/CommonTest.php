@@ -7,7 +7,7 @@ use Railken\LaraOre\Config\ConfigManager;
 
 /**
  */
-class UserTest extends BaseTest
+class CommonTest extends BaseTest
 {
     use Traits\ApiTestCommonTrait;
     

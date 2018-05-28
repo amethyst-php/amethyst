@@ -35,6 +35,7 @@ class ConfigsController extends RestController
     public function __construct(ConfigManager $manager)
     {
         $this->manager = $manager;
+        $this->manager->setAgent($this->getUser());
         parent::__construct();
     }
 

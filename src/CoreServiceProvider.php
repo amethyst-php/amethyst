@@ -58,6 +58,12 @@ class CoreServiceProvider extends ServiceProvider
         config(['auth.providers.users.driver' => 'eloquent']);
         config(['auth.providers.users.model' => \Railken\LaraOre\User\User::class]);
 
+        config(['ore.user.permission.managers' => [
+            \Railken\LaraOre\User\UserManager::class,
+            \Railken\LaraOre\Config\ConfigManager::class
+        ]]);
+
+
 
         $callback = function ($router) {
             $router->all();

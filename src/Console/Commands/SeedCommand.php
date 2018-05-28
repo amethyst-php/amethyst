@@ -38,8 +38,8 @@ class SeedCommand extends Command
      */
     public function handle()
     {
+        $this->call('lara-ore:permission:flush');
         $this->call('db:seed', ['--class' => 'Railken\LaraOre\User\Database\Seeds\UserSeeder']);
-
         $this->call('passport:install');
     }
 }

@@ -59,6 +59,8 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
 
         $this->artisan('lara-ore:seed');
 
+        (new \Railken\LaraOre\User\UserManager())->getRepository()->findOneBy(['id' => 1])->attachRole(\Railken\LaraOre\Permission\Role::where('name', 'admin')->first());
+
         $this->signIn();
         $this->disableExceptionHandling();
     }

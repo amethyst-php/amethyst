@@ -16,12 +16,11 @@ class PermissionPolicy implements PolicyContract
     	});
 
         if ($agent->hasRole('admin')) {
-
         	return $query;
         }
 
         if ($agent->hasRole('user')) {
-        	return $query->where('ownerships.');
+        	return $query;
         }
 
         throw new \Exception("No role found for user: #".$agent->id);
