@@ -40,5 +40,6 @@ class InstallCommand extends Command
     {
         $this->call('vendor:publish', ['--provider' => 'Railken\LaraOre\UserServiceProvider', '--force' => $this->option('force')]);
         $this->call('vendor:publish', ['--provider' => 'Railken\LaraOre\Config\ConfigServiceProvider', '--force' => $this->option('force')]);
+        $this->call('vendor:publish', ['--provider' => 'Railken\LaraOre\RequestLogger\RequestLoggerServiceProvider', '--force' => $this->option('force')]);
     }
 }

@@ -13,7 +13,7 @@ class PermissionPolicy implements PolicyContract
     {   
     	$query->leftJoin('ownerships', function($join) {
     		$join->on('ownership.table_name', '=', $query->)
-    	})
+    	});
 
         if ($agent->hasRole('admin')) {
 
@@ -21,7 +21,7 @@ class PermissionPolicy implements PolicyContract
         }
 
         if ($agent->hasRole('user')) {
-        	return $query->where('ownerships.')
+        	return $query->where('ownerships.');
         }
 
         throw new \Exception("No role found for user: #".$agent->id);

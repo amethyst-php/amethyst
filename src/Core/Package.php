@@ -1,6 +1,6 @@
 <?php
 
-namespace Core;
+namespace Railken\LaraOre\Core;
 
 use Railken\Laravel\App\Package as BasePackage;
 

@@ -7,7 +7,7 @@ use Railken\LaraOre\Api\Http\Controllers\RestController;
 use Railken\LaraOre\Api\Http\Controllers\Traits\RestIndexTrait;
 use Railken\LaraOre\Api\Http\Controllers\Traits\RestRemoveTrait;
 use Railken\LaraOre\Api\Http\Controllers\Traits\RestShowTrait;
-use Railken\LaraOre\Core\HttpLog\HttpLogManager;
+use Railken\LaraOre\RequestLogger\RequestLog\RequestLogManager;
 
 class HttpLogsController extends RestController
 {
@@ -51,7 +51,7 @@ class HttpLogsController extends RestController
         'updated_at',
     ];
 
-    public function __construct(HttpLogManager $manager)
+    public function __construct(RequestLogManager $manager)
     {
         $this->manager = $manager;
         $this->manager->setAgent($this->getUser());

@@ -36,6 +36,7 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
             \Railken\LaraOre\UserServiceProvider::class,
             \Railken\LaraOre\Config\ConfigServiceProvider::class,
             \Zizaco\Entrust\EntrustServiceProvider::class,
+            \Railken\LaraOre\RequestLogger\RequestLoggerServiceProvider::class,
         ];
     }
 
