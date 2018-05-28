@@ -9,6 +9,21 @@ This package is meant to be as a my personal starter-pack for every laravel proj
 ## Users
 [Package](https://github.com/railken/lara-ore-user)
 
+## Template
+[Package](https://github.com/railken/lara-ore-template)
+
+Create a template record
+
+## Listeners
+[Package](https://github.com/railken/lara-ore-listeners)
+
+Attach a listener to an event to perform user-custom action (For e.g. send an email when user is registered)
+
+## Actions
+[Package]
+
+Perform an action. This may change from "FTP upload, HTTP Call, Email notification, User Notification, File generation"
+
 ## Dinamic disks
 [Package](https://github.com/railken/lara-ore-disk)
 
@@ -28,43 +43,3 @@ Log all requests with the response to debug your api
 [Package](https://github.com/railken/lara-ore-event-logger)
 
 Log all events to know what's going on
-
-## File pdf [WIP]
-[Package]
-
-Create a .pdf template file
-
-## File csv [WIP]
-[Package]
-
-Create a .csv template file
-
-## File xls [WIP]
-[Package]
-
-Create a .xls template file
-
-## Listeners [WIP]
-[Package](https://github.com/railken/lara-ore-listeners)
-
-Attach a listener to an event to perform user-custom action (For e.g. send an email when user is registered)
-
-## Action Email [WIP]
-[Package]
-
-Create a template email to attach to a listeners. This will send an email when the event configured is fired. You can attach multiple action files as attachments.
-
-## Action Notification [WIP]
-[Package]
-
-Create a template notification to attach to a listeners. This will send a notification when the event configured is fired
-
-## Action File [WIP]
-[Package]
-
-Attach a template file (such as xls or pdf) to a listeners. This will create a file using that template
-
-## TODO
-- File Manager
-- Users
-- Permissions
