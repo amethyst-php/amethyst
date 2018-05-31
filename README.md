@@ -19,26 +19,26 @@ Handle users, permissions.
 
 Create a template record. This can be an html template, to be used as body for the email, or can be a .pdf template, to be used as invoice for an order
 
-## Jobs
-[![Build Status](https://travis-ci.org/railken/lara-ore-job.svg?branch=master)](https://travis-ci.org/railken/lara-ore-job)
+## Work
+[![Build Status](https://travis-ci.org/railken/lara-ore-work.svg?branch=master)](https://travis-ci.org/railken/lara-ore-work)
 
-[Package](https://github.com/railken/lara-ore-job)
+[Package](https://github.com/railken/lara-ore-work)
 
-Perform a job. This may change from "FTP upload, HTTP Call, Email notification, User Notification, File generation, Report creation"
+Perform a work. This may change from "FTP upload, HTTP Call, Email notification, User Notification, File generation, Report creation"
 
 ## Schedule
 [![Build Status](https://travis-ci.org/railken/lara-ore-schedule.svg?branch=master)](https://travis-ci.org/railken/lara-ore-schedule)
 
 [Package](https://github.com/railken/lara-ore-schedule)
 
-Schedule a job.
+Schedule a work.
 
 ## Listeners
 [![Build Status](https://travis-ci.org/railken/lara-ore-listener.svg?branch=master)](https://travis-ci.org/railken/lara-ore-listener)
 
 [Package](https://github.com/railken/lara-ore-listener)
 
-Create listener to an event to perform user-custom job (For e.g. send an email when user is registered)
+Create listener to an event to perform user-custom work (For e.g. send an email when user is registered)
 
 ## Taxonomies
 [![Build Status](https://travis-ci.org/railken/lara-ore-taxonomies.svg?branch=master)](https://travis-ci.org/railken/lara-ore-taxonomies)
