@@ -5,8 +5,7 @@ namespace Railken\LaraOre\Tests\Admin\Traits;
 trait ApiTestCommonTrait
 {
     public function commonTest($url, $parameters, $check = null)
-    {   
-
+    {
         if (!$check) {
             $check = $parameters;
         }
