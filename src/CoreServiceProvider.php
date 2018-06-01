@@ -51,7 +51,7 @@ class CoreServiceProvider extends ServiceProvider
     {
         $router->middleware([
             \Barryvdh\Cors\HandleCors::class,
-            \Railken\LaraOre\RequestLogger\RequestLoggerMiddleware::class
+            \Railken\LaraOre\RequestLoggerMiddleware::class
         ]);
 
         $this->commands([

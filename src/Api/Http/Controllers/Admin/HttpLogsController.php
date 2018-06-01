@@ -7,7 +7,7 @@ use Railken\LaraOre\Api\Http\Controllers\RestController;
 use Railken\LaraOre\Api\Http\Controllers\Traits\RestIndexTrait;
 use Railken\LaraOre\Api\Http\Controllers\Traits\RestRemoveTrait;
 use Railken\LaraOre\Api\Http\Controllers\Traits\RestShowTrait;
-use Railken\LaraOre\RequestLogger\RequestLog\RequestLogManager;
+use Railken\LaraOre\RequestLog\RequestLogManager;
 
 class HttpLogsController extends RestController
 {
