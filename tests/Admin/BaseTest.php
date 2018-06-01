@@ -30,13 +30,7 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
     protected function getPackageProviders($app)
     {
         return [
-            \Laravel\Passport\PassportServiceProvider::class,
             \Railken\LaraOre\CoreServiceProvider::class,
-            \Railken\Laravel\Manager\ManagerServiceProvider::class,
-            \Railken\LaraOre\UserServiceProvider::class,
-            \Railken\LaraOre\Config\ConfigServiceProvider::class,
-            \Zizaco\Entrust\EntrustServiceProvider::class,
-            \Railken\LaraOre\RequestLogger\RequestLoggerServiceProvider::class,
         ];
     }
 

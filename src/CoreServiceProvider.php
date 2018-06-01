@@ -31,6 +31,15 @@ class CoreServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->register(\Laravel\Passport\PassportServiceProvider::class);
+
+        $this->app->register(\Railken\Laravel\Manager\ManagerServiceProvider::class);
+        $this->app->register(\Railken\LaraOre\UserServiceProvider::class);
+        $this->app->register(\Railken\LaraOre\ConfigServiceProvider::class);
+        $this->app->register(\Railken\LaraOre\RequestLoggerServiceProvider::class);
+        $this->app->register(\Railken\LaraOre\FileServiceProvider::class);
+        $this->app->register(\Railken\LaraOre\DiskServiceProvider::class);
+        $this->app->register(\Railken\LaraOre\WorkServiceProvider::class);
     }
 
     /**

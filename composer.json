@@ -5,24 +5,26 @@
     "require": {
         "php": ">=7.1",
         "barryvdh/laravel-cors": "^0.11.0",
-        "phpstan/phpstan": "^0.9.2",
         "laravel/passport": "^5.0",
         "laravel/tinker": "^1.0",
         "laravolt/avatar": "^2.0",
         "league/flysystem-aws-s3-v3": "^1.0",
-        "rcrowe/twigbridge": "^0.9.6",
         "railken/bag": "^1.2",
         "railken/laravel-manager": "^3.0.3",
         "railken/laravel-application": "^1.0.3",
         "railken/lara-eye": "^1.0",
         "railken/lara-ore-user": "dev-master",
         "railken/lara-ore-disk": "dev-master",
+        "railken/lara-ore-file": "dev-master",
+        "railken/lara-ore-user": "dev-master",
         "railken/lara-ore-config": "dev-master",
         "railken/lara-ore-request-logger": "dev-master",
         "railken/lara-ore-template": "dev-master",
+        "railken/lara-ore-work": "dev-master",
         "ralouphie/mimey": "^1.0"
     },
     "require-dev": {
+        "phpstan/phpstan": "^0.9.2",
         "phpunit/phpunit": "~7.0",
         "orchestra/testbench": "~3.6",
         "friendsofphp/php-cs-fixer": "^2.8.1"
