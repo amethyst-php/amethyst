@@ -69,7 +69,8 @@ class CoreServiceProvider extends ServiceProvider
 
         config(['ore.user.permission.managers' => [
             \Railken\LaraOre\User\UserManager::class,
-            \Railken\LaraOre\Config\ConfigManager::class
+            \Railken\LaraOre\Config\ConfigManager::class,
+            \Railken\LaraOre\Work\WorkManager::class,
         ]]);
 
 
