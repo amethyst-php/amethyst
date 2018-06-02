@@ -37,8 +37,13 @@ class WorkTest extends BaseTest
         return $bag;
     }
 
+    /**
+     * Test common requests.
+     *
+     * @return void
+     */
     public function testSuccessCommon()
     {
-        $this->commonTest($this->getBaseUrl(), $this->getParameters(), $this->getParameters()->remove('password'));
+        $this->commonTest($this->getBaseUrl(), $parameters = $this->getParameters(), $parameters);
     }
 }

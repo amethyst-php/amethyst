@@ -32,9 +32,14 @@ class ConfigsTest extends BaseTest
         return $bag;
     }
 
+    /**
+     * Test common requests.
+     *
+     * @return void
+     */
     public function testSuccessCommon()
     {
-        $this->commonTest($this->getBaseUrl(), $this->getParameters());
+        $this->commonTest($this->getBaseUrl(), $parameters = $this->getParameters(), $parameters);
     }
 
     public function testWrongCreate()

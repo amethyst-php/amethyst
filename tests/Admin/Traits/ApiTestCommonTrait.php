@@ -49,7 +49,7 @@ trait ApiTestCommonTrait
     public function assertOrPrint($response, $code)
     {
         if ($response->getStatusCode() !== $code) {
-            print_r($response);
+            print_r($response->getContent());
         }
 
         $response->assertStatus($code);

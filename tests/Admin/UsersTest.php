@@ -25,7 +25,7 @@ class UsersTest extends BaseTest
      */
     public function getParameters()
     {
-        $bag = new bag();
+        $bag = new Bag();
         $bag->set('name', "A name");
         $bag->set('email', "test".microtime(true)."@test.net");
         $bag->set('password', 'password');
@@ -35,8 +35,13 @@ class UsersTest extends BaseTest
         return $bag;
     }
 
+    /**
+     * Test common requests.
+     *
+     * @return void
+     */
     public function testSuccessCommon()
     {
-        $this->commonTest($this->getBaseUrl(), $this->getParameters(), $this->getParameters()->remove('password'));
+        $this->commonTest($this->getBaseUrl(), $parameters = $this->getParameters(), (new Bag($parameters))->remove('password'));
     }
 }
