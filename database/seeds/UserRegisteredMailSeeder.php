@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\LaraOre\Resources\Seeds;
+namespace Railken\LaraOre\Seeds;
 
 use Illuminate\Database\Seeder;
 
