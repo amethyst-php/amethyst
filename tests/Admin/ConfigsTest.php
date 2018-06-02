@@ -3,10 +3,7 @@
 namespace Railken\LaraOre\Tests\Admin;
 
 use Railken\Bag;
-use Railken\LaraOre\Config\ConfigManager;
 
-/**
- */
 class ConfigsTest extends BaseTest
 {
     use Traits\ApiTestCommonTrait;
@@ -19,16 +16,6 @@ class ConfigsTest extends BaseTest
     public function getBaseUrl()
     {
         return '/api/v1/admin/configs';
-    }
-
-    /**
-     * Retrieve basic url.
-     *
-     * @return \Railken\Laravel\Manager\Contracts\ManagerContract
-     */
-    public function getManager()
-    {
-        return new ConfigManager();
     }
 
     /**

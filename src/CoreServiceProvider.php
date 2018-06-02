@@ -94,14 +94,7 @@ class CoreServiceProvider extends ServiceProvider
         });
 
         Passport::tokensExpireIn(now()->addDays(15));
-
         Passport::refreshTokensExpireIn(now()->addDays(30));
-
-
-        /*Route::group([
-        ],function ($router){
-            require __DIR__."/../routes/ore.php");
-        });*/
     }
 
     /**
