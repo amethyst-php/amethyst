@@ -5,28 +5,10 @@ namespace Railken\LaraOre\Tests\Admin;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Foundation\Exceptions\Handler as BaseHandler;
 use Illuminate\Support\Facades\File;
+use Illuminate\Contracts\Container\Container;
 
 abstract class BaseTest extends \Orchestra\Testbench\TestCase
 {
-    protected function disableExceptionHandling()
-    {
-        $this->app->instance(ExceptionHandler::class, new class extends BaseHandler {
-            public function __construct()
-            {
-            }
-
-            public function report(\Exception $e)
-            {
-                // no-op
-            }
-
-            public function render($request, \Exception $e)
-            {
-                throw $e;
-            }
-        });
-    }
-
     protected function getPackageProviders($app)
     {
         return [
@@ -53,10 +35,9 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
 
         $this->artisan('lara-ore:seed');
 
-        (new \Railken\LaraOre\User\UserManager())->getRepository()->findOneBy(['id' => 1])->attachRole(\Railken\LaraOre\Permission\Role::where('name', 'admin')->first());
+        (new \Railken\LaraOre\User\UserManager())->getRepository()->findOneBy(['id' => 1])->attachRole((new \Railken\LaraOre\Permission\Role)->newQuery()->where('name', 'admin')->first());
 
         $this->signIn();
-        $this->disableExceptionHandling();
     }
 
     public function signIn()
