@@ -57,7 +57,7 @@ class EventLogsController extends RestController
     /**
      * Create a new instance for query.
      *
-     * @return \Illuminate\DataBase\Query\Builder
+     * @return \Illuminate\Database\Query\Builder
      */
     public function getQuery()
     {

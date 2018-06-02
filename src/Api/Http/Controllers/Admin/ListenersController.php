@@ -8,7 +8,7 @@ use Railken\LaraOre\Api\Http\Controllers\Traits\RestIndexTrait;
 use Railken\LaraOre\Api\Http\Controllers\Traits\RestRemoveTrait;
 use Railken\LaraOre\Api\Http\Controllers\Traits\RestShowTrait;
 use Railken\LaraOre\Api\Http\Controllers\Traits\RestUpdateTrait;
-use Railken\LaraOre\Core\Listener\ListenerManager;
+use Railken\LaraOre\Listener\ListenerManager;
 
 class ListenersController extends RestController
 {
@@ -59,7 +59,7 @@ class ListenersController extends RestController
     /**
      * Create a new instance for query.
      *
-     * @return \Illuminate\DataBase\Query\Builder
+     * @return \Illuminate\Database\Query\Builder
      */
     public function getQuery()
     {
