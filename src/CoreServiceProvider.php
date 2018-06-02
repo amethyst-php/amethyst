@@ -40,6 +40,7 @@ class CoreServiceProvider extends ServiceProvider
         $this->app->register(\Railken\LaraOre\FileServiceProvider::class);
         $this->app->register(\Railken\LaraOre\DiskServiceProvider::class);
         $this->app->register(\Railken\LaraOre\WorkServiceProvider::class);
+        $this->app->register(\Railken\LaraOre\ListenerServiceProvider::class);
     }
 
     /**
@@ -71,6 +72,7 @@ class CoreServiceProvider extends ServiceProvider
             \Railken\LaraOre\User\UserManager::class,
             \Railken\LaraOre\Config\ConfigManager::class,
             \Railken\LaraOre\Work\WorkManager::class,
+            \Railken\LaraOre\Listener\ListenerManager::class,
         ]]);
 
 

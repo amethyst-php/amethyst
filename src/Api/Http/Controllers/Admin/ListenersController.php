@@ -28,8 +28,7 @@ class ListenersController extends RestController
         'name',
         'description',
         'event_class',
-        'action_id',
-        'action_type',
+        'work_id',
         'enabled',
         'created_at',
         'updated_at',
@@ -44,8 +43,7 @@ class ListenersController extends RestController
         'name',
         'description',
         'event_class',
-        'action_id',
-        'action_type',
+        'work_id',
         'enabled',
     ];
 
