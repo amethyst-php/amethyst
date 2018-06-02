@@ -27,16 +27,8 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         parent::setUp();
 
         File::cleanDirectory(database_path("migrations/"));
-
-        $this->artisan('lara-ore:install');
-
         $this->artisan('migrate:fresh');
-        $this->artisan('migrate', ['--force' => true]);
-
-        $this->artisan('lara-ore:seed');
-
-        (new \Railken\LaraOre\User\UserManager())->getRepository()->findOneBy(['id' => 1])->attachRole((new \Railken\LaraOre\Permission\Role)->newQuery()->where('name', 'admin')->first());
-
+        $this->artisan('lara-ore:install');
         $this->signIn();
     }
 
