@@ -90,7 +90,7 @@ class EventLogsController extends RestController
     
         try {
             if ($request->input('query')) {
-                $filter = new Filter($this->manager->getTableName(), $selectable->toArray());
+                $filter = new Filter($this->manager->newEntity()->getTable(), $selectable->toArray());
                 $filter->buid($query, $request->input('query'));
             }
         } catch (QuerySyntaxException $e) {

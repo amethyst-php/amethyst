@@ -14,6 +14,11 @@ trait ApiTestCommonTrait
         $response = $this->get($url, []);
         $this->assertOrPrint($response, 200);
 
+        # GET /
+        $response = $this->get($url, ['query' => 'id eq 1']);
+        $this->assertOrPrint($response, 200);
+        
+
         # POST /
         $response = $this->post($url, $parameters->toArray());
         $this->assertOrPrint($response, 200);
