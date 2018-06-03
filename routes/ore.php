@@ -30,10 +30,6 @@ Route::group(['namespace' => 'Railken\LaraOre\Api\Http\Controllers', 'prefix' =>
     Route::post('/oauth/{name}/access_token', ['uses' => 'User\SignInController@accessToken']);
     Route::post('/oauth/{name}/exchange_token', ['uses' => 'User\SignInController@exchangeToken']);
     
-    //Route::post('/files/upload', ['uses' => 'File\FilesController@upload']);
-    //Route::get('/files/{token}', ['uses' => 'File\FilesController@get']);
-    //Route::delete('/files/{token}', ['uses' => 'File\FilesController@remove']);
-
     Route::group(['middleware' => ['auth:api']], function () {
         Route::group(['prefix' => 'notifications'], function () {
             Route::get('/', ['uses' => 'User\NotificationsController@index']);
@@ -58,7 +54,6 @@ Route::group(['namespace' => 'Railken\LaraOre\Api\Http\Controllers', 'prefix' =>
         /*
 
         rest('http-logs', 'HttpLogsController');
-        rest('disks', 'DisksController');
         rest('files', 'FilesController');
         Route::post('/files/upload', ['uses' => 'FilesController@upload']);
 
@@ -68,12 +63,6 @@ Route::group(['namespace' => 'Railken\LaraOre\Api\Http\Controllers', 'prefix' =>
             Route::patch('/', ['uses' => 'ConfigsController@update']);
         });
 
-        # Users
-        // Customer?
-        rest('addresses', 'AddressesController');
-
-        # Event driven data
-        rest('listeners', 'ListenersController');
 
         rest('action-notifications', 'ActionNotificationsController', function ($controller) {
             Route::post('/render', ['uses' => $controller.'@renderTemplate']);
@@ -86,23 +75,7 @@ Route::group(['namespace' => 'Railken\LaraOre\Api\Http\Controllers', 'prefix' =>
         rest('report-pdf', 'ReportPdfController', function ($controller) {
             Route::post('/render', ['uses' => $controller.'@renderTemplate']);
         });
-
-        Route::group(['prefix' => 'mail-logs'], function () {
-            Route::get('/', ['uses' => 'MailLogsController@index']);
-            Route::delete('/{id}', ['uses' => 'MailLogsController@remove']);
-            Route::get('/{id}', ['uses' => 'MailLogsController@show']);
-        });
-
-        # Logs
-        rest('event-logs', 'EventLogsController', function ($controller) {
-            Route::get('/stats', ['uses' => $controller.'@stats']);
-        });
-
-        Route::group(['prefix' => 'logs'], function () {
-            Route::get('/', ['uses' => 'LogsController@index']);
-            Route::delete('/{id}', ['uses' => 'LogsController@remove']);
-            Route::get('/{id}', ['uses' => 'LogsController@show']);
-        });
         */
+
     });
 });
