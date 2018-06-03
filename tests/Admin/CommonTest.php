@@ -5,8 +5,6 @@ namespace Railken\LaraOre\Tests\Admin;
 use Railken\Bag;
 use Railken\LaraOre\Config\ConfigManager;
 
-/**
- */
 class CommonTest extends BaseTest
 {
     use Traits\ApiTestCommonTrait;
