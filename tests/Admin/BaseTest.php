@@ -17,4 +17,14 @@ abstract class BaseTest extends \Railken\LaraOre\Tests\BaseTest
 
         return $response;
     }
+
+
+    /**
+     * Setup the test environment.
+     */
+    public function setUp()
+    {
+        parent::setUp();
+        $this->signIn();
+    }
 }
