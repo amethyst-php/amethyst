@@ -27,11 +27,9 @@ class HttpLogTest extends BaseTest
      */
     public function testSuccessCommon()
     {
-
         $url = $this->getBaseUrl();
 
         $response = $this->get($url, []);
         $this->assertOrPrint($response, 200);
-
     }
 }
