@@ -43,10 +43,8 @@ class InstallCommand extends Command
         $this->call('vendor:publish', ['--provider' => 'Railken\LaraOre\ConfigServiceProvider', '--force' => $this->option('force')]);
         $this->call('vendor:publish', ['--provider' => 'Railken\LaraOre\RequestLoggerServiceProvider', '--force' => $this->option('force')]);
         $this->call('vendor:publish', ['--provider' => 'Railken\LaraOre\WorkServiceProvider', '--force' => $this->option('force')]);
-
-        $this->call('migrate', ['--force' => true]);
-
         $this->call('vendor:publish', ['--provider' => 'Railken\LaraOre\ListenerServiceProvider', '--force' => $this->option('force')]);
+        
         $this->call('migrate', ['--force' => true]);
         $this->call('lara-ore:seed');
         (new \Railken\LaraOre\User\UserManager())->getRepository()->findOneBy(['id' => 1])->attachRole((new \Railken\LaraOre\Permission\Role)->newQuery()->where('name', 'admin')->first());
