@@ -49,11 +49,11 @@ Route::group(['namespace' => 'Railken\LaraOre\Api\Http\Controllers', 'prefix' =>
         rest('works', 'WorksController');
         rest('listeners', 'ListenersController');
         rest('disks', 'DisksController');
+        rest('http-logs', 'HttpLogsController');
 
         # Storage
         /*
 
-        rest('http-logs', 'HttpLogsController');
         rest('files', 'FilesController');
         Route::post('/files/upload', ['uses' => 'FilesController@upload']);
 

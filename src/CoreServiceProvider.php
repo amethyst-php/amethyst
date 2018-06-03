@@ -74,6 +74,7 @@ class CoreServiceProvider extends ServiceProvider
             \Railken\LaraOre\Work\WorkManager::class,
             \Railken\LaraOre\Listener\ListenerManager::class,
             \Railken\LaraOre\Disk\DiskManager::class,
+            \Railken\LaraOre\RequestLog\RequestLogManager::class,
         ]]);
 
 
