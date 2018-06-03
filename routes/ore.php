@@ -52,7 +52,8 @@ Route::group(['namespace' => 'Railken\LaraOre\Api\Http\Controllers', 'prefix' =>
         rest('configs', 'ConfigsController');
         rest('works', 'WorksController');
         rest('listeners', 'ListenersController');
-        
+        rest('disks', 'DisksController');
+
         # Storage
         /*
 
