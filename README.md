@@ -3,22 +3,22 @@
 This package is meant to be as a my personal starter-pack for every laravel project.
 
 ### Base
-* [User](https://github.com/railken/lara-ore-user)
+* [User](https://github.com/railken/lara-ore-user) (Authentication, Authorization, Users)
 
 ### Common
-* [Template](https://github.com/railken/lara-ore-template)
-* [Work](https://github.com/railken/lara-ore-work)
-* [Schedule](https://github.com/railken/lara-ore-schedule)
-* [Listener](https://github.com/railken/lara-ore-listener)
-* [Taxonomies](https://github.com/railken/lara-ore-taxonomies)
-* [Disk](https://github.com/railken/lara-ore-disk)
-* [File](https://github.com/railken/lara-ore-file)
-* [Config](https://github.com/railken/lara-ore-config)
-* [HttpLogger](https://github.com/railken/lara-ore-request-logger)
-* [EventLogger](https://github.com/railken/lara-ore-event-logger)
+* [Template](https://github.com/railken/lara-ore-template) (Save templates such as .xls, .html, etc.)
+* [Work](https://github.com/railken/lara-ore-work) (Send email, create files, and more)
+* [Schedule](https://github.com/railken/lara-ore-schedule) (Schedule your works)
+* [Listener](https://github.com/railken/lara-ore-listener) (Attach events to works)
+* [Taxonomies](https://github.com/railken/lara-ore-taxonomy) (Vocabulary and taxonomy)
+* [Disk](https://github.com/railken/lara-ore-disk) (Dynamic disks)
+* [File](https://github.com/railken/lara-ore-file) (Manage files)
+* [Config](https://github.com/railken/lara-ore-config) (Configs in the database)
+* [HttpLogger](https://github.com/railken/lara-ore-request-logger) (Log all requests)
+* [EventLogger](https://github.com/railken/lara-ore-event-logger) (Log all events)
 
 ### Data
 * [Address](https://github.com/railken/lara-ore-address)
-* [Contacts](https://github.com/railken/lara-ore-contact)
+* [Contacts](https://github.com/railken/lara-ore-contact) 
 * [Legal Entity](https://github.com/railken/lara-ore-legal-entity)
 * [Invoice](https://github.com/railken/lara-ore-invoice)
