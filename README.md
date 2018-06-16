@@ -20,7 +20,8 @@ This package is meant to be as a my personal starter-pack for every laravel proj
 ### Data
 * [Address](https://github.com/railken/lara-ore-address)
 * [Legal Entity](https://github.com/railken/lara-ore-legal-entity)
+* [Tax](https://github.com/railken/lara-ore-tax)
 * [Invoice](https://github.com/railken/lara-ore-invoice)
 * [Customer](https://github.com/railken/lara-ore-customer)
+* [Recurring Service](https://github.com/railken/lara-ore-recurring-service)
 * [Contract](https://github.com/railken/lara-ore-contract)
-* [Recurrent Service](https://github.com/railken/lara-ore-recurrent-service)
