@@ -1,11 +1,12 @@
 # lara-ore
 
-This package is meant to be as a my personal starter-pack for every laravel project.
+A collection of lara-ore-* packages that i use to start every laravel project.
 
 ### Base
 * [User](https://github.com/railken/lara-ore-user)
 * [Auth](https://github.com/railken/lara-ore-auth)
 * [Account](https://github.com/railken/lara-ore-account)
+* [Registration](https://github.com/railken/lara-ore-registration)
 
 ### Common
 * [Config](https://github.com/railken/lara-ore-config)
@@ -27,4 +28,4 @@ This package is meant to be as a my personal starter-pack for every laravel proj
 * [Customer](https://github.com/railken/lara-ore-customer)
 * [Recurring Service](https://github.com/railken/lara-ore-recurring-service)
 * [Contract](https://github.com/railken/lara-ore-contract)
-* [Catalogue](https://github.com/railken/lara-ore-contract)
+* [Catalogue](https://github.com/railken/lara-ore-catalogue)
