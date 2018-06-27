@@ -1,6 +1,6 @@
 # lara-ore
 
-A collection of lara-ore-* packages that i use to start every laravel project.
+A collection of lara-ore-* packages that i use in my laravel projects.
 
 ### Base
 * [User](https://github.com/railken/lara-ore-user)
