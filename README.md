@@ -1,6 +1,6 @@
 # lara-ore
 
-Because it's easier 
+Let's divide a project into particles
 
 
 ## Walkthrough
@@ -110,7 +110,18 @@ class User extends BaseUser
 }
 ```
 The package will also add some endpoints to sign-in without client_id and client_secret alongs with social login.
+## Account
 
+To add all endpoints for the profile, the recovery and etc add the following package
+```bash
+composer require railken/lara-ore-account
+```
+## Registration
+
+If your app need a registration
+```bash
+composer require railken/lara-ore-registration
+```
 
 ### Base
 * [User](https://github.com/railken/lara-ore-user)
