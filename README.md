@@ -1,10 +1,15 @@
 The purpose of this project it's to create a collection of packages to facilitate the developing process of common problems when building the backend of a crm.
 
-Each component/data has his own package. The user has his own package, the authentication has his own package, the registration, the notification, every solution is divided and fully configurabile.
-For this reason it can be hard to start with it, this is why there is a starter with a bunch of packages added and already installed
+Each component/data has his own package. The user has his own package, the authentication has his own package, the registration, the notification and so on; all fully configurabile.
+For this reason it can be hard to start with it, this is when the [Starter](docs/starter.md) comes in: with a bunch of packages added and already installed you can start to test all the features.
 
-## Documentation
+This package provides only the backend with a sets of endpoints, so a frontend it's still required.
+
+There is a [frontend project](https://github.com/railken/vue-admin-start) written in vue, but it's far from being complete, still it's still valid as a demo/showcase
+
+## Links
 
 * [Starter](docs/starter.md)
 * [Walkthrough](docs/walkthrough.md)
 * [Packages](docs/packages.md)
+* [Frontend](docs/packages.md)
