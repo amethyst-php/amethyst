@@ -6,7 +6,7 @@ Do you want to add some extra fields to the package of the customer? No problem 
 
 At first, all of these packages can give you an headache, i mean, you want something simple to install, without worring to much, i feel you, really. So don't worry, there is a [starter](docs/starter.md) for that: with a bunch of packages added and already installed you can start to test all the features within seconds.
 
-All the packages are laravel-based, the most of them provides full configurabile api.
+All the packages are laravel-based, the most of them provides full configurable api.
 
 This package provides only the backend with a sets of endpoints, so a frontend it's still required. You can write your own or use [this](https://github.com/railken/vue-admin-start).
 
