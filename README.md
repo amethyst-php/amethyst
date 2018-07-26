@@ -7,6 +7,7 @@ Let's divide a project into particles
 * [Auth](https://github.com/railken/lara-ore-auth)
 * [Account](https://github.com/railken/lara-ore-account)
 * [Registration](https://github.com/railken/lara-ore-registration)
+* [Notification](https://github.com/railken/lara-ore-notification)
 
 ### Configuration
 * [Config](https://github.com/railken/lara-ore-config)
@@ -16,6 +17,10 @@ Let's divide a project into particles
 * [File](https://github.com/railken/lara-ore-file)
 
 ### Common
+* [Repository](https://github.com/railken/lara-ore-repository)
+* [DataBuilder](https://github.com/railken/lara-ore-data-builder)
+* [Exporter](https://github.com/railken/lara-ore-exporter)
+* [Importer](https://github.com/railken/lara-ore-importer)
 * [FileGenerator](https://github.com/railken/lara-ore-file-generator)
 * [EmailSender](https://github.com/railken/lara-ore-email-sender)
 * [Template](https://github.com/railken/lara-ore-template)
@@ -38,3 +43,5 @@ Let's divide a project into particles
 * [Recurring Service](https://github.com/railken/lara-ore-recurring-service)
 * [Contract](https://github.com/railken/lara-ore-contract)
 * [Catalogue](https://github.com/railken/lara-ore-catalogue)
+* [FoodAllergen](https://github.com/railken/lara-ore-food-allergen)
+* [Nutrition](https://github.com/railken/lara-ore-nutrition)
