@@ -4,7 +4,7 @@ Each solution has his own package. The user has his own package, the authenticat
 Do you have your own authentication? Good! Continue to use it and skip that package. 
 Do you want to add some extra fields to the package of the customer? No problem at all, all packages permits that.
 
-At first, all of these packages can give you an headache, i mean, you want something simple to install, without worring to much, i feel you, really. So don't worry, there is a [starter](docs/starter.md) for that: with a bunch of packages added and already installed you can start to test all the features.
+At first, all of these packages can give you an headache, i mean, you want something simple to install, without worring to much, i feel you, really. So don't worry, there is a [starter](docs/starter.md) for that: with a bunch of packages added and already installed you can start to test all the features within seconds.
 
 All the packages are laravel-based, the most of them provides full configurabile api.
 
