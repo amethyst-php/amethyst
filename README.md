@@ -8,11 +8,10 @@ At first, all of these packages can give you an headache, i mean, you want somet
 
 All the packages are laravel-based, the most of them provides full configurable api.
 
-This package provides only the backend with a sets of endpoints, so a frontend it's still required. You can write your own or use [this](https://github.com/railken/vue-admin-start).
+This package provides only the backend with a sets of endpoints, so a frontend it's still required.
 
 ## Links
 
 * [Starter](docs/starter.md)
 * [Walkthrough](docs/walkthrough.md)
 * [Packages](docs/packages.md)
-* [Frontend](https://github.com/railken/vue-admin-start)
