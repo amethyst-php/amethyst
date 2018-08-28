@@ -8,7 +8,7 @@ At first, all of these packages can give you an headache, i mean, you want somet
 
 All the packages are laravel-based, the most of them provides full configurable api.
 
-This package provides only the backend with a sets of endpoints, so a frontend it's still required.
+These packages provide only the backend with a sets of endpoints, so a frontend it's still required.
 
 ## Links
 
