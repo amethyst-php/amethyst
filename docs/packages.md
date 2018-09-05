@@ -2,7 +2,8 @@
 
 ### Base
 * [User](https://github.com/railken/lara-ore-user)
-* [Auth](https://github.com/railken/lara-ore-auth)
+* [Authentication](https://github.com/railken/lara-ore-auth)
+* [Authorization](https://github.com/railken/lara-ore-authorization)
 * [Account](https://github.com/railken/lara-ore-account)
 * [Registration](https://github.com/railken/lara-ore-registration)
 * [Notification](https://github.com/railken/lara-ore-notification)
