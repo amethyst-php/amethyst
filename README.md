@@ -15,3 +15,4 @@ These packages provide only the backend with a sets of endpoints, so a frontend 
 * [Starter](docs/starter.md)
 * [Walkthrough](docs/walkthrough.md)
 * [Packages](docs/packages.md)
+* [Status](docs/status.md)
