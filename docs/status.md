@@ -4,12 +4,13 @@ A simple document to watch all builds at once.
 
 | Name | Build | 
 |---|---|
-| [user](https://github.com/railken/lara-ore-user) | [![Build Status](https://travis-ci.org/railken/lara-ore-user.svg?branch=master)](https://travis-ci.org/railken/lara-ore-user) |
-| [account](https://github.com/railken/lara-ore-account) | [![Build Status](https://travis-ci.org/railken/lara-ore-account.svg?branch=master)](https://travis-ci.org/railken/lara-ore-account) |
-| [address](https://github.com/railken/lara-ore-address) | [![Build Status](https://travis-ci.org/railken/lara-ore-address.svg?branch=master)](https://travis-ci.org/railken/lara-ore-address) |
+| [support](https://github.com/railken/lara-ore-support) | [![Build Status](https://travis-ci.org/railken/lara-ore-support.svg?branch=master)](https://travis-ci.org/railken/lara-ore-support) |
 | [api](https://github.com/railken/lara-ore-api) | [![Build Status](https://travis-ci.org/railken/lara-ore-api.svg?branch=master)](https://travis-ci.org/railken/lara-ore-api) |
+| [user](https://github.com/railken/lara-ore-user) | [![Build Status](https://travis-ci.org/railken/lara-ore-user.svg?branch=master)](https://travis-ci.org/railken/lara-ore-user) |
 | [auth](https://github.com/railken/lara-ore-auth) | [![Build Status](https://travis-ci.org/railken/lara-ore-auth.svg?branch=master)](https://travis-ci.org/railken/lara-ore-auth) |
 | [authorization](https://github.com/railken/lara-ore-authorization) | [![Build Status](https://travis-ci.org/railken/lara-ore-authorization.svg?branch=master)](https://travis-ci.org/railken/lara-ore-authorization) |
+| [account](https://github.com/railken/lara-ore-account) | [![Build Status](https://travis-ci.org/railken/lara-ore-account.svg?branch=master)](https://travis-ci.org/railken/lara-ore-account) |
+| [address](https://github.com/railken/lara-ore-address) | [![Build Status](https://travis-ci.org/railken/lara-ore-address.svg?branch=master)](https://travis-ci.org/railken/lara-ore-address) |
 | [catalogue](https://github.com/railken/lara-ore-catalogue) | [![Build Status](https://travis-ci.org/railken/lara-ore-catalogue.svg?branch=master)](https://travis-ci.org/railken/lara-ore-catalogue) |
 | [config](https://github.com/railken/lara-ore-config) | [![Build Status](https://travis-ci.org/railken/lara-ore-config.svg?branch=master)](https://travis-ci.org/railken/lara-ore-config) |
 | [contract](https://github.com/railken/lara-ore-contract) | [![Build Status](https://travis-ci.org/railken/lara-ore-contract.svg?branch=master)](https://travis-ci.org/railken/lara-ore-contract) |
@@ -31,7 +32,6 @@ A simple document to watch all builds at once.
 | [repository](https://github.com/railken/lara-ore-repository) | [![Build Status](https://travis-ci.org/railken/lara-ore-repository.svg?branch=master)](https://travis-ci.org/railken/lara-ore-repository) |
 | [request-logger](https://github.com/railken/lara-ore-request-logger) | [![Build Status](https://travis-ci.org/railken/lara-ore-request-logger.svg?branch=master)](https://travis-ci.org/railken/lara-ore-request-logger) |
 | [schedule](https://github.com/railken/lara-ore-schedule) | [![Build Status](https://travis-ci.org/railken/lara-ore-schedule.svg?branch=master)](https://travis-ci.org/railken/lara-ore-schedule) |
-| [support](https://github.com/railken/lara-ore-support) | [![Build Status](https://travis-ci.org/railken/lara-ore-support.svg?branch=master)](https://travis-ci.org/railken/lara-ore-support) |
 | [tax](https://github.com/railken/lara-ore-tax) | [![Build Status](https://travis-ci.org/railken/lara-ore-tax.svg?branch=master)](https://travis-ci.org/railken/lara-ore-tax) |
 | [taxonomy](https://github.com/railken/lara-ore-taxonomy) | [![Build Status](https://travis-ci.org/railken/lara-ore-taxonomy.svg?branch=master)](https://travis-ci.org/railken/lara-ore-taxonomy) |
 | [template](https://github.com/railken/lara-ore-template) | [![Build Status](https://travis-ci.org/railken/lara-ore-template.svg?branch=master)](https://travis-ci.org/railken/lara-ore-template) |
