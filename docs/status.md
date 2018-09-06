@@ -7,7 +7,7 @@ A simple document to watch all builds at once.
 | [support](https://github.com/railken/lara-ore-support) | [![Build Status](https://travis-ci.org/railken/lara-ore-support.svg?branch=master)](https://travis-ci.org/railken/lara-ore-support) |
 | [api](https://github.com/railken/lara-ore-api) | [![Build Status](https://travis-ci.org/railken/lara-ore-api.svg?branch=master)](https://travis-ci.org/railken/lara-ore-api) |
 | [user](https://github.com/railken/lara-ore-user) | [![Build Status](https://travis-ci.org/railken/lara-ore-user.svg?branch=master)](https://travis-ci.org/railken/lara-ore-user) |
-| [auth](https://github.com/railken/lara-ore-authentication) | [![Build Status](https://travis-ci.org/railken/lara-ore-authentication.svg?branch=master)](https://travis-ci.org/railken/lara-ore-authentication) |
+| [authentication](https://github.com/railken/lara-ore-authentication) | [![Build Status](https://travis-ci.org/railken/lara-ore-authentication.svg?branch=master)](https://travis-ci.org/railken/lara-ore-authentication) |
 | [authorization](https://github.com/railken/lara-ore-authorization) | [![Build Status](https://travis-ci.org/railken/lara-ore-authorization.svg?branch=master)](https://travis-ci.org/railken/lara-ore-authorization) |
 | [account](https://github.com/railken/lara-ore-account) | [![Build Status](https://travis-ci.org/railken/lara-ore-account.svg?branch=master)](https://travis-ci.org/railken/lara-ore-account) |
 | [address](https://github.com/railken/lara-ore-address) | [![Build Status](https://travis-ci.org/railken/lara-ore-address.svg?branch=master)](https://travis-ci.org/railken/lara-ore-address) |
