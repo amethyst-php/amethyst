@@ -1,3 +1,6 @@
+This is currently WIP
+-
+
 The purpose of this project is to create a collection of packages to standardize and facilitate the developing process of common problems when building the backend of a crm.
 
 Each solution has his own package. The user has his own package, the authentication has his own package, the registration, the notification and so on; all fully configurabile. 
