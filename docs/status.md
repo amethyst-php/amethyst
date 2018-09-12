@@ -31,6 +31,7 @@ A simple document to watch all builds at once.
 | [registration](https://github.com/railken/lara-ore-registration) | [![Build Status](https://travis-ci.org/railken/lara-ore-registration.svg?branch=master)](https://travis-ci.org/railken/lara-ore-registration) |
 | [repository](https://github.com/railken/lara-ore-repository) | [![Build Status](https://travis-ci.org/railken/lara-ore-repository.svg?branch=master)](https://travis-ci.org/railken/lara-ore-repository) |
 | [request-logger](https://github.com/railken/lara-ore-request-logger) | [![Build Status](https://travis-ci.org/railken/lara-ore-request-logger.svg?branch=master)](https://travis-ci.org/railken/lara-ore-request-logger) |
+| [query-log](https://github.com/railken/lara-ore-query-log) | [![Build Status](https://travis-ci.org/railken/lara-ore-query-log.svg?branch=master)](https://travis-ci.org/railken/lara-ore-query-log) |
 | [schedule](https://github.com/railken/lara-ore-schedule) | [![Build Status](https://travis-ci.org/railken/lara-ore-schedule.svg?branch=master)](https://travis-ci.org/railken/lara-ore-schedule) |
 | [tax](https://github.com/railken/lara-ore-tax) | [![Build Status](https://travis-ci.org/railken/lara-ore-tax.svg?branch=master)](https://travis-ci.org/railken/lara-ore-tax) |
 | [taxonomy](https://github.com/railken/lara-ore-taxonomy) | [![Build Status](https://travis-ci.org/railken/lara-ore-taxonomy.svg?branch=master)](https://travis-ci.org/railken/lara-ore-taxonomy) |
