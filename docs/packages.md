@@ -28,6 +28,7 @@
 * [Schedule](https://github.com/railken/lara-ore-schedule)
 
 ### Loggers
+* [QueryLog](https://github.com/railken/lara-ore-query-log) 
 * [HttpLog](https://github.com/railken/lara-ore-request-logger) 
 * [EventLog](https://github.com/railken/lara-ore-event-log) 
 * [EmailLog](https://github.com/railken/lara-ore-email-log)
