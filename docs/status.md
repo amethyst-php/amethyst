@@ -4,7 +4,6 @@ A simple document to watch all builds at once.
 
 | Name | Build | 
 |---|---|
-| [support](https://github.com/railken/amethyst-support) | [![Build Status](https://travis-ci.org/railken/amethyst-support.svg?branch=master)](https://travis-ci.org/railken/amethyst-support) |
 | [api](https://github.com/railken/amethyst-api) | [![Build Status](https://travis-ci.org/railken/amethyst-api.svg?branch=master)](https://travis-ci.org/railken/amethyst-api) |
 | [user](https://github.com/railken/amethyst-user) | [![Build Status](https://travis-ci.org/railken/amethyst-user.svg?branch=master)](https://travis-ci.org/railken/amethyst-user) |
 | [authentication](https://github.com/railken/amethyst-authentication) | [![Build Status](https://travis-ci.org/railken/amethyst-authentication.svg?branch=master)](https://travis-ci.org/railken/amethyst-authentication) |
