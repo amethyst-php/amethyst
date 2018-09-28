@@ -12,7 +12,7 @@ A series of common classes to help building an amethyst package
 ## Api
 [![Build Status](https://travis-ci.org/railken/amethyst-api.svg?branch=master)](https://travis-ci.org/railken/amethyst-api)
 
-Helpers and Controllers to expose an api in json-api
+Helpers and Controllers to help building an amethyst package that expose api
 
 [View source](https://github.com/railken/amethyst-api)
 
