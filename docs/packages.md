@@ -3,7 +3,7 @@
 ## Common
 [![Build Status](https://travis-ci.org/railken/amethyst-common.svg?branch=master)](https://travis-ci.org/railken/amethyst-common)
 
-A series of common classes to help building an amethyst package
+A series of common classes to help building an amethyst package.
 
 [View source](https://github.com/railken/amethyst-common)
 
@@ -12,7 +12,7 @@ A series of common classes to help building an amethyst package
 ## Api
 [![Build Status](https://travis-ci.org/railken/amethyst-api.svg?branch=master)](https://travis-ci.org/railken/amethyst-api)
 
-Helpers and Controllers to help building an amethyst package that expose api
+Helpers and Controllers to help building an amethyst package that expose api.
 
 [View source](https://github.com/railken/amethyst-api)
 
@@ -30,7 +30,7 @@ The address used in a shipment order, the address for the customer office, the a
 ## Config
 [![Build Status](https://travis-ci.org/railken/amethyst-config.svg?branch=master)](https://travis-ci.org/railken/amethyst-config)
 
-Manage laravel configs through the database
+Manage laravel configs through the database.
 
 [View source](https://github.com/railken/amethyst-config)
 
@@ -51,5 +51,14 @@ Handle the suppliers for your services or products.
 Handle a catalogue of products/services.
 
 [View source](https://github.com/railken/amethyst-catalogue)
+
+----
+
+## Taxonomy
+[![Build Status](https://travis-ci.org/railken/amethyst-taxonomy.svg?branch=master)](https://travis-ci.org/railken/amethyst-taxonomy)
+
+Handle taxonomies.
+
+[View source](https://github.com/railken/amethyst-taxonomy)
 
 ----
