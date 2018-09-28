@@ -36,3 +36,12 @@ Manage laravel configs through the database
 
 ----
 
+## Supplier
+[![Build Status](https://travis-ci.org/railken/amethyst-supplier.svg?branch=master)](https://travis-ci.org/railken/amethyst-supplier)
+
+Handle the suppliers for your services or products.
+
+[View source](https://github.com/railken/amethyst-supplier)
+
+----
+
