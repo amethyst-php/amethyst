@@ -6,6 +6,7 @@
 A series of common classes to help building an amethyst package
 
 [View source](https://github.com/railken/amethyst-common)
+
 ----
 
 ## Api
@@ -14,6 +15,7 @@ A series of common classes to help building an amethyst package
 Helpers and Controllers to expose an api in json-api
 
 [View source](https://github.com/railken/amethyst-api)
+
 ----
 
 ## Address
@@ -22,6 +24,7 @@ Helpers and Controllers to expose an api in json-api
 The address for the shipment order, the address for your customer office, the address used in the invoice.
 
 [View source](https://github.com/railken/amethyst-address)
+
 ----
 
 ## Config
@@ -30,5 +33,6 @@ The address for the shipment order, the address for your customer office, the ad
 Manager laravel configs through the database
 
 [View source](https://github.com/railken/amethyst-config)
+
 ----
 
