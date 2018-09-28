@@ -45,3 +45,11 @@ Handle the suppliers for your services or products.
 
 ----
 
+## Catalogue
+[![Build Status](https://travis-ci.org/railken/amethyst-catalogue.svg?branch=master)](https://travis-ci.org/railken/amethyst-catalogue)
+
+Handle a catalogue of products/services.
+
+[View source](https://github.com/railken/amethyst-catalogue)
+
+----
