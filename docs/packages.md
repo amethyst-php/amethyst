@@ -1,47 +1,34 @@
 # Packages
 
-### Base
-* [User](https://github.com/railken/amethyst-user)
-* [Authentication](https://github.com/railken/amethyst-auth)
-* [Authorization](https://github.com/railken/amethyst-authorization)
-* [Account](https://github.com/railken/amethyst-account)
-* [Registration](https://github.com/railken/amethyst-registration)
-* [Notification](https://github.com/railken/amethyst-notification)
+## Common
+[![Build Status](https://travis-ci.org/railken/amethyst-common.svg?branch=master)](https://travis-ci.org/railken/amethyst-common)
 
-### Configuration
-* [Config](https://github.com/railken/amethyst-config)
+A series of common classes to help building an amethyst package
 
-### Storage
-* [Disk](https://github.com/railken/amethyst-disk)
-* [File](https://github.com/railken/amethyst-file)
+[View source](https://github.com/railken/amethyst-common)
+----
 
-### Common
-* [Repository](https://github.com/railken/amethyst-repository)
-* [DataBuilder](https://github.com/railken/amethyst-data-builder)
-* [Exporter](https://github.com/railken/amethyst-exporter)
-* [Importer](https://github.com/railken/amethyst-importer)
-* [FileGenerator](https://github.com/railken/amethyst-file-generator)
-* [EmailSender](https://github.com/railken/amethyst-email-sender)
-* [Template](https://github.com/railken/amethyst-template)
-* [Work](https://github.com/railken/amethyst-work)
-* [Listener](https://github.com/railken/amethyst-listener)
-* [Schedule](https://github.com/railken/amethyst-schedule)
+## Api
+[![Build Status](https://travis-ci.org/railken/amethyst-api.svg?branch=master)](https://travis-ci.org/railken/amethyst-api)
 
-### Loggers
-* [QueryLog](https://github.com/railken/amethyst-query-log) 
-* [HttpLog](https://github.com/railken/amethyst-request-logger) 
-* [EventLog](https://github.com/railken/amethyst-event-log) 
-* [EmailLog](https://github.com/railken/amethyst-email-log)
+Helpers and Controllers to expose an api in json-api
 
-### Data
-* [Taxonomy](https://github.com/railken/amethyst-taxonomy)
-* [Address](https://github.com/railken/amethyst-address)
-* [Legal Entity](https://github.com/railken/amethyst-legal-entity)
-* [Tax](https://github.com/railken/amethyst-tax)
-* [Invoice](https://github.com/railken/amethyst-invoice)
-* [Customer](https://github.com/railken/amethyst-customer)
-* [Recurring Service](https://github.com/railken/amethyst-recurring-service)
-* [Contract](https://github.com/railken/amethyst-contract)
-* [Catalogue](https://github.com/railken/amethyst-catalogue)
-* [FoodAllergen](https://github.com/railken/amethyst-food-allergen)
-* [Nutrition](https://github.com/railken/amethyst-nutrition)
+[View source](https://github.com/railken/amethyst-api)
+----
+
+## Address
+[![Build Status](https://travis-ci.org/railken/amethyst-address.svg?branch=master)](https://travis-ci.org/railken/amethyst-address)
+
+The address for the shipment order, the address for your customer office, the address used in the invoice.
+
+[View source](https://github.com/railken/amethyst-address)
+----
+
+## Config
+[![Build Status](https://travis-ci.org/railken/amethyst-config.svg?branch=master)](https://travis-ci.org/railken/amethyst-config)
+
+Manager laravel configs through the database
+
+[View source](https://github.com/railken/amethyst-config)
+----
+
