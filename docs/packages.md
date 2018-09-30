@@ -62,3 +62,30 @@ Handle taxonomies.
 [View source](https://github.com/railken/amethyst-taxonomy)
 
 ----
+
+## Nutrition
+[![Build Status](https://travis-ci.org/railken/amethyst-nutrition.svg?branch=master)](https://travis-ci.org/railken/amethyst-nutrition)
+
+Handle nutritions.
+
+[View source](https://github.com/railken/amethyst-nutrition)
+
+----
+
+## Food Allergen
+[![Build Status](https://travis-ci.org/railken/amethyst-food-allergen.svg?branch=master)](https://travis-ci.org/railken/amethyst-food-allergen)
+
+Handle food allergens.
+
+[View source](https://github.com/railken/amethyst-food-allergen)
+
+----
+
+## Taxes
+[![Build Status](https://travis-ci.org/railken/amethyst-tax.svg?branch=master)](https://travis-ci.org/railken/amethyst-tax)
+
+Handle taxes.
+
+[View source](https://github.com/railken/amethyst-tax)
+
+----
