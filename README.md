@@ -15,6 +15,6 @@ These packages provide only the backend with a sets of endpoints, so a frontend 
 
 ## Links
 
-* [Starter](docs/starter.md)
+* [Starters](docs/starters.md)
 * [Walkthrough](docs/walkthrough.md)
 * [Packages](docs/packages.md)
