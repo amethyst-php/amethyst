@@ -14,3 +14,6 @@ W.I.P
 
 ## CRM starter
 W.I.P
+
+## Blog starter
+W.I.P
