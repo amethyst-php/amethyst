@@ -2,7 +2,7 @@
 
 A package has been created to speed-up the development. Install the package globally.
 
-    composer require global railken/amethyst-skeleton
+    composer global require railken/amethyst-skeleton
     
 If this is your first global composer package, you have to add the composer path
 
