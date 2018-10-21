@@ -12,3 +12,12 @@ Now you can execute the command
 
     skeleton <name>
     
+Go inside the folder, update the .env and install all vendors packages
+    
+    cd <name>
+    cp .env.example .env
+    composer update
+    
+Launch the tests
+
+    ./vendor/bin/phpunit
