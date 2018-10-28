@@ -10,12 +10,22 @@ If this is your first global composer package, you have to add the composer path
     
 Now you can execute the command 
 
-    amethyst <name>
+    amethyst new <my-package>
+
+Go inside the package
+
+    cd <my-package>
     
-Go inside the folder, update the .env and install all vendors packages
+Create a new data
+
+    amethyst data <my-package> <my-data>
     
-    cd <name>
+Copy the .env.example and configure it
+
     cp .env.example .env
+    
+Install all vendors packages
+    
     composer update
     
 Launch the tests
