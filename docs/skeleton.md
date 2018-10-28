@@ -10,7 +10,7 @@ If this is your first global composer package, you have to add the composer path
     
 Now you can execute the command 
 
-    skeleton <name>
+    amethyst <name>
     
 Go inside the folder, update the .env and install all vendors packages
     
