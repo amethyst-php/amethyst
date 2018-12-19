@@ -19,4 +19,4 @@ These packages provide only the backend with a sets of endpoints, so a frontend 
 
 * [Starters](docs/starters.md)
 * [Packages](docs/packages.md)
-* [Create your package](docs/skeleton.md)
+* [Tools](https://github.com/railken/amethyst-skeleton)
