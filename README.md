@@ -1,4 +1,4 @@
-This is currently WIP
+Amethyst
 -
 
 The purpose of this project is to create a collection of packages to standardize and facilitate the developing process of common problems when building the backend of a general purpose project.
@@ -15,8 +15,12 @@ All the packages are laravel-based, the most of them provides full configurable 
 
 These packages provide only the backend with a sets of endpoints, so a frontend it's still required.
 
+## Contribution
+
+If you wish to create your own package you can use this [Tool](https://github.com/railken/amethyst-skeleton)
+
 ## Links
 
 * [Starters](https://github.com/search?l=PHP&q=amethyst-starter&type=Repositories)
 * [Packages](https://github.com/search?l=PHP&q=amethyst-package&type=Repositories)
-* [Tools](https://github.com/railken/amethyst-skeleton)
+* [Tool](https://github.com/railken/amethyst-skeleton)
