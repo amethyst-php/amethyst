@@ -21,6 +21,6 @@ If you wish to create your own package you can use this [Tool](https://github.co
 
 ## Links
 
-* [Starters](https://github.com/search?l=PHP&q=amethyst-starter&type=Repositories)
-* [Packages](https://github.com/search?l=PHP&q=amethyst-package&type=Repositories)
+* [Starters](https://github.com/topics/amethyst-starter)
+* [Packages](https://github.com/topics/amethyst-package)
 * [Tool](https://github.com/railken/amethyst-skeleton)
