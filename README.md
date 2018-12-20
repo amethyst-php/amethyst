@@ -17,6 +17,6 @@ These packages provide only the backend with a sets of endpoints, so a frontend 
 
 ## Links
 
-* [Starters](docs/starters.md)
-* [Packages](docs/packages.md)
+* [Starters](https://github.com/search?l=PHP&q=amethyst-starter&type=Repositories)
+* [Packages](https://github.com/search?l=PHP&q=amethyst-package&type=Repositories)
 * [Tools](https://github.com/railken/amethyst-skeleton)
