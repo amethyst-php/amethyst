@@ -24,3 +24,7 @@ If you wish to create your own package you can use this [Tool](https://github.co
 * [Starters](https://github.com/topics/amethyst-starter)
 * [Packages](https://github.com/topics/amethyst-package)
 * [Tool](https://github.com/railken/amethyst-skeleton)
+
+## Status
+
+This is currently WIP
