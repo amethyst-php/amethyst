@@ -7,8 +7,6 @@ Usually when you're building an application, the type of project influences the 
 
 The solution? Start building packages that solve only one problem, and create your project as it was a puzzle.
 
-The package that add the customer, should only add the customer and should be usable either in a crm or an e-commerce.
-
 ## The Project
 
 Each solution has his own package. The user has his own package, the authentication has his own package, the registration, the notification and so on; all fully configurabile. 
