@@ -21,6 +21,11 @@ All the packages are laravel-based, the most of them provides full configurable 
 
 These packages provide only the backend with a sets of endpoints, so a frontend it's still required.
 
+## Documentation
+
+One of the command of [Tool](https://github.com/railken/cli-amethyst) give the ability to generate automatically the documentation of the given data and is currently wip.
+Example of result: [link](https://github.com/railken/amethyst-foo/blob/master/docs/data/foo/index.md)
+
 ## Contribution
 
 If you wish to create your own package you can use this [Tool](https://github.com/railken/amethyst-skeleton)
@@ -29,7 +34,7 @@ If you wish to create your own package you can use this [Tool](https://github.co
 
 * [Starters](https://github.com/topics/amethyst-starter)
 * [Packages](https://github.com/topics/amethyst-package)
-* [Tool](https://github.com/railken/amethyst-skeleton)
+* [Tool](https://github.com/railken/cli-amethyst)
 
 ## Status
 
