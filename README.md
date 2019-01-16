@@ -24,7 +24,8 @@ These packages provide only the backend with a sets of endpoints, so a frontend 
 ## Documentation
 
 One of the command of [Tool](https://github.com/railken/cli-amethyst) give the ability to generate automatically the documentation of the given data and is currently wip.
-Example of result: [link](https://github.com/railken/amethyst-foo/blob/master/docs/data/foo/index.md)
+
+[Example](https://github.com/railken/amethyst-foo/blob/master/docs/data/foo/index.md)
 
 ## Contribution
 
