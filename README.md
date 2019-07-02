@@ -21,6 +21,8 @@ All the packages are laravel-based, the most of them provides full configurable 
 
 These packages provide only the backend with a sets of endpoints, so a frontend it's still required.
 
+There is currently a parallel project that take all the advantages provided by Amethyst and create an automatic administration panel, it's called [Quartz](https://github.com/railken/quartz). Keep in mind that you're not forced to use Quartz 
+
 ## Documentation
 
 WIP.
